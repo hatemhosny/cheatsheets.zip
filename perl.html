@@ -1,0 +1,1459 @@
+<!DOCTYPE HTML><html class="scrollbar" translate="no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title>Perl Cheat Sheet & Quick Reference</title><meta name="keywords" content="cheat,sheet,cheatsheets,reference,programming,code table,snippets,linux,command,shortcuts,developers"><meta name="description" content="The perl quick reference cheat sheet that aims at providing help on writing basic syntax and methods. "><meta property="og:url" content="https://cheatsheets.zip/perl.html"><meta property="og:title" content="Perl Cheat Sheet & Quick Reference"><meta property="og:site_name" content="CheatSheets.zip"><meta property="og:description" content="The perl quick reference cheat sheet that aims at providing help on writing basic syntax and methods. "><meta property="og:image" content="https://cheatsheets.zip/assets/image/perl-preview.png?v=ryha9"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Perl Cheat Sheet & Quick Reference"><meta name="twitter:site" content="@CheatSheets.zip"><meta name="twitter:creator" content="@CheatSheets.zip"><meta name="twitter:description" content="The perl quick reference cheat sheet that aims at providing help on writing basic syntax and methods. "><meta name="twitter:image" content="https://cheatsheets.zip/assets/image/perl-preview.png?v=4gy8p"><link rel="icon" href="/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="/images/favicon.png?v=1"><link rel="canonical" href="https://cheatsheets.zip/perl.html"><link rel="prefetch" href="https://cheatsheets.zip"><link rel="prerender" href="https://cheatsheets.zip"><link rel="alternate" href="/atom.xml" title="CheatSheets.zip" type="application/atom+xml"><link rel="stylesheet" href="/css/style.css?_v=1735753229098"><script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            let html = document.documentElement.classList;
+            html.toggle('dark')
+        }
+    </script></head><body class="bg-slate-100 dark:bg-slate-900"><header class=""><div class="max-container z-10"><div class="flex flex-row justify-between md:justify-start items-center py-3"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center text-white mr-2 text-3xl md:text-4xl"><div class="self-center"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M234.624 932.864a43.52 43.52 0 0 1-58.688-17.024 46.528 46.528 0 0 1-5.248-21.248V584.896c0 30.72 17.28 49.664 62.848 70.912l278.08 138.688-276.992 138.368z" fill="#6ad09d" opacity=".4"></path><path d="M642.944 85.312c115.584 0 209.28 45.504 210.368 161.92v647.36a44.992 44.992 0 0 1-5.248 20.864 43.328 43.328 0 0 1-59.84 17.408L511.616 794.496l-278.08-138.688c-45.568-21.248-62.848-40.192-62.848-70.912V247.168c0-116.352 93.696-161.856 208.832-161.856zm28.992 257.792H350.912a33.6 33.6 0 0 0-33.472 33.728c0 18.56 14.976 33.728 33.472 33.728H672a33.6 33.6 0 0 0 33.472-33.728A33.6 33.6 0 0 0 672 343.104z" fill="#6ad09d"></path></svg></div></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">cheatsheets<span class="text-emerald-400">.zip</span></span></a><div class="md:ml-auto flex flex-wrap items-center text-base justify-center"> <button id="mysearch-trigger" type="button" class="fadeIn inline-flex h-8 items-center bg-slate-200 dark:bg-gray-900 md:dark:bg-transparent md:bg-transparent rounded-full px-2 md:px-3 lg:px-6 py-2 text-slate-700 md:hover:opacity-80"><div class="md:text-xl text-slate-700 dark:text-slate-300 md:mr-2"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M942.14826666 878.7968l-200.56746667-229.92213333C795.37493333 583.8848 827.73333333 500.5312 827.73333333 409.6 827.73333333 202.27413333 659.59253333 34.13333333 452.26666666 34.13333333 244.87253333 34.13333333 76.79999999 202.27413333 76.79999999 409.6S244.87253333 785.06666667 452.26666666 785.06666667c77.14133333 0 148.82133333-23.3472 208.41813333-63.21493334l199.33866667 228.5568c19.72906667 22.7328 54.272 24.91733333 76.8 5.25653334C959.62453333 935.86773333 961.87733333 901.46133333 942.14826666 878.7968zM179.19999999 409.6c0-150.59626667 122.4704-273.06666667 273.06666667-273.06666667 150.59626667 0 273.06666667 122.4704 273.06666667 273.06666667s-122.4704 273.06666667-273.06666667 273.06666667C301.67039999 682.66666667 179.19999999 560.19626667 179.19999999 409.6z"></path></svg></div> <span class="hidden md:inline dark:text-slate-300">Search for cheatsheet</span> <span class="hidden md:inline dark:text-slate-300 md:ml-2 text-sm leading-5 py-0.5 px-1.5 border border-slate-400 rounded-md"><span class="font-sans">⌘</span> <span class="font-sans">K</span></span></button> <a href="https://github.com/Fechin/reference/blob/main/source/_posts/perl.md" rel="external nofollow noreferrer" target="_blank"><img alt="GitHub Repo stars" style="height:26px;opacity:.8" src="https://img.shields.io/github/stars/Fechin/reference?style=social"></a> <a href="https://twitter.com/FechinLi" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 items-center rounded-full bg-[#4d9feb] text-slate-100 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:opacity-80"><div class="md:mr-2"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M283.02655555 307.55600001c140.717 72.074 260.839 66.925 260.839 66.92499999s-44.617-157.87599999 94.384-228.234c138.998-70.359 236.816 48.048 236.816 48.048s24.025-6.863 42.901-13.728 44.617-18.87599999 44.61700001-18.876l-42.90100001 77.222 66.92500001-6.863s-8.579 12.014-34.31900001 36.038c-25.741 24.025-37.754 37.754-37.754 37.754s10.297 190.483-90.95 338.062c-99.53 147.58000001-229.952 235.099-417.002 253.973-187.05 18.87599999-310.606-58.347-310.606-58.347s82.37-5.149 133.852-24.025c51.483-20.592 126.99-73.79 126.99-73.79s-106.397-32.605-145.866-70.35899999-48.048-60.062-48.048-60.06200001l106.397-1.716s-111.542-60.062-142.433-106.397c-30.89-46.333-36.038-92.666-36.038-92.666l80.656 32.605s-66.925-92.666-77.222-163.025c-10.297-72.074 12.014-109.826 12.014-109.826s36.038 65.21 176.752 137.283z"></path></svg></div> <span class="hidden md:inline text-sm">Follow Me</span></button></a> <button id="darkMode" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"> <i class="icon-light text-gray-600 dark:text-gray-300 dark:hover:text-white"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M512 31.40266667c14.19946667 0 26.935296 8.14830933 31.93787733 20.447232l29.40381867 72.50466133c12.713984 31.30436267-4.456448 66.21320533-38.33856 77.96599467A70.34197333 70.34197333 0 0 1 512 206.16533333c-36.19771733 0-65.536-27.11005867-65.536-60.555264 0-7.25265067 1.41994667-14.46161067 4.17245867-21.25550933l29.425664-72.50466133C485.04285867 39.550976 497.75684267 31.40266667 512 31.40266667zm0 961.19466666c-14.221312 0-26.95714133-8.14830933-31.93787733-20.447232l-29.425664-72.50466133a56.492032 56.492032 0 0 1-4.17245867-21.25550933C446.464 844.96657067 475.80228267 817.83466667 512 817.83466667c7.86432 0 15.64125867 1.31072 23.003136 3.84477866 33.882112 11.75278933 51.052544 46.661632 38.33856 77.98784l-29.40381867 72.482816c-5.00258133 12.29892267-17.73841067 20.447232-31.93787733 20.447232zm480.59733333-480.59733333c0 14.19946667-8.14830933 26.935296-20.447232 31.93787733l-72.50466133 29.40381867c-31.30436267 12.713984-66.21320533-4.456448-77.96599467-38.33856A70.34197333 70.34197333 0 0 1 817.83466667 512c0-36.19771733 27.11005867-65.536 60.555264-65.536 7.25265067 0 14.46161067 1.41994667 21.25550933 4.17245867l72.50466133 29.425664c12.29892267 4.980736 20.447232 17.69472 20.447232 31.93787733zM31.40266667 512c0-14.221312 8.14830933-26.95714133 20.447232-31.93787733l72.50466133-29.425664c6.77205333-2.752512 13.98101333-4.17245867 21.25550933-4.17245867C179.03342933 446.464 206.16533333 475.80228267 206.16533333 512c0 7.86432-1.31072 15.64125867-3.84477866 23.003136-11.75278933 33.882112-46.661632 51.052544-77.98784 38.33856l-72.482816-29.40381867C39.550976 538.935296 31.40266667 526.19946667 31.40266667 512zM172.15214933 172.17399467c10.04885333-10.04885333 24.81629867-13.28196267 37.04968534-8.126464l72.06775466 30.45239466c31.1296 13.172736 43.66882133 49.98212267 28.00571734 82.24768a70.34197333 70.34197333 0 0 1-13.54410667 19.00544c-25.58088533 25.58088533-65.49230933 27.15374933-89.12896 3.49525334a56.492032 56.492032 0 0 1-12.10231467-17.97870934L164.04753067 209.22368c-5.177344-12.23338667-1.94423467-27.000832 8.10461866-37.04968533zm679.673856 679.673856c-10.04885333 10.04885333-24.81629867 13.28196267-37.04968533 8.10461866l-72.04590933-30.45239466a56.492032 56.492032 0 0 1-18.00055467-12.08046934c-23.63665067-23.658496-22.06378667-63.56992 3.51709867-89.15080533a70.34197333 70.34197333 0 0 1 19.00544-13.54410667c32.26555733-15.663104 69.074944-3.12388267 82.24768 28.00571734l30.45239466 72.06775466c5.15549867 12.23338667 1.92238933 26.97898667-8.126464 37.04968534zm0-679.69570134c10.04885333 10.04885333 13.28196267 24.81629867 8.126464 37.04968534l-30.45239466 72.06775466c-13.172736 31.1296-49.98212267 43.66882133-82.24768 28.00571734a70.34197333 70.34197333 0 0 1-19.00544-13.54410667c-25.58088533-25.58088533-27.15374933-65.49230933-3.49525334-89.12896 5.111808-5.15549867 11.206656-9.240576 17.97870934-12.10231467l72.04590933-30.45239466c12.23338667-5.177344 27.000832-1.94423467 37.04968533 8.10461866zM172.15214933 851.82600533c-10.04885333-10.04885333-13.28196267-24.81629867-8.10461866-37.04968533l30.45239466-72.04590933c2.83989333-6.77205333 6.946816-12.86690133 12.08046934-18.00055467 23.658496-23.63665067 63.56992-22.06378667 89.15080533 3.51709867 5.57056 5.57056 10.15808 12.01493333 13.54410667 19.00544 15.663104 32.26555733 3.12388267 69.074944-28.00571734 82.24768l-72.06775466 30.45239466c-12.23338667 5.15549867-26.97898667 1.92238933-37.04968534-8.126464zM512 752.29866667c-132.7104 0-240.29866667-107.58826667-240.29866667-240.29866667s107.58826667-240.29866667 240.29866667-240.29866667 240.29866667 107.58826667 240.29866667 240.29866667-107.58826667 240.29866667-240.29866667 240.29866667z"></path></svg></i></button> <a href="https://facebook.com/sharer/sharer.php?u=https://cheatsheets.zip/perl.html" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 w-8 justify-center items-center rounded-full bg-[#4a66ad] text-slate-100 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:opacity-80"> <span class="text-md"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M594.74346667 51.53066667c-28.95893333 0-56.30826667 3.2192-88.48533334 16.0896-65.9616 27.34826667-98.13653333 88.48533333-98.13653333 186.6208v94.91946666h-91.70026667v157.66186667h91.70026667v455.28853333h186.6208v-455.28853333h127.09546667l17.696-157.66186667h-144.7936v-70.7872c0-22.52266667 1.60853333-38.61013333 8.04266666-46.65706666 8.04266667-14.47786667 24.13226667-20.91413333 49.872-20.91413334h85.26613334v-157.66186666h-143.184z"></path></svg></span> <span class="hidden">Facebook</span></button></a> <a href="https://twitter.com/intent/tweet/?text=The%20perl%20quick%20reference%20cheat%20sheet%20that%20aims%20at%20providing%20help%20on%20writing%20basic%20syntax%20and%20methods.%20&url=https://cheatsheets.zip/perl.html" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 w-8 justify-center items-center rounded-full bg-[#4d9feb] text-slate-100 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:opacity-80"> <span class="text-md"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M283.02655555 307.55600001c140.717 72.074 260.839 66.925 260.839 66.92499999s-44.617-157.87599999 94.384-228.234c138.998-70.359 236.816 48.048 236.816 48.048s24.025-6.863 42.901-13.728 44.617-18.87599999 44.61700001-18.876l-42.90100001 77.222 66.92500001-6.863s-8.579 12.014-34.31900001 36.038c-25.741 24.025-37.754 37.754-37.754 37.754s10.297 190.483-90.95 338.062c-99.53 147.58000001-229.952 235.099-417.002 253.973-187.05 18.87599999-310.606-58.347-310.606-58.347s82.37-5.149 133.852-24.025c51.483-20.592 126.99-73.79 126.99-73.79s-106.397-32.605-145.866-70.35899999-48.048-60.062-48.048-60.06200001l106.397-1.716s-111.542-60.062-142.433-106.397c-30.89-46.333-36.038-92.666-36.038-92.666l80.656 32.605s-66.925-92.666-77.222-163.025c-10.297-72.074 12.014-109.826 12.014-109.826s36.038 65.21 176.752 137.283z"></path></svg></span> <span class="hidden">Twitter</span></button></a></div></div></div></header><div class="mx-auto flex flex-wrap md:py-5 flex-col md:flex-row items-center"><div class="flex flex-col w-full mx-auto items-center text-center my-8"><div class="max-container w-full"><h1 class="text-5xl mb-4"> <span class="text-slate-700 dark:text-slate-300 font-light">Perl</span> <span class="text-slate-400 dark:text-slate-500 font-extralight hidden md:inline">cheatsheet</span></h1><div class="lg:w-3/5 mx-auto intro leading-relaxed text-slate-600"><p>The perl quick reference cheat sheet that aims at providing help on writing basic syntax and methods.</p></div><div class="pt-5" id="carbon_container"></div></div></div><div id="mdLayout" class="mdLayout w-full max-container"> 
+        <div class="h2-wrap">
+<h2 id="getting-started"><a class="h-anchor" href="#getting-started">#</a>Getting Started</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="unix-and-linux-installation"><a class="h-anchor" href="#unix-and-linux-installation">#</a>Unix and Linux Installation</h3>
+<div class="section">
+<ul>
+<li>
+<p>Open a Web browser and go to https://www.perl.org/get.html.</p>
+</li>
+<li>
+<p>Follow the link to download zipped source code available for Unix/Linux.</p>
+</li>
+<li>
+<p>Download perl-5.x.y.tar.gz file and issue the following commands at $ prompt.</p>
+</li>
+</ul>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$</span><span class="language-bash">tar -xzf perl-5.x.y.tar.gz</span>
+<span class="hljs-meta prompt_">$</span><span class="language-bash"><span class="hljs-built_in">cd</span> perl-5.x.y</span>
+<span class="hljs-meta prompt_">$</span><span class="language-bash">./Configure -de</span>
+<span class="hljs-meta prompt_">$</span><span class="language-bash">make</span>
+<span class="hljs-meta prompt_">$</span><span class="language-bash">make <span class="hljs-built_in">test</span></span>
+<span class="hljs-meta prompt_">$</span><span class="language-bash">make install</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="windows-installation"><a class="h-anchor" href="#windows-installation">#</a>Windows Installation</h3>
+<div class="section">
+<ul>
+<li>
+<p>Follow the link for the Strawberry Perl installation on Windows http://strawberryperl.com</p>
+</li>
+<li>
+<p>Download either 32bit or 64bit version of installation.</p>
+</li>
+<li>
+<p>Run the downloaded file by double-clicking it in Windows Explorer. This brings up the Perl install wizard, which is really easy to use. Just accept the default settings, wait until the installation is finished, and you're ready to roll!</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="macintosh-installation"><a class="h-anchor" href="#macintosh-installation">#</a>Macintosh Installation</h3>
+<div class="section">
+<ul>
+<li>
+<p>Open a Web browser and go to https://www.perl.org/get.html.</p>
+</li>
+<li>
+<p>Follow the link to download zipped source code available for Mac OS X.</p>
+</li>
+<li>
+<p>Download perl-5.x.y.tar.gz file and issue the following commands at $ prompt</p>
+</li>
+</ul>
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$</span><span class="language-bash">tar -xzf perl-5.x.y.tar.gz</span>
+<span class="hljs-meta prompt_">$</span><span class="language-bash"><span class="hljs-built_in">cd</span> perl-5.x.y</span>
+<span class="hljs-meta prompt_">$</span><span class="language-bash">./Configure -de</span>
+<span class="hljs-meta prompt_">$</span><span class="language-bash">make</span>
+<span class="hljs-meta prompt_">$</span><span class="language-bash">make <span class="hljs-built_in">test</span></span>
+<span class="hljs-meta prompt_">$</span><span class="language-bash">make install</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="running-perl"><a class="h-anchor" href="#running-perl">#</a>Running Perl</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">Unix/Linux</span>
+<span class="hljs-meta prompt_">$</span><span class="language-bash">perl  -e &lt;perl code&gt;</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">Windows/DOS</span>
+C:&gt;perl -e &lt;perl code&gt;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="available-command-line-options"><a class="h-anchor" href="#available-command-line-options">#</a>Available command line options</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Option</th>
+<th style="text-align:right">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">-d[:debugger]</td>
+<td style="text-align:right">Runs program under debugger</td>
+</tr>
+<tr>
+<td style="text-align:center">-Idirectory</td>
+<td style="text-align:right">Specifies @INC/#include directory</td>
+</tr>
+<tr>
+<td style="text-align:center">-T</td>
+<td style="text-align:right">Enables tainting warnings</td>
+</tr>
+<tr>
+<td style="text-align:center">-U</td>
+<td style="text-align:right">Allows unsafe operations</td>
+</tr>
+<tr>
+<td style="text-align:center">-w</td>
+<td style="text-align:right">Enables many useful warnings</td>
+</tr>
+<tr>
+<td style="text-align:center">-W</td>
+<td style="text-align:right">Enables all warnings</td>
+</tr>
+<tr>
+<td style="text-align:center">-X</td>
+<td style="text-align:right">Disables all warnings</td>
+</tr>
+<tr>
+<td style="text-align:center">-e program</td>
+<td style="text-align:right">Runs Perl script sent in as program</td>
+</tr>
+<tr>
+<td style="text-align:center">file</td>
+<td style="text-align:right">Runs Perl script from a given file</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="script-from-the-command-line"><a class="h-anchor" href="#script-from-the-command-line">#</a>Script from the Command-line</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">Unix/Linux</span>
+<span class="hljs-meta prompt_">$</span><span class="language-bash">perl  script.pl</span>
+<span class="hljs-meta prompt_"># </span><span class="language-bash">Windows/DOS</span>
+C:&gt;perl script.pl
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="first-perl-program"><a class="h-anchor" href="#first-perl-program">#</a>First Perl Program</h3>
+<div class="section">
+<pre><code class="hljs language-shell"><span class="hljs-meta prompt_">$</span><span class="language-bash">perl -e <span class="hljs-string">&#x27;print &quot;Hello World\n&quot;&#x27;</span></span>
+<span class="hljs-meta prompt_">
+# </span><span class="language-bash"><span class="hljs-meta">#!/usr/bin/perl</span></span>
+<span class="hljs-meta prompt_">
+# </span><span class="language-bash">This will <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;Hello, World&quot;</span></span>
+print &quot;Hello, world\n&quot;;
+<span class="hljs-meta prompt_">$</span><span class="language-bash"><span class="hljs-built_in">chmod</span> 0755 hello.pl</span>
+<span class="hljs-meta prompt_">$</span><span class="language-bash">./hello.pl</span>
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="comments-in-perl"><a class="h-anchor" href="#comments-in-perl">#</a>Comments in Perl</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment"># This is a comment in perl</span>
+<span class="hljs-comment">=begin comment
+This is all part of multiline comment.
+You can use as many lines as you like
+These comments will be ignored by the
+compiler until the next =cut</span> is encountered.
+<span class="hljs-comment">=cut
+
+</span></code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="whitespaces-in-perl"><a class="h-anchor" href="#whitespaces-in-perl">#</a>Whitespaces in Perl</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-comment"># This would print with a line break in the middle</span>
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Hello
+          world\n&quot;</span>;
+<span class="hljs-comment">#output</span>
+<span class="hljs-comment">#Hello</span>
+<span class="hljs-comment">#         world</span>
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="single-and-double-quotes-in-perl"><a class="h-anchor" href="#single-and-double-quotes-in-perl">#</a>Single and Double Quotes in Perl</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Hello, world\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&#x27;Hello, world\n&#x27;</span>;
+
+<span class="hljs-comment">#Hello, world</span>
+<span class="hljs-comment">#Hello, world\n$</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="datatypes"><a class="h-anchor" href="#datatypes">#</a>Datatypes</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="creating-variables"><a class="h-anchor" href="#creating-variables">#</a>Creating Variables</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-variable">$age</span> = <span class="hljs-number">25</span>;             <span class="hljs-comment"># An integer assignment</span>
+<span class="hljs-variable">$name</span> = <span class="hljs-string">&quot;John Paul&quot;</span>;   <span class="hljs-comment"># A string</span>
+<span class="hljs-variable">$salary</span> = <span class="hljs-number">1445.50</span>;     <span class="hljs-comment"># A floating point</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="scalar-variables"><a class="h-anchor" href="#scalar-variables">#</a>Scalar Variables</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">$age</span> = <span class="hljs-number">25</span>;             <span class="hljs-comment"># An integer assignment</span>
+<span class="hljs-variable">$name</span> = <span class="hljs-string">&quot;John Paul&quot;</span>;   <span class="hljs-comment"># A string</span>
+<span class="hljs-variable">$salary</span> = <span class="hljs-number">1445.50</span>;     <span class="hljs-comment"># A floating point</span>
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Age = <span class="hljs-variable">$age</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Name = <span class="hljs-variable">$name</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Salary = <span class="hljs-variable">$salary</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="array-variables"><a class="h-anchor" href="#array-variables">#</a>Array Variables</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">@ages</span> = (<span class="hljs-number">25</span>, <span class="hljs-number">30</span>, <span class="hljs-number">40</span>);
+<span class="hljs-variable">@names</span> = (<span class="hljs-string">&quot;John Paul&quot;</span>, <span class="hljs-string">&quot;Lisa&quot;</span>, <span class="hljs-string">&quot;Kumar&quot;</span>);
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;\$ages[0] = <span class="hljs-variable">$ages</span>[0]\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;\$ages[1] = <span class="hljs-variable">$ages</span>[1]\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;\$ages[2] = <span class="hljs-variable">$ages</span>[2]\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;\$names[0] = <span class="hljs-variable">$names</span>[0]\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;\$names[1] = <span class="hljs-variable">$names</span>[1]\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;\$names[2] = <span class="hljs-variable">$names</span>[2]\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="hash-variables"><a class="h-anchor" href="#hash-variables">#</a>Hash Variables</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">%data</span> = (<span class="hljs-string">&#x27;John Paul&#x27;</span>, <span class="hljs-number">45</span>, <span class="hljs-string">&#x27;Lisa&#x27;</span>, <span class="hljs-number">30</span>, <span class="hljs-string">&#x27;Kumar&#x27;</span>, <span class="hljs-number">40</span>);
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;\$data&#123;&#x27;John Paul&#x27;&#125; = <span class="hljs-variable">$data</span>&#123;&#x27;John Paul&#x27;&#125;\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;\$data&#123;&#x27;Lisa&#x27;&#125; = <span class="hljs-variable">$data</span>&#123;&#x27;Lisa&#x27;&#125;\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;\$data&#123;&#x27;Kumar&#x27;&#125; = <span class="hljs-variable">$data</span>&#123;&#x27;Kumar&#x27;&#125;\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="variable-context"><a class="h-anchor" href="#variable-context">#</a>Variable Context</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">@names</span> = (<span class="hljs-string">&#x27;John Paul&#x27;</span>, <span class="hljs-string">&#x27;Lisa&#x27;</span>, <span class="hljs-string">&#x27;Kumar&#x27;</span>);
+
+<span class="hljs-variable">@copy</span> = <span class="hljs-variable">@names</span>;
+<span class="hljs-variable">$size</span> = <span class="hljs-variable">@names</span>;
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Given names are : <span class="hljs-variable">@copy</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Number of names are : <span class="hljs-variable">$size</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="numeric-scalars"><a class="h-anchor" href="#numeric-scalars">#</a>Numeric Scalars</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">$integer</span> = <span class="hljs-number">200</span>;
+<span class="hljs-variable">$negative</span> = -<span class="hljs-number">300</span>;
+<span class="hljs-variable">$floating</span> = <span class="hljs-number">200.340</span>;
+<span class="hljs-variable">$bigfloat</span> = -<span class="hljs-number">1</span>.2E-<span class="hljs-number">23</span>;
+
+<span class="hljs-comment"># 377 octal, same as 255 decimal</span>
+<span class="hljs-variable">$octal</span> = <span class="hljs-number">0377</span>;
+
+<span class="hljs-comment"># FF hex, also 255 decimal</span>
+<span class="hljs-variable">$hexa</span> = <span class="hljs-number">0xff</span>;
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;integer = <span class="hljs-variable">$integer</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;negative = <span class="hljs-variable">$negative</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;floating = <span class="hljs-variable">$floating</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;bigfloat = <span class="hljs-variable">$bigfloat</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;octal = <span class="hljs-variable">$octal</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;hexa = <span class="hljs-variable">$hexa</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="string-scalars"><a class="h-anchor" href="#string-scalars">#</a>String Scalars</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">$var</span> = <span class="hljs-string">&quot;This is string scalar!&quot;</span>;
+<span class="hljs-variable">$quote</span> = <span class="hljs-string">&#x27;I m inside single quote - $var&#x27;</span>;
+<span class="hljs-variable">$double</span> = <span class="hljs-string">&quot;This is inside single quote - <span class="hljs-variable">$var</span>&quot;</span>;
+
+<span class="hljs-variable">$escape</span> = <span class="hljs-string">&quot;This example of escape -\tHello, World!&quot;</span>;
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;var = <span class="hljs-variable">$var</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;quote = <span class="hljs-variable">$quote</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;double = <span class="hljs-variable">$double</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;escape = <span class="hljs-variable">$escape</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="scalar-operations"><a class="h-anchor" href="#scalar-operations">#</a>Scalar Operations</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">$str</span> = <span class="hljs-string">&quot;hello&quot;</span> . <span class="hljs-string">&quot;world&quot;</span>;       <span class="hljs-comment"># Concatenates strings.</span>
+<span class="hljs-variable">$num</span> = <span class="hljs-number">5</span> + <span class="hljs-number">10</span>;                  <span class="hljs-comment"># adds two numbers.</span>
+<span class="hljs-variable">$mul</span> = <span class="hljs-number">4</span> * <span class="hljs-number">5</span>;                   <span class="hljs-comment"># multiplies two numbers.</span>
+<span class="hljs-variable">$mix</span> = <span class="hljs-variable">$str</span> . <span class="hljs-variable">$num</span>;             <span class="hljs-comment"># concatenates string and number.</span>
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;str = <span class="hljs-variable">$str</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;num = <span class="hljs-variable">$num</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;mul = <span class="hljs-variable">$mul</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;mix = <span class="hljs-variable">$mix</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="multiline-strings"><a class="h-anchor" href="#multiline-strings">#</a>Multiline Strings</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">$string</span> = <span class="hljs-string">&#x27;This is
+a multiline
+string&#x27;</span>;
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$string</span>\n&quot;</span>;
+
+<span class="hljs-comment">##########################</span>
+<span class="hljs-keyword">print</span> &lt;&lt;EOF;
+This is
+a multiline
+string
+EOF
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="v-strings"><a class="h-anchor" href="#v-strings">#</a>V-Strings</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">$smile</span>  = <span class="hljs-number">v9786</span>;
+<span class="hljs-variable">$foo</span>    = <span class="hljs-number">v102.111</span><span class="hljs-number">.111</span>;
+<span class="hljs-variable">$martin</span> = <span class="hljs-number">v77.97</span><span class="hljs-number">.114</span><span class="hljs-number">.116</span><span class="hljs-number">.105</span><span class="hljs-number">.110</span>;
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;smile = <span class="hljs-variable">$smile</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;foo = <span class="hljs-variable">$foo</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;martin = <span class="hljs-variable">$martin</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="special-literals"><a class="h-anchor" href="#special-literals">#</a>Special Literals</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;File name &quot;</span>. __FILE__ . <span class="hljs-string">&quot;\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Line Number &quot;</span> . __LINE__ .<span class="hljs-string">&quot;\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Package &quot;</span> . __PACKAGE__ .<span class="hljs-string">&quot;\n&quot;</span>;
+
+<span class="hljs-comment"># they can not be interpolated</span>
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;__FILE__ __LINE__ __PACKAGE__\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="sequential-number-arrays"><a class="h-anchor" href="#sequential-number-arrays">#</a>Sequential Number Arrays</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">@var_10</span> = (<span class="hljs-number">1</span>.<span class="hljs-number">.10</span>);
+<span class="hljs-variable">@var_20</span> = (<span class="hljs-number">10</span>.<span class="hljs-number">.20</span>);
+<span class="hljs-variable">@var_abc</span> = (a..z);
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">@var_10</span>\n&quot;</span>;   <span class="hljs-comment"># Prints number from 1 to 10</span>
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">@var_20</span>\n&quot;</span>;   <span class="hljs-comment"># Prints number from 10 to 20</span>
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">@var_abc</span>\n&quot;</span>;  <span class="hljs-comment"># Prints number from a to z</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="array-size"><a class="h-anchor" href="#array-size">#</a>Array Size</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">@array</span> = (<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>);
+<span class="hljs-variable">$array</span>[<span class="hljs-number">50</span>] = <span class="hljs-number">4</span>;
+
+<span class="hljs-variable">$size</span> = <span class="hljs-variable">@array</span>;
+<span class="hljs-variable">$max_index</span> = <span class="hljs-variable">$#array</span>;
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Size:  <span class="hljs-variable">$size</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Max Index: <span class="hljs-variable">$max_index</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="array-oparationns"><a class="h-anchor" href="#array-oparationns">#</a>Array oparationns</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="adding-and-removing-elements-in-array"><a class="h-anchor" href="#adding-and-removing-elements-in-array">#</a>Adding and Removing Elements in Array</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">types</th>
+<th style="text-align:center">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">push @ARRAY, LIST</td>
+<td style="text-align:center">Pushes the values of the list onto the end of the array.</td>
+</tr>
+<tr>
+<td style="text-align:left">pop @ARRAY</td>
+<td style="text-align:center">Pops off and returns the last value of the array.</td>
+</tr>
+<tr>
+<td style="text-align:left">shift @ARRAY</td>
+<td style="text-align:center">Shifts the first value of the array off and returns it, shortening the array by 1 and moving everything down.</td>
+</tr>
+<tr>
+<td style="text-align:left">unshift @ARRAY, LIST</td>
+<td style="text-align:center">Prepends list to the front of the array, and returns the number of elements in the new array.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="array-oparations"><a class="h-anchor" href="#array-oparations">#</a>Array oparations</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-comment"># create a simple array</span>
+
+<span class="hljs-variable">@coins</span> = (<span class="hljs-string">&quot;Quarter&quot;</span>,<span class="hljs-string">&quot;Dime&quot;</span>,<span class="hljs-string">&quot;Nickel&quot;</span>);
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;1. \@coins = <span class="hljs-variable">@coins</span>\n&quot;</span>;
+
+<span class="hljs-comment"># add one element at the end of the array</span>
+
+<span class="hljs-keyword">push</span>(<span class="hljs-variable">@coins</span>, <span class="hljs-string">&quot;Penny&quot;</span>);
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;2. \@coins = <span class="hljs-variable">@coins</span>\n&quot;</span>;
+
+<span class="hljs-comment"># add one element at the beginning of the array</span>
+
+<span class="hljs-keyword">unshift</span>(<span class="hljs-variable">@coins</span>, <span class="hljs-string">&quot;Dollar&quot;</span>);
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;3. \@coins = <span class="hljs-variable">@coins</span>\n&quot;</span>;
+
+<span class="hljs-comment"># remove one element from the last of the array.</span>
+
+<span class="hljs-keyword">pop</span>(<span class="hljs-variable">@coins</span>);
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;4. \@coins = <span class="hljs-variable">@coins</span>\n&quot;</span>;
+
+<span class="hljs-comment"># remove one element from the beginning of the array.</span>
+
+<span class="hljs-keyword">shift</span>(<span class="hljs-variable">@coins</span>);
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;5. \@coins = <span class="hljs-variable">@coins</span>\n&quot;</span>;
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="slicing-array-elements"><a class="h-anchor" href="#slicing-array-elements">#</a>Slicing Array Elements</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">@days</span> = <span class="hljs-keyword">qw</span>/Mon Tue Wed Thu Fri Sat Sun/;
+
+<span class="hljs-variable">@weekdays</span> = <span class="hljs-variable">@days</span>[<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>];
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">@weekdays</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="replacing-array-elements"><a class="h-anchor" href="#replacing-array-elements">#</a>Replacing Array Elements</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">@nums</span> = (<span class="hljs-number">1</span>.<span class="hljs-number">.20</span>);
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Before - <span class="hljs-variable">@nums</span>\n&quot;</span>;
+
+<span class="hljs-keyword">splice</span>(<span class="hljs-variable">@nums</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">21</span>.<span class="hljs-number">.25</span>);
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;After - <span class="hljs-variable">@nums</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="transform-strings-to-arrays"><a class="h-anchor" href="#transform-strings-to-arrays">#</a>Transform Strings to Arrays</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-comment"># define Strings</span>
+
+<span class="hljs-variable">$var_string</span> = <span class="hljs-string">&quot;Rain-Drops-On-Roses-And-Whiskers-On-Kittens&quot;</span>;
+<span class="hljs-variable">$var_names</span> = <span class="hljs-string">&quot;Larry,David,Roger,Ken,Michael,Tom&quot;</span>;
+
+<span class="hljs-comment"># transform above strings into arrays.</span>
+
+<span class="hljs-variable">@string</span> = <span class="hljs-keyword">split</span>(<span class="hljs-string">&#x27;-&#x27;</span>, <span class="hljs-variable">$var_string</span>);
+<span class="hljs-variable">@names</span> = <span class="hljs-keyword">split</span>(<span class="hljs-string">&#x27;,&#x27;</span>, <span class="hljs-variable">$var_names</span>);
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$string</span>[3]\n&quot;</span>;  <span class="hljs-comment"># This will print Roses</span>
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$names</span>[4]\n&quot;</span>; <span class="hljs-comment"># This will print Michael</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="transform-arrays-to-strings"><a class="h-anchor" href="#transform-arrays-to-strings">#</a>Transform Arrays to Strings</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-comment"># define Strings</span>
+<span class="hljs-variable">$var_string</span> = <span class="hljs-string">&quot;Rain-Drops-On-Roses-And-Whiskers-On-Kittens&quot;</span>;
+<span class="hljs-variable">$var_names</span> = <span class="hljs-string">&quot;Larry,David,Roger,Ken,Michael,Tom&quot;</span>;
+
+<span class="hljs-comment"># transform above strings into arrays.</span>
+<span class="hljs-variable">@string</span> = <span class="hljs-keyword">split</span>(<span class="hljs-string">&#x27;-&#x27;</span>, <span class="hljs-variable">$var_string</span>);
+<span class="hljs-variable">@names</span>  = <span class="hljs-keyword">split</span>(<span class="hljs-string">&#x27;,&#x27;</span>, <span class="hljs-variable">$var_names</span>);
+
+<span class="hljs-variable">$string1</span> = <span class="hljs-keyword">join</span>( <span class="hljs-string">&#x27;-&#x27;</span>, <span class="hljs-variable">@string</span> );
+<span class="hljs-variable">$string2</span> = <span class="hljs-keyword">join</span>( <span class="hljs-string">&#x27;,&#x27;</span>, <span class="hljs-variable">@names</span> );
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$string1</span>\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$string2</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="sorting-arrays"><a class="h-anchor" href="#sorting-arrays">#</a>Sorting Arrays</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-comment"># define an array</span>
+<span class="hljs-variable">@foods</span> = <span class="hljs-string">qw(pizza steak chicken burgers)</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Before: <span class="hljs-variable">@foods</span>\n&quot;</span>;
+
+<span class="hljs-comment"># sort this array</span>
+<span class="hljs-variable">@foods</span> = <span class="hljs-keyword">sort</span>(<span class="hljs-variable">@foods</span>);
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;After: <span class="hljs-variable">@foods</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="the-special-variable"><a class="h-anchor" href="#the-special-variable">#</a>The $[ Special Variable</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-comment"># define an array</span>
+<span class="hljs-variable">@foods</span> = <span class="hljs-string">qw(pizza steak chicken burgers)</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Foods: <span class="hljs-variable">@foods</span>\n&quot;</span>;
+
+<span class="hljs-comment"># Let&#x27;s reset first index of all the arrays.</span>
+<span class="hljs-variable">$[</span> = <span class="hljs-number">1</span>;
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Food at \@foods[1]: <span class="hljs-variable">$foods</span>[1]\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Food at \@foods[2]: <span class="hljs-variable">$foods</span>[2]\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="merging-arrays"><a class="h-anchor" href="#merging-arrays">#</a>Merging Arrays</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">@odd</span> = (<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>);
+<span class="hljs-variable">@even</span> = (<span class="hljs-number">2</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>);
+
+<span class="hljs-variable">@numbers</span> = (<span class="hljs-variable">@odd</span>, <span class="hljs-variable">@even</span>);
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;numbers = <span class="hljs-variable">@numbers</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="selecting-elements-from-lists"><a class="h-anchor" href="#selecting-elements-from-lists">#</a>Selecting Elements from Lists</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">@list</span> = (<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">3</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>)[<span class="hljs-number">1</span>..<span class="hljs-number">3</span>];
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Value of list = <span class="hljs-variable">@list</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="accessing-hash-elements"><a class="h-anchor" href="#accessing-hash-elements">#</a>Accessing Hash Elements</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">%data</span> = (<span class="hljs-string">&#x27;John Paul&#x27;</span> =&gt; <span class="hljs-number">45</span>, <span class="hljs-string">&#x27;Lisa&#x27;</span> =&gt; <span class="hljs-number">30</span>, <span class="hljs-string">&#x27;Kumar&#x27;</span> =&gt; <span class="hljs-number">40</span>);
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$data</span>&#123;&#x27;John Paul&#x27;&#125;\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$data</span>&#123;&#x27;Lisa&#x27;&#125;\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$data</span>&#123;&#x27;Kumar&#x27;&#125;\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="extracting-slices"><a class="h-anchor" href="#extracting-slices">#</a>Extracting Slices</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/uer/bin/perl</span>
+
+
+<span class="hljs-variable">%data</span> = (<span class="hljs-string">-JohnPaul =&gt;</span> <span class="hljs-number">45</span>, <span class="hljs-string">-Lisa =&gt;</span> <span class="hljs-number">30</span>, <span class="hljs-string">-Kumar =&gt;</span> <span class="hljs-number">40</span>);
+
+<span class="hljs-variable">@array</span> = <span class="hljs-variable">@data</span>&#123;-JohnPaul, -Lisa&#125;;
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Array : <span class="hljs-variable">@array</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="extracting-keys-and-values"><a class="h-anchor" href="#extracting-keys-and-values">#</a>Extracting Keys and Values</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">%data</span> = (<span class="hljs-string">&#x27;John Paul&#x27;</span> =&gt; <span class="hljs-number">45</span>, <span class="hljs-string">&#x27;Lisa&#x27;</span> =&gt; <span class="hljs-number">30</span>, <span class="hljs-string">&#x27;Kumar&#x27;</span> =&gt; <span class="hljs-number">40</span>);
+
+<span class="hljs-variable">@names</span> = <span class="hljs-keyword">keys</span> <span class="hljs-variable">%data</span>;
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$names</span>[0]\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$names</span>[1]\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$names</span>[2]\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="getting-hash-size"><a class="h-anchor" href="#getting-hash-size">#</a>Getting Hash Size</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">%data</span> = (<span class="hljs-string">&#x27;John Paul&#x27;</span> =&gt; <span class="hljs-number">45</span>, <span class="hljs-string">&#x27;Lisa&#x27;</span> =&gt; <span class="hljs-number">30</span>, <span class="hljs-string">&#x27;Kumar&#x27;</span> =&gt; <span class="hljs-number">40</span>);
+
+<span class="hljs-variable">@keys</span> = <span class="hljs-keyword">keys</span> <span class="hljs-variable">%data</span>;
+<span class="hljs-variable">$size</span> = <span class="hljs-variable">@keys</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;1 - Hash size:  is <span class="hljs-variable">$size</span>\n&quot;</span>;
+
+<span class="hljs-variable">@values</span> = <span class="hljs-keyword">values</span> <span class="hljs-variable">%data</span>;
+<span class="hljs-variable">$size</span> = <span class="hljs-variable">@values</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;2 - Hash size:  is <span class="hljs-variable">$size</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="add-and-remove-elements-in-hashes"><a class="h-anchor" href="#add-and-remove-elements-in-hashes">#</a>Add and Remove Elements in Hashes</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-variable">%data</span> = (<span class="hljs-string">&#x27;John Paul&#x27;</span> =&gt; <span class="hljs-number">45</span>, <span class="hljs-string">&#x27;Lisa&#x27;</span> =&gt; <span class="hljs-number">30</span>, <span class="hljs-string">&#x27;Kumar&#x27;</span> =&gt; <span class="hljs-number">40</span>);
+<span class="hljs-variable">@keys</span> = <span class="hljs-keyword">keys</span> <span class="hljs-variable">%data</span>;
+<span class="hljs-variable">$size</span> = <span class="hljs-variable">@keys</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;1 - Hash size:  is <span class="hljs-variable">$size</span>\n&quot;</span>;
+
+<span class="hljs-comment"># adding an element to the hash;</span>
+<span class="hljs-variable">$data</span>&#123;<span class="hljs-string">&#x27;Ali&#x27;</span>&#125; = <span class="hljs-number">55</span>;
+<span class="hljs-variable">@keys</span> = <span class="hljs-keyword">keys</span> <span class="hljs-variable">%data</span>;
+<span class="hljs-variable">$size</span> = <span class="hljs-variable">@keys</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;2 - Hash size:  is <span class="hljs-variable">$size</span>\n&quot;</span>;
+
+<span class="hljs-comment"># delete the same element from the hash;</span>
+<span class="hljs-keyword">delete</span> <span class="hljs-variable">$data</span>&#123;<span class="hljs-string">&#x27;Ali&#x27;</span>&#125;;
+<span class="hljs-variable">@keys</span> = <span class="hljs-keyword">keys</span> <span class="hljs-variable">%data</span>;
+<span class="hljs-variable">$size</span> = <span class="hljs-variable">@keys</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;3 - Hash size:  is <span class="hljs-variable">$size</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="control-flow"><a class="h-anchor" href="#control-flow">#</a>Control Flow</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="if-else"><a class="h-anchor" href="#if-else">#</a>if-else</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-comment"># Perl program to illustrate</span>
+<span class="hljs-comment"># Decision-Making statements</span>
+
+<span class="hljs-variable">$a</span> = <span class="hljs-number">10</span>;
+<span class="hljs-variable">$b</span> = <span class="hljs-number">15</span>;
+
+<span class="hljs-comment"># if condition to check</span>
+<span class="hljs-comment"># for even number</span>
+<span class="hljs-keyword">if</span>(<span class="hljs-variable">$a</span> % <span class="hljs-number">2</span> == <span class="hljs-number">0</span> )
+&#123;
+	<span class="hljs-keyword">printf</span> <span class="hljs-string">&quot;Even Number&quot;</span>;
+&#125;
+
+<span class="hljs-comment"># if-else condition to check</span>
+<span class="hljs-comment"># for even number or odd number</span>
+<span class="hljs-keyword">if</span>(<span class="hljs-variable">$b</span> % <span class="hljs-number">2</span> == <span class="hljs-number">0</span> )
+&#123;
+	<span class="hljs-keyword">printf</span> <span class="hljs-string">&quot;\nEven Number&quot;</span>;
+&#125;
+<span class="hljs-keyword">else</span>
+&#123;
+	<span class="hljs-keyword">printf</span> <span class="hljs-string">&quot;\nOdd Number&quot;</span>;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="the-operator"><a class="h-anchor" href="#the-operator">#</a>The ? : Operator</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/local/bin/perl</span>
+
+<span class="hljs-variable">$name</span> = <span class="hljs-string">&quot;Ali&quot;</span>;
+<span class="hljs-variable">$age</span> = <span class="hljs-number">10</span>;
+
+<span class="hljs-variable">$status</span> = (<span class="hljs-variable">$age</span> &gt; <span class="hljs-number">60</span> )? <span class="hljs-string">&quot;A senior citizen&quot;</span> : <span class="hljs-string">&quot;Not a senior citizen&quot;</span>;
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$name</span> is  - <span class="hljs-variable">$status</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="for-loop"><a class="h-anchor" href="#for-loop">#</a>for loop</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-comment"># Perl program to illustrate</span>
+<span class="hljs-comment"># the use of for Loop</span>
+
+<span class="hljs-comment"># for loop</span>
+<span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;For Loop:\n&quot;</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-variable">$count</span> = <span class="hljs-number">1</span> ; <span class="hljs-variable">$count</span> &lt;= <span class="hljs-number">3</span> ; <span class="hljs-variable">$count</span>++)
+&#123;
+	<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;GeeksForGeeks\n&quot;</span>
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="foreach-loop"><a class="h-anchor" href="#foreach-loop">#</a>foreach loop</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-comment"># Perl program to illustrate</span>
+<span class="hljs-comment"># the use of foreach Loop</span>
+
+<span class="hljs-comment"># Array</span>
+<span class="hljs-variable">@data</span> = (<span class="hljs-string">&#x27;GEEKS&#x27;</span>, <span class="hljs-number">4</span>, <span class="hljs-string">&#x27;GEEKS&#x27;</span>);
+
+<span class="hljs-comment"># foreach loop</span>
+<span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;For-each Loop:\n&quot;</span>);
+<span class="hljs-keyword">foreach</span> <span class="hljs-variable">$word</span> (<span class="hljs-variable">@data</span>)
+&#123;
+	<span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;<span class="hljs-variable">$word</span> &quot;</span>);
+&#125;
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="while-and-do-while"><a class="h-anchor" href="#while-and-do-while">#</a>while and do-while</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-comment"># Perl program to illustrate</span>
+<span class="hljs-comment"># the use of foreach Loop</span>
+
+<span class="hljs-comment"># while loop</span>
+<span class="hljs-variable">$count</span> = <span class="hljs-number">3</span>;
+
+<span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;While Loop:\n&quot;</span>);
+<span class="hljs-keyword">while</span> (<span class="hljs-variable">$count</span> &gt;= <span class="hljs-number">0</span>)
+&#123;
+	<span class="hljs-variable">$count</span> = <span class="hljs-variable">$count</span> - <span class="hljs-number">1</span>;
+	<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;GeeksForGeeks\n&quot;</span>;
+&#125;
+
+<span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;\ndo...while Loop:\n&quot;</span>);
+<span class="hljs-variable">$a</span> = <span class="hljs-number">10</span>;
+
+<span class="hljs-comment"># do..While loop</span>
+<span class="hljs-keyword">do</span> &#123;
+
+	<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$a</span> &quot;</span>;
+	<span class="hljs-variable">$a</span> = <span class="hljs-variable">$a</span> - <span class="hljs-number">1</span>;
+&#125; <span class="hljs-keyword">while</span> (<span class="hljs-variable">$a</span> &gt; <span class="hljs-number">0</span>);
+
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="object-oriented-programming"><a class="h-anchor" href="#object-oriented-programming">#</a>Object Oriented Programming</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="class-and-object"><a class="h-anchor" href="#class-and-object">#</a>Class and object</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-comment"># Perl Program for creation of a</span>
+<span class="hljs-comment"># Class and its object</span>
+<span class="hljs-keyword">use</span> strict;
+<span class="hljs-keyword">use</span> warnings;
+
+<span class="hljs-keyword">package</span> student;
+
+<span class="hljs-comment"># constructor</span>
+<span class="hljs-function"><span class="hljs-keyword">sub</span> <span class="hljs-title">student_data</span>
+</span>&#123;
+
+	<span class="hljs-comment"># shift will take package name &#x27;student&#x27;</span>
+	<span class="hljs-comment"># and assign it to variable &#x27;class&#x27;</span>
+	<span class="hljs-keyword">my</span> <span class="hljs-variable">$class_name</span> = <span class="hljs-keyword">shift</span>;
+	<span class="hljs-keyword">my</span> <span class="hljs-variable">$self</span> = &#123;
+				<span class="hljs-string">&#x27;StudentFirstName&#x27;</span> =&gt; <span class="hljs-keyword">shift</span>,
+				<span class="hljs-string">&#x27;StudentLastName&#x27;</span> =&gt; <span class="hljs-keyword">shift</span>
+			&#125;;
+	<span class="hljs-comment"># Using bless function</span>
+	<span class="hljs-keyword">bless</span> <span class="hljs-variable">$self</span>, <span class="hljs-variable">$class_name</span>;
+
+	<span class="hljs-comment"># returning object from constructor</span>
+	<span class="hljs-keyword">return</span> <span class="hljs-variable">$self</span>;
+&#125;
+
+<span class="hljs-comment"># Object creating and constructor calling</span>
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$Data</span> = student_data student(<span class="hljs-string">&quot;Geeks&quot;</span>, <span class="hljs-string">&quot;forGeeks&quot;</span>);
+
+<span class="hljs-comment"># Printing the data</span>
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$Data</span>-&gt;&#123;&#x27;StudentFirstName&#x27;&#125;\n&quot;</span>;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$Data</span>-&gt;&#123;&#x27;StudentLastName&#x27;&#125;\n&quot;</span>;
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="subroutines"><a class="h-anchor" href="#subroutines">#</a>Subroutines</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-comment"># Perl Program to demonstrate the</span>
+<span class="hljs-comment"># subroutine declaration and calling</span>
+
+<span class="hljs-comment"># defining subroutine</span>
+<span class="hljs-function"><span class="hljs-keyword">sub</span> <span class="hljs-title">ask_user</span>
+</span>&#123;
+	<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Hello Geeks!\n&quot;</span>;
+&#125;
+
+<span class="hljs-comment"># calling subroutine</span>
+<span class="hljs-comment"># you can also use</span>
+<span class="hljs-comment"># &amp;ask_user();</span>
+ask_user();
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="modules-and-packages"><a class="h-anchor" href="#modules-and-packages">#</a>Modules and Packages</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-comment"># Using the Package &#x27;Calculator&#x27;</span>
+<span class="hljs-keyword">use</span> Calculator;
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Enter two numbers to multiply&quot;</span>;
+
+<span class="hljs-comment"># Defining values to the variables</span>
+<span class="hljs-variable">$a</span> = <span class="hljs-number">5</span>;
+<span class="hljs-variable">$b</span> = <span class="hljs-number">10</span>;
+
+<span class="hljs-comment"># Subroutine call</span>
+Calculator::multiplication(<span class="hljs-variable">$a</span>, <span class="hljs-variable">$b</span>);
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;\nEnter two numbers to divide&quot;</span>;
+
+<span class="hljs-comment"># Defining values to the variables</span>
+<span class="hljs-variable">$a</span> = <span class="hljs-number">45</span>;
+<span class="hljs-variable">$b</span> = <span class="hljs-number">5</span>;
+
+<span class="hljs-comment"># Subroutine call</span>
+Calculator::division(<span class="hljs-variable">$a</span>, <span class="hljs-variable">$b</span>);
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="references"><a class="h-anchor" href="#references">#</a>References</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment"># Perl program to illustrate the</span>
+<span class="hljs-comment"># Referencing and Dereferencing</span>
+<span class="hljs-comment"># of an Array</span>
+
+<span class="hljs-comment"># defining an array</span>
+<span class="hljs-variable">@array</span> = (<span class="hljs-string">&#x27;1&#x27;</span>, <span class="hljs-string">&#x27;2&#x27;</span>, <span class="hljs-string">&#x27;3&#x27;</span>);
+
+<span class="hljs-comment"># making an reference to an array variable</span>
+<span class="hljs-variable">$reference_array</span> = \<span class="hljs-variable">@array</span>;
+
+<span class="hljs-comment"># Dereferencing</span>
+<span class="hljs-comment"># printing the value stored</span>
+<span class="hljs-comment"># at $reference_array by prefixing</span>
+<span class="hljs-comment"># @ as it is a array reference</span>
+<span class="hljs-keyword">print</span> <span class="hljs-variable">@$</span>reference_array;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="regular-expression"><a class="h-anchor" href="#regular-expression">#</a>Regular Expression</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment"># Perl program to demonstrate</span>
+<span class="hljs-comment"># the m// and =~ operators</span>
+
+<span class="hljs-comment"># Actual String</span>
+<span class="hljs-variable">$a</span> = <span class="hljs-string">&quot;GEEKSFORGEEKS&quot;</span>;
+
+<span class="hljs-comment"># Prints match found if</span>
+<span class="hljs-comment"># its found in $a</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-variable">$a</span> =~ <span class="hljs-regexp">m[GEEKS]</span>)
+&#123;
+	<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Match Found\n&quot;</span>;
+&#125;
+
+<span class="hljs-comment"># Prints match not found</span>
+<span class="hljs-comment"># if its not found in $a</span>
+<span class="hljs-keyword">else</span>
+&#123;
+	<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Match Not Found\n&quot;</span>;
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="file-handling"><a class="h-anchor" href="#file-handling">#</a>File Handling</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment"># Opening the file</span>
+<span class="hljs-keyword">open</span>(fh, <span class="hljs-string">&quot;GFG2.txt&quot;</span>) <span class="hljs-keyword">or</span> <span class="hljs-keyword">die</span> <span class="hljs-string">&quot;File &#x27;<span class="hljs-variable">$filename</span>&#x27; can&#x27;t be opened&quot;</span>;
+
+<span class="hljs-comment"># Reading First line from the file</span>
+<span class="hljs-variable">$firstline</span> = &lt;fh&gt;;
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$firstline</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="file-test-operators"><a class="h-anchor" href="#file-test-operators">#</a>File Test Operators</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+
+<span class="hljs-comment"># Using predefined modules</span>
+<span class="hljs-keyword">use</span> warnings;
+<span class="hljs-keyword">use</span> strict;
+
+<span class="hljs-comment"># Providing path of file to a variable</span>
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$filename</span> = <span class="hljs-string">&#x27;C:\Users\GeeksForGeeks\GFG.txt&#x27;</span>;
+
+<span class="hljs-comment"># Checking for the file existence</span>
+<span class="hljs-keyword">if</span>(-e <span class="hljs-variable">$filename</span>)
+&#123;
+
+	<span class="hljs-comment"># If File exists</span>
+	<span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;File <span class="hljs-variable">$filename</span> exists\n&quot;</span>);
+&#125;
+
+<span class="hljs-keyword">else</span>
+&#123;
+
+	<span class="hljs-comment"># If File doesn&#x27;t exists</span>
+	<span class="hljs-keyword">print</span>(<span class="hljs-string">&quot;File <span class="hljs-variable">$filename</span> does not exists\n&quot;</span>);
+&#125;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="working-with-excel-files"><a class="h-anchor" href="#working-with-excel-files">#</a>Working with Excel Files</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/bin/perl</span>
+<span class="hljs-keyword">use</span> Excel::Writer::XLSX;
+
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$Excelbook</span> = Excel::Writer::XLSX-&gt;new( <span class="hljs-string">&#x27;GFG_Sample.xlsx&#x27;</span> );
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$Excelsheet</span> = <span class="hljs-variable">$Excelbook</span>-&gt;add_worksheet();
+
+<span class="hljs-variable">$Excelsheet</span>-&gt;<span class="hljs-keyword">write</span>( <span class="hljs-string">&quot;A1&quot;</span>, <span class="hljs-string">&quot;Hello!&quot;</span> );
+<span class="hljs-variable">$Excelsheet</span>-&gt;<span class="hljs-keyword">write</span>( <span class="hljs-string">&quot;A2&quot;</span>, <span class="hljs-string">&quot;GeeksForGeeks&quot;</span> );
+<span class="hljs-variable">$Excelsheet</span>-&gt;<span class="hljs-keyword">write</span>( <span class="hljs-string">&quot;B1&quot;</span>, <span class="hljs-string">&quot;Next_Column&quot;</span> );
+
+<span class="hljs-variable">$Excelbook</span>-&gt;<span class="hljs-keyword">close</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="reading-from-an-excel-file"><a class="h-anchor" href="#reading-from-an-excel-file">#</a>Reading from an Excel File:</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-keyword">use</span> <span class="hljs-number">5.016</span>;
+<span class="hljs-keyword">use</span> Spreadsheet::Read <span class="hljs-string">qw(ReadData)</span>;
+<span class="hljs-keyword">my</span> <span class="hljs-variable">$book_data</span> = ReadData (‘new_excel.xlsx<span class="hljs-string">&#x27;);
+say &#x27;</span>A2: <span class="hljs-string">&#x27; . $book_data-&gt;[1]&#123;A2&#125;;
+
+</span></code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="error-handling"><a class="h-anchor" href="#error-handling">#</a>Error Handling</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-keyword">if</span>(<span class="hljs-keyword">open</span>(DATA, <span class="hljs-variable">$file</span>)) &#123;
+   ...
+&#125; <span class="hljs-keyword">else</span> &#123;
+   <span class="hljs-keyword">die</span> <span class="hljs-string">&quot;Error: Couldn&#x27;t open the file - <span class="hljs-variable">$!</span>&quot;</span>
+&#125;
+<span class="hljs-comment">#example</span>
+<span class="hljs-keyword">open</span>(DATA, <span class="hljs-variable">$file</span>) || <span class="hljs-keyword">die</span> <span class="hljs-string">&quot;Error: Couldn&#x27;t open the file <span class="hljs-variable">$!</span>&quot;</span>;
+<span class="hljs-comment">## example</span>
+<span class="hljs-keyword">unless</span>(<span class="hljs-keyword">chdir</span>(<span class="hljs-string">&quot;/etc&quot;</span>)) &#123;
+   <span class="hljs-keyword">die</span> <span class="hljs-string">&quot;Error: Can&#x27;t change directory - <span class="hljs-variable">$!</span>&quot;</span>;
+&#125;
+<span class="hljs-comment">##example</span>
+<span class="hljs-keyword">print</span>(<span class="hljs-keyword">exists</span>(<span class="hljs-variable">$hash</span><span class="hljs-string">&#123;value&#125;</span>) ? <span class="hljs-string">&#x27;There&#x27;</span> : <span class="hljs-string">&#x27;Missing&#x27;</span>,<span class="hljs-string">&quot;\n&quot;</span>);
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="the-warn-function"><a class="h-anchor" href="#the-warn-function">#</a>The warn Function</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-keyword">chdir</span>(<span class="hljs-string">&#x27;/etc&#x27;</span>) <span class="hljs-keyword">or</span> <span class="hljs-keyword">warn</span> <span class="hljs-string">&quot;Can&#x27;t change directory&quot;</span>;
+
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="the-die-function"><a class="h-anchor" href="#the-die-function">#</a>The die function</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-keyword">chdir</span>(<span class="hljs-string">&#x27;/etc&#x27;</span>) <span class="hljs-keyword">or</span> <span class="hljs-keyword">die</span> <span class="hljs-string">&quot;Can&#x27;t change directory&quot;</span>;
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="errors-within-modules"><a class="h-anchor" href="#errors-within-modules">#</a>Errors within Modules</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-keyword">package</span> T;
+
+<span class="hljs-keyword">require</span> Exporter;
+<span class="hljs-variable">@ISA</span> = <span class="hljs-keyword">qw</span>/Exporter/;
+<span class="hljs-variable">@EXPORT</span> = <span class="hljs-keyword">qw</span>/function/;
+<span class="hljs-keyword">use</span> Carp;
+
+<span class="hljs-function"><span class="hljs-keyword">sub</span> <span class="hljs-title">function</span> </span>&#123;
+   <span class="hljs-keyword">warn</span> <span class="hljs-string">&quot;Error in module!&quot;</span>;
+&#125;
+<span class="hljs-number">1</span>;
+<span class="hljs-comment">#use T;</span>
+<span class="hljs-comment">#function();</span>
+<span class="hljs-comment"># all below code call the funtion</span>
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="the-carp-function"><a class="h-anchor" href="#the-carp-function">#</a>The carp Function</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-keyword">package</span> T;
+
+<span class="hljs-keyword">require</span> Exporter;
+<span class="hljs-variable">@ISA</span> = <span class="hljs-keyword">qw</span>/Exporter/;
+<span class="hljs-variable">@EXPORT</span> = <span class="hljs-keyword">qw</span>/function/;
+<span class="hljs-keyword">use</span> Carp;
+
+<span class="hljs-function"><span class="hljs-keyword">sub</span> <span class="hljs-title">function</span> </span>&#123;
+   carp <span class="hljs-string">&quot;Error in module!&quot;</span>;
+&#125;
+<span class="hljs-number">1</span>;
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="the-cluck-function"><a class="h-anchor" href="#the-cluck-function">#</a>The cluck Function</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-keyword">package</span> T;
+
+<span class="hljs-keyword">require</span> Exporter;
+<span class="hljs-variable">@ISA</span> = <span class="hljs-keyword">qw</span>/Exporter/;
+<span class="hljs-variable">@EXPORT</span> = <span class="hljs-keyword">qw</span>/function/;
+<span class="hljs-keyword">use</span> Carp <span class="hljs-string">qw(cluck)</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">sub</span> <span class="hljs-title">function</span> </span>&#123;
+   cluck <span class="hljs-string">&quot;Error in module!&quot;</span>;
+&#125;
+<span class="hljs-number">1</span>;
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="the-croak-function"><a class="h-anchor" href="#the-croak-function">#</a>The croak Function</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-keyword">package</span> T;
+
+<span class="hljs-keyword">require</span> Exporter;
+<span class="hljs-variable">@ISA</span> = <span class="hljs-keyword">qw</span>/Exporter/;
+<span class="hljs-variable">@EXPORT</span> = <span class="hljs-keyword">qw</span>/function/;
+<span class="hljs-keyword">use</span> Carp;
+
+<span class="hljs-function"><span class="hljs-keyword">sub</span> <span class="hljs-title">function</span> </span>&#123;
+   croak <span class="hljs-string">&quot;Error in module!&quot;</span>;
+&#125;
+<span class="hljs-number">1</span>;
+
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="the-confess-function"><a class="h-anchor" href="#the-confess-function">#</a>The confess Function</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-keyword">package</span> T;
+
+<span class="hljs-keyword">require</span> Exporter;
+<span class="hljs-variable">@ISA</span> = <span class="hljs-keyword">qw</span>/Exporter/;
+<span class="hljs-variable">@EXPORT</span> = <span class="hljs-keyword">qw</span>/function/;
+<span class="hljs-keyword">use</span> Carp;
+
+<span class="hljs-function"><span class="hljs-keyword">sub</span> <span class="hljs-title">function</span> </span>&#123;
+   confess <span class="hljs-string">&quot;Error in module!&quot;</span>;
+&#125;
+<span class="hljs-number">1</span>;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="date-and-time"><a class="h-anchor" href="#date-and-time">#</a>Date and Time</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="current-date-and-time"><a class="h-anchor" href="#current-date-and-time">#</a>Current Date and Time</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/local/bin/perl</span>
+
+<span class="hljs-variable">@months</span> = <span class="hljs-string">qw( Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec )</span>;
+<span class="hljs-variable">@days</span> = <span class="hljs-string">qw(Sun Mon Tue Wed Thu Fri Sat Sun)</span>;
+
+(<span class="hljs-variable">$sec</span>,<span class="hljs-variable">$min</span>,<span class="hljs-variable">$hour</span>,<span class="hljs-variable">$mday</span>,<span class="hljs-variable">$mon</span>,<span class="hljs-variable">$year</span>,<span class="hljs-variable">$wday</span>,<span class="hljs-variable">$yday</span>,<span class="hljs-variable">$isdst</span>) = <span class="hljs-keyword">localtime</span>();
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;<span class="hljs-variable">$mday</span> <span class="hljs-variable">$months</span>[<span class="hljs-variable">$mon</span>] <span class="hljs-variable">$days</span>[<span class="hljs-variable">$wday</span>]\n&quot;</span>;
+<span class="hljs-comment">#or</span>
+<span class="hljs-comment">#!/usr/local/bin/perl</span>
+
+<span class="hljs-variable">$datestring</span> = <span class="hljs-keyword">localtime</span>();
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Local date and time <span class="hljs-variable">$datestring</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="gmt-time"><a class="h-anchor" href="#gmt-time">#</a>GMT Time</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/local/bin/perl</span>
+
+<span class="hljs-variable">$datestring</span> = <span class="hljs-keyword">gmtime</span>();
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;GMT date and time <span class="hljs-variable">$datestring</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="format-date-and-time"><a class="h-anchor" href="#format-date-and-time">#</a>Format Date and Time</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/local/bin/perl</span>
+
+(<span class="hljs-variable">$sec</span>,<span class="hljs-variable">$min</span>,<span class="hljs-variable">$hour</span>,<span class="hljs-variable">$mday</span>,<span class="hljs-variable">$mon</span>,<span class="hljs-variable">$year</span>,<span class="hljs-variable">$wday</span>,<span class="hljs-variable">$yday</span>,<span class="hljs-variable">$isdst</span>) = <span class="hljs-keyword">localtime</span>();
+
+<span class="hljs-keyword">printf</span>(<span class="hljs-string">&quot;Time Format - HH:MM:SS\n&quot;</span>);
+<span class="hljs-keyword">printf</span>(<span class="hljs-string">&quot;<span class="hljs-variable">%02d</span>:<span class="hljs-variable">%02d</span>:<span class="hljs-variable">%02d</span>&quot;</span>, <span class="hljs-variable">$hour</span>, <span class="hljs-variable">$min</span>, <span class="hljs-variable">$sec</span>);
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="epoch-time"><a class="h-anchor" href="#epoch-time">#</a>Epoch time</h3>
+<div class="section">
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/local/bin/perl</span>
+
+<span class="hljs-variable">$epoc</span> = <span class="hljs-keyword">time</span>();
+
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Number of seconds since Jan 1, 1970 - <span class="hljs-variable">$epoc</span>\n&quot;</span>;
+<span class="hljs-comment">#or</span>
+<span class="hljs-comment">#!/usr/local/bin/perl</span>
+
+<span class="hljs-variable">$datestring</span> = <span class="hljs-keyword">localtime</span>();
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Current date and time <span class="hljs-variable">$datestring</span>\n&quot;</span>;
+
+<span class="hljs-variable">$epoc</span> = <span class="hljs-keyword">time</span>();
+<span class="hljs-variable">$epoc</span> = <span class="hljs-variable">$epoc</span> - <span class="hljs-number">24</span> * <span class="hljs-number">60</span> * <span class="hljs-number">60</span>;   <span class="hljs-comment"># one day before of current date.</span>
+
+<span class="hljs-variable">$datestring</span> = <span class="hljs-keyword">localtime</span>(<span class="hljs-variable">$epoc</span>);
+<span class="hljs-keyword">print</span> <span class="hljs-string">&quot;Yesterday&#x27;s date and time <span class="hljs-variable">$datestring</span>\n&quot;</span>;
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="posix-function-strftime"><a class="h-anchor" href="#posix-function-strftime">#</a>POSIX Function strftime()</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Specifier</th>
+<th style="text-align:left">Replaced by</th>
+<th style="text-align:center">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">%a</td>
+<td style="text-align:left">Abbreviated weekday name</td>
+<td style="text-align:center">Thu</td>
+</tr>
+<tr>
+<td style="text-align:left">%A</td>
+<td style="text-align:left">Full weekday name</td>
+<td style="text-align:center">Thursday</td>
+</tr>
+<tr>
+<td style="text-align:left">%b</td>
+<td style="text-align:left">Abbreviated month name</td>
+<td style="text-align:center">Aug</td>
+</tr>
+<tr>
+<td style="text-align:left">%B</td>
+<td style="text-align:left">Full month name</td>
+<td style="text-align:center">August</td>
+</tr>
+<tr>
+<td style="text-align:left">%c</td>
+<td style="text-align:left">Date and time representation</td>
+<td style="text-align:center">Thu Aug 23 14:55:02 2001</td>
+</tr>
+<tr>
+<td style="text-align:left">%C</td>
+<td style="text-align:left">Year divided by 100 and truncated to integer (00-99)</td>
+<td style="text-align:center">20</td>
+</tr>
+<tr>
+<td style="text-align:left">%d</td>
+<td style="text-align:left">Day of the month, zero-padded (01-31)</td>
+<td style="text-align:center">23</td>
+</tr>
+<tr>
+<td style="text-align:left">%D</td>
+<td style="text-align:left">Short MM/DD/YY date, equivalent to %m/%d/%y</td>
+<td style="text-align:center">08/23/01</td>
+</tr>
+<tr>
+<td style="text-align:left">%e</td>
+<td style="text-align:left">Day of the month, space-padded ( 1-31)</td>
+<td style="text-align:center">23</td>
+</tr>
+<tr>
+<td style="text-align:left">%F</td>
+<td style="text-align:left">Short YYYY-MM-DD date, equivalent to %Y-%m-%d</td>
+<td style="text-align:center">2001-08-23</td>
+</tr>
+<tr>
+<td style="text-align:left">%g</td>
+<td style="text-align:left">Week-based year, last two digits (00-99)</td>
+<td style="text-align:center">01</td>
+</tr>
+<tr>
+<td style="text-align:left">%G</td>
+<td style="text-align:left">Week-based year</td>
+<td style="text-align:center">2001</td>
+</tr>
+<tr>
+<td style="text-align:left">%h</td>
+<td style="text-align:left">Abbreviated month name (same as %b)</td>
+<td style="text-align:center">Aug</td>
+</tr>
+<tr>
+<td style="text-align:left">%H</td>
+<td style="text-align:left">Hour in 24h format (00-23)</td>
+<td style="text-align:center">14</td>
+</tr>
+<tr>
+<td style="text-align:left">%I</td>
+<td style="text-align:left">Hour in 12h format (01-12)</td>
+<td style="text-align:center">02</td>
+</tr>
+<tr>
+<td style="text-align:left">%j</td>
+<td style="text-align:left">Day of the year (001-366)</td>
+<td style="text-align:center">235</td>
+</tr>
+<tr>
+<td style="text-align:left">%m</td>
+<td style="text-align:left">Month as a decimal number (01-12)</td>
+<td style="text-align:center">08</td>
+</tr>
+<tr>
+<td style="text-align:left">%M</td>
+<td style="text-align:left">Minute (00-59)</td>
+<td style="text-align:center">55</td>
+</tr>
+<tr>
+<td style="text-align:left">%n</td>
+<td style="text-align:left">New-line character ('\n')</td>
+</tr>
+<tr>
+<td style="text-align:left">%p</td>
+<td style="text-align:left">AM or PM designation</td>
+<td style="text-align:center">PM</td>
+</tr>
+<tr>
+<td style="text-align:left">%r</td>
+<td style="text-align:left">12-hour clock time</td>
+<td style="text-align:center">02:55:02 pm</td>
+</tr>
+<tr>
+<td style="text-align:left">%R</td>
+<td style="text-align:left">24-hour HH:MM time, equivalent to %H:%M</td>
+<td style="text-align:center">14:55</td>
+</tr>
+<tr>
+<td style="text-align:left">%S</td>
+<td style="text-align:left">Second (00-61)</td>
+<td style="text-align:center">02</td>
+</tr>
+<tr>
+<td style="text-align:left">%t</td>
+<td style="text-align:left">Horizontal-tab character ('\t')</td>
+</tr>
+<tr>
+<td style="text-align:left">%T</td>
+<td style="text-align:left">ISO 8601 time format (HH:MM:SS), equivalent to %H:%M:%S</td>
+<td style="text-align:center">14:55</td>
+</tr>
+<tr>
+<td style="text-align:left">%u</td>
+<td style="text-align:left">ISO 8601 weekday as number with Monday as 1 (1-7)</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:left">%U</td>
+<td style="text-align:left">Week number with the first Sunday as the first day of week one (00-53)</td>
+<td style="text-align:center">33</td>
+</tr>
+<tr>
+<td style="text-align:left">%V</td>
+<td style="text-align:left">ISO 8601 week number (00-53)</td>
+<td style="text-align:center">34</td>
+</tr>
+<tr>
+<td style="text-align:left">%w</td>
+<td style="text-align:left">Weekday as a decimal number with Sunday as 0 (0-6)</td>
+<td style="text-align:center">4</td>
+</tr>
+<tr>
+<td style="text-align:left">%W</td>
+<td style="text-align:left">Week number with the first Monday as the first day of week one (00-53)</td>
+<td style="text-align:center">34</td>
+</tr>
+<tr>
+<td style="text-align:left">%x</td>
+<td style="text-align:left">Date representation</td>
+<td style="text-align:center">08/23/01</td>
+</tr>
+<tr>
+<td style="text-align:left">%X</td>
+<td style="text-align:left">Time representation</td>
+<td style="text-align:center">14:55:02</td>
+</tr>
+<tr>
+<td style="text-align:left">%y</td>
+<td style="text-align:left">Year, last two digits (00-99)</td>
+<td style="text-align:center">01</td>
+</tr>
+<tr>
+<td style="text-align:left">%Y</td>
+<td style="text-align:left">Year</td>
+<td style="text-align:center">2001</td>
+</tr>
+<tr>
+<td style="text-align:left">%z</td>
+<td style="text-align:left">ISO 8601 offset from UTC in timezone (1 minute = 1, 1 hour = 100)If timezone cannot be termined, no characters</td>
+<td style="text-align:center">+100</td>
+</tr>
+<tr>
+<td style="text-align:left">%Z</td>
+<td style="text-align:left">Timezone name or abbreviation If timezone cannot be termined, no characters</td>
+<td style="text-align:center">CDT</td>
+</tr>
+<tr>
+<td style="text-align:left">%%</td>
+<td style="text-align:left">A % sign</td>
+<td style="text-align:center">%</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="hljs language-perl"><span class="hljs-comment">#!/usr/local/bin/perl</span>
+<span class="hljs-keyword">use</span> POSIX <span class="hljs-string">qw(strftime)</span>;
+
+<span class="hljs-variable">$datestring</span> = strftime <span class="hljs-string">&quot;<span class="hljs-variable">%a</span> <span class="hljs-variable">%b</span> <span class="hljs-variable">%e</span> <span class="hljs-variable">%H</span>:<span class="hljs-variable">%M</span>:<span class="hljs-variable">%S</span> <span class="hljs-variable">%Y</span>&quot;</span>, <span class="hljs-keyword">localtime</span>;
+<span class="hljs-keyword">printf</span>(<span class="hljs-string">&quot;date and time - <span class="hljs-variable">$datestring</span>\n&quot;</span>);
+
+<span class="hljs-comment"># or for GMT formatted appropriately for your locale:</span>
+<span class="hljs-variable">$datestring</span> = strftime <span class="hljs-string">&quot;<span class="hljs-variable">%a</span> <span class="hljs-variable">%b</span> <span class="hljs-variable">%e</span> <span class="hljs-variable">%H</span>:<span class="hljs-variable">%M</span>:<span class="hljs-variable">%S</span> <span class="hljs-variable">%Y</span>&quot;</span>, <span class="hljs-keyword">gmtime</span>;
+<span class="hljs-keyword">printf</span>(<span class="hljs-string">&quot;date and time - <span class="hljs-variable">$datestring</span>\n&quot;</span>);
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><div class="text-2xl text-emerald-500"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M942.14826666 878.7968l-200.56746667-229.92213333C795.37493333 583.8848 827.73333333 500.5312 827.73333333 409.6 827.73333333 202.27413333 659.59253333 34.13333333 452.26666666 34.13333333 244.87253333 34.13333333 76.79999999 202.27413333 76.79999999 409.6S244.87253333 785.06666667 452.26666666 785.06666667c77.14133333 0 148.82133333-23.3472 208.41813333-63.21493334l199.33866667 228.5568c19.72906667 22.7328 54.272 24.91733333 76.8 5.25653334C959.62453333 935.86773333 961.87733333 901.46133333 942.14826666 878.7968zM179.19999999 409.6c0-150.59626667 122.4704-273.06666667 273.06666667-273.06666667 150.59626667 0 273.06666667 122.4704 273.06666667 273.06666667s-122.4704 273.06666667-273.06666667 273.06666667C301.67039999 682.66666667 179.19999999 560.19626667 179.19999999 409.6z"></path></svg></div></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search for cheatsheet" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> Cancel</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">Top <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/python.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Python <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/vim.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Vim <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/javascript.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">JavaScript <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/bash.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Bash <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">Recent <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/windows-shortcuts.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white"> <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/unreal-engine.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Unreal Engine <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/ocaml.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">OCaml <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/unity-shader-graph.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Unity Shader Graph <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center text-white mr-2 text-3xl md:text-4xl"><div class="self-center"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M234.624 932.864a43.52 43.52 0 0 1-58.688-17.024 46.528 46.528 0 0 1-5.248-21.248V584.896c0 30.72 17.28 49.664 62.848 70.912l278.08 138.688-276.992 138.368z" fill="#6ad09d" opacity=".4"></path><path d="M642.944 85.312c115.584 0 209.28 45.504 210.368 161.92v647.36a44.992 44.992 0 0 1-5.248 20.864 43.328 43.328 0 0 1-59.84 17.408L511.616 794.496l-278.08-138.688c-45.568-21.248-62.848-40.192-62.848-70.912V247.168c0-116.352 93.696-161.856 208.832-161.856zm28.992 257.792H350.912a33.6 33.6 0 0 0-33.472 33.728c0 18.56 14.976 33.728 33.472 33.728H672a33.6 33.6 0 0 0 33.472-33.728A33.6 33.6 0 0 0 672 343.104z" fill="#6ad09d"></path></svg></div></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">cheatsheets<span class="text-emerald-400">.zip</span></span></a><h4 class="mt-5 text-sm text-slate-500">Share quick reference and cheat sheet for developers.</h4><div class="share mt-4"> <a href="/zh-CN/">中文版</a></div><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"> <a class="mr-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://facebook.com/sharer/sharer.php?u=https://cheatsheets.zip/perl.html" rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M594.74346667 51.53066667c-28.95893333 0-56.30826667 3.2192-88.48533334 16.0896-65.9616 27.34826667-98.13653333 88.48533333-98.13653333 186.6208v94.91946666h-91.70026667v157.66186667h91.70026667v455.28853333h186.6208v-455.28853333h127.09546667l17.696-157.66186667h-144.7936v-70.7872c0-22.52266667 1.60853333-38.61013333 8.04266666-46.65706666 8.04266667-14.47786667 24.13226667-20.91413333 49.872-20.91413334h85.26613334v-157.66186666h-143.184z"></path></svg></a> <a class="mx-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://twitter.com/intent/tweet/?text=The%20perl%20quick%20reference%20cheat%20sheet%20that%20aims%20at%20providing%20help%20on%20writing%20basic%20syntax%20and%20methods.%20&url=https://cheatsheets.zip/perl.html" rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M283.02655555 307.55600001c140.717 72.074 260.839 66.925 260.839 66.92499999s-44.617-157.87599999 94.384-228.234c138.998-70.359 236.816 48.048 236.816 48.048s24.025-6.863 42.901-13.728 44.617-18.87599999 44.61700001-18.876l-42.90100001 77.222 66.92500001-6.863s-8.579 12.014-34.31900001 36.038c-25.741 24.025-37.754 37.754-37.754 37.754s10.297 190.483-90.95 338.062c-99.53 147.58000001-229.952 235.099-417.002 253.973-187.05 18.87599999-310.606-58.347-310.606-58.347s82.37-5.149 133.852-24.025c51.483-20.592 126.99-73.79 126.99-73.79s-106.397-32.605-145.866-70.35899999-48.048-60.062-48.048-60.06200001l106.397-1.716s-111.542-60.062-142.433-106.397c-30.89-46.333-36.038-92.666-36.038-92.666l80.656 32.605s-66.925-92.666-77.222-163.025c-10.297-72.074 12.014-109.826 12.014-109.826s36.038 65.21 176.752 137.283z"></path></svg></a> <a class="mx-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://reddit.com/submit/?url=https://cheatsheets.zip/perl.html&resubmit=true&title=The%20perl%20quick%20reference%20cheat%20sheet%20that%20aims%20at%20providing%20help%20on%20writing%20basic%20syntax%20and%20methods." rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M830.73813333 279.88586667c29.1712 0 54.9152-24.02453333 54.9152-54.9152s-24.02453333-54.9152-54.9152-54.9152c-29.1712 0-54.9152 24.02453333-54.9152 54.9152 0 29.1712 24.02453333 54.9152 54.9152 54.9152zM518.416 741.504c-97.81333333 0-154.44693333-41.184-154.44693333-41.184-5.1488-3.4336-10.29653333-1.71626667-12.01386667 3.4336l-10.29653333 18.87573333c-1.71626667 5.1488-1.71626667 12.01386667 3.4336 15.4432 0 0 48.048 49.76746667 173.32266666 49.76746667s169.888-53.1968 169.888-53.1968c3.4336-3.4336 3.4336-10.29653333 1.71626667-13.728l-12.01386667-17.16266667c-3.4336-3.4336-8.5792-5.1488-13.728-1.71626666 0-1.71626667-48.048 39.46986667-145.8656 39.46986666zM341.66506667 609.3696c29.1712 0 54.9152-24.02453333 54.9152-54.9152s-24.02453333-54.9152-54.9152-54.9152c-29.1712 0-54.9152 24.02453333-54.9152 54.9152 1.71626667 30.8896 25.7408 54.9152 54.9152 54.9152zM667.71413333 609.3696c29.1712 0 54.9152-24.02453333 54.9152-54.9152s-24.02453333-54.9152-54.9152-54.9152-54.9152 24.02453333-54.9152 54.9152c0 30.8896 24.02453333 54.9152 54.9152 54.9152zM722.6272 216.39466667c-8.5792-3.4336-101.24693333-34.31893333-140.7168-6.86293334-41.184 29.1712-39.46986667 125.2704-36.0384 125.2704 90.9504 6.86293333 175.0368 34.31893333 238.53013333 77.2224 5.1488 3.4336 60.06186667-44.61653333 120.1248-34.31893333 60.06186667 10.29653333 101.24693333 66.9248 82.37013334 130.4192-18.87573333 61.77813333-77.2224 80.656-75.50613334 99.5296v15.4432c0 159.5936-181.9008 288.29653333-406.704 288.29653333s-406.704-128.70293333-406.704-288.29653333c0-8.5792 0-15.4432 1.71626667-24.02453333 0-1.71626667-41.184-24.02453333-56.62933333-61.77813334-15.4432-36.0384-8.5792-78.9376 6.86293333-104.67946666 25.7408-39.46986667 56.62933333-54.9152 99.5296-54.9152s89.2352 25.7408 90.9504 25.7408c68.6432-41.184 157.87626667-66.9248 253.97333333-68.6432 3.4336 0-6.86293333-116.6912 58.34666667-159.5936 66.9248-42.90133333 176.752 0 178.46933333 0v3.4336c17.16266667-37.7536 54.9152-63.49333333 97.81333334-63.49333334 60.06186667 0 108.11306667 49.76746667 108.11306666 109.82613334 0 60.06186667-48.048 109.82613333-108.11306666 109.82613333s-108.11306667-49.76746667-108.11306667-109.82613333c0-3.4336 0-6.86293333 1.71626667-8.5792z"></path></svg></a> <a class="mx-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://pinterest.com/pin/create/button/?url=https://cheatsheets.zip/perl.html&description=The%20perl%20quick%20reference%20cheat%20sheet%20that%20aims%20at%20providing%20help%20on%20writing%20basic%20syntax%20and%20methods." rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M977 512c0 256.875-208.125 465-465 465-48 0-94.125-7.3125-137.625-20.8125 18.9375-30.9375 47.25-81.5625 57.75-121.875 5.625-21.75 28.875-110.625 28.875-110.625 15.1875 28.875 59.4375 53.4375 106.5 53.4375 140.25 0 241.3125-129 241.3125-289.3125 0-153.5625-125.4375-268.5-286.6875-268.5-200.625 0-307.3125 134.625-307.3125 281.4375 0 68.25 36.375 153.1875 94.3125 180.1875 8.8125 4.125 13.5 2.25 15.5625-6.1875 1.5-6.375 9.375-38.0625 12.9375-52.6875 1.125-4.6875.5625-8.8125-3.1875-13.3125-18.9375-23.4375-34.3125-66.1875-34.3125-106.125 0-102.5625 77.625-201.75 210-201.75 114.1875 0 194.25 77.8125 194.25 189.1875 0 125.8125-63.5625 213-146.25 213-45.5625 0-79.875-37.6875-68.8125-84 13.125-55.3125 38.4375-114.9375 38.4375-154.875 0-35.625-19.125-65.4375-58.875-65.4375-46.6875 0-84.1875 48.1875-84.1875 112.875 0 41.25 13.875 69 13.875 69s-45.9375 194.625-54.375 231c-9.375 40.125-5.625 96.75-1.6875 133.5C169.625 877.4375 47 709.0625 47 512 47 255.125 255.125 47 512 47s465 208.125 465 465z"></path></svg></a> <a class="mx-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://www.linkedin.com/shareArticle?url=https://cheatsheets.zip/perl.html&title=Perl%20Cheat%20Sheet%20&%20Quick%20Reference&summary=The%20perl%20quick%20reference%20cheat%20sheet%20that%20aims%20at%20providing%20help%20on%20writing%20basic%20syntax%20and%20methods." rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M387.20790124 931.03893333h183.53386665v-355.35146666c0-17.5712 1.952-37.0976 7.80906668-48.81173334 11.7152-35.1456 42.95573333-72.24106667 93.7184-72.24106665 66.38613333 0 93.7184 54.66773333 93.7184 132.76799999v341.68426666h183.53386667v-365.11466665c0-181.58293333-89.8144-265.53706667-210.86826667-265.53706668-97.62559999 0-158.14933333 58.576-181.58293333 97.6256h-3.90720001l-7.80906666-83.95626667h-160.10453333c1.952 54.66773333 3.9072 119.10186667 3.9072 197.20320001v421.73759999zM149.00310124 46.56213332c-58.576 0-97.62559999 41.00373333-95.67146668 97.62560001-1.952 52.7168 37.0976 95.67146668 95.67146668 95.67146668 60.52586667 0 99.5776-42.95573333 99.5776-95.67146668-3.9072-56.624-41.00373333-97.62559999-99.5776-97.62559999zM240.7705679 931.03893333v-616.98346666h-183.53386666v616.98346666h183.53386666z"></path></svg></a><a class="ml-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://social-plugins.line.me/lineit/share?url=https://cheatsheets.zip/perl.html" rel="external nofollow noreferrer" target="_blank"><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1672903354277" class="icon" viewBox="0 0 1107 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11220" xmlns:xlink="http://www.w3.org/1999/xlink" width="1em" height="1em"><path d="M551.3440625 32C264.509375 32 32 215.0290625 32 440.7875c0 209.7046875 200.7028125 382.425 459.1471875 405.9534375a31.60125001 31.60125001 0 0 1 21.105 13.7859375c11.4721875 18.8859375 3.320625 59.1271875-5.5875 104.2471875s39.5334375 21.7021875 50.25 16.4775c8.53125001-4.1390625 228.103125-127.91625001 358.820625-249.3009375 95.5903125-74.15625001 154.921875-177.20625001 154.921875-291.148125C1070.688125 215.0290625 838.16375001 32 551.3440625 32zM378.2290625 547.7721875a27.6984375 27.6984375 0 0 1-27.91875 27.44625H255.3659375c-16.760625 0-39.091875-5.791875-39.091875-32.9390625v-203.01562499a27.6825 27.6825 0 0 1 27.91875-27.44718751h5.5865625a27.6825 27.6825 0 0 1 27.91875 27.44625v175.5703125h72.59812499a27.6984375 27.6984375 0 0 1 27.93375001 27.44625v5.4928125zm78.264375-5.46093749a27.886875 27.886875 0 0 1-55.77468751 0V345.085625a27.886875 27.886875 0 0 1 55.77468751 0v197.22562499zm245.634375 0a30.8625 30.8625 0 0 1-27.91875 27.44624999 31.60125001 31.60125001 0 0 1-32.908125-15.7378125l-89.956875-126.16875v114.4284375a27.91875001 27.91875001 0 0 1-55.8215625 0V344.7396875a27.6665625 27.6665625 0 0 1 27.9028125-27.43125 35.315625 35.315625 0 0 1 31.6490625 20.0971875c8.655 12.7790625 91.27875001 127.9790625 91.27875 127.9790625V344.740625a27.9346875 27.9346875 0 0 1 55.8525 0v197.5396875zm167.5275-126.20062501a27.44624999 27.44624999 0 1 1 0 54.8925H797.05625001v43.8928125h72.59812499a27.44624999 27.44624999 0 1 1 0 54.8775H760.765625a24.8971875 24.8971875 0 0 1-25.1803125-24.676875V342.033125a24.8971875 24.8971875 0 0 1 25.18125-24.6928125h108.88875a27.44624999 27.44624999 0 1 1 0 54.8775H797.05625001v43.9078125h72.59812499z" fill="currentColor" p-id="11221"></path></svg></a></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2025 cheatsheets.zip, All rights reserved.</p></div></footer></body><script src="/js/main.js?_v=1735753229098"></script><script>
+        // Get all pre > code elements
+        const codeBlocks = document.querySelectorAll('pre > code');
+        const initInnerHTML = '<svg height="1em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path> </svg>';
+        const successInnerHTML = '<svg height="1em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>';
+        codeBlocks.forEach(function (codeBlock) {
+            // Create a copy button element
+            const copyButton = document.createElement('button');
+            copyButton.className = 'bg-emerald-500 p-2 text-white fadeIn shadow-xl rounded flex items-center absolute top-2 right-2';
+            copyButton.innerHTML = initInnerHTML;
+            copyButton.style.opacity = "0";
+            const parent = codeBlock.parentNode;
+
+            parent.style = "position: relative;"
+            parent.insertBefore(copyButton, codeBlock);
+
+            // Add click event listener to copy button
+            copyButton.addEventListener('click', () => {
+                navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+                    copyButton.innerHTML = successInnerHTML;
+                    setTimeout(() => {
+                        copyButton.innerHTML = initInnerHTML;
+                    }, 1000);
+                });
+            });
+
+            parent.addEventListener('mouseenter', () => {
+                copyButton.style.opacity = "1";
+            });
+            parent.addEventListener('mouseleave', () => {
+                copyButton.style.opacity = "0";
+            });
+        });
+    </script></html>

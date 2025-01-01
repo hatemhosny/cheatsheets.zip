@@ -1,0 +1,2183 @@
+<!DOCTYPE HTML><html class="scrollbar" translate="no"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"><meta http-equiv="content-language" content="en-gb"><meta name="renderer" content="webkit"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="app:pageurl" content="/"><title>Django Cheat Sheet & Quick Reference</title><meta name="keywords" content="cheat,sheet,cheatsheets,reference,programming,code table,snippets,linux,command,shortcuts,developers,web,python"><meta name="description" content="A Django cheat sheet. "><meta property="og:url" content="https://cheatsheets.zip/django.html"><meta property="og:title" content="Django Cheat Sheet & Quick Reference"><meta property="og:site_name" content="CheatSheets.zip"><meta property="og:description" content="A Django cheat sheet. "><meta property="og:image" content="https://cheatsheets.zip/assets/image/django-preview.png?v=xqtyf"><meta property="og:image:width" content="2276"><meta property="og:image:height" content="1240"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Django Cheat Sheet & Quick Reference"><meta name="twitter:site" content="@CheatSheets.zip"><meta name="twitter:creator" content="@CheatSheets.zip"><meta name="twitter:description" content="A Django cheat sheet. "><meta name="twitter:image" content="https://cheatsheets.zip/assets/image/django-preview.png?v=yegwt"><link rel="icon" href="/images/favicon.png?v=1"><link rel="icon shortcut" type="image/png" href="/images/favicon.png?v=1"><link rel="canonical" href="https://cheatsheets.zip/django.html"><link rel="prefetch" href="https://cheatsheets.zip"><link rel="prerender" href="https://cheatsheets.zip"><link rel="alternate" href="/atom.xml" title="CheatSheets.zip" type="application/atom+xml"><link rel="stylesheet" href="/css/style.css?_v=1735753229098"><script>
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            let html = document.documentElement.classList;
+            html.toggle('dark')
+        }
+    </script></head><body class="bg-slate-100 dark:bg-slate-900"><header class=""><div class="max-container z-10"><div class="flex flex-row justify-between md:justify-start items-center py-3"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center text-white mr-2 text-3xl md:text-4xl"><div class="self-center"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M234.624 932.864a43.52 43.52 0 0 1-58.688-17.024 46.528 46.528 0 0 1-5.248-21.248V584.896c0 30.72 17.28 49.664 62.848 70.912l278.08 138.688-276.992 138.368z" fill="#6ad09d" opacity=".4"></path><path d="M642.944 85.312c115.584 0 209.28 45.504 210.368 161.92v647.36a44.992 44.992 0 0 1-5.248 20.864 43.328 43.328 0 0 1-59.84 17.408L511.616 794.496l-278.08-138.688c-45.568-21.248-62.848-40.192-62.848-70.912V247.168c0-116.352 93.696-161.856 208.832-161.856zm28.992 257.792H350.912a33.6 33.6 0 0 0-33.472 33.728c0 18.56 14.976 33.728 33.472 33.728H672a33.6 33.6 0 0 0 33.472-33.728A33.6 33.6 0 0 0 672 343.104z" fill="#6ad09d"></path></svg></div></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">cheatsheets<span class="text-emerald-400">.zip</span></span></a><div class="md:ml-auto flex flex-wrap items-center text-base justify-center"> <button id="mysearch-trigger" type="button" class="fadeIn inline-flex h-8 items-center bg-slate-200 dark:bg-gray-900 md:dark:bg-transparent md:bg-transparent rounded-full px-2 md:px-3 lg:px-6 py-2 text-slate-700 md:hover:opacity-80"><div class="md:text-xl text-slate-700 dark:text-slate-300 md:mr-2"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M942.14826666 878.7968l-200.56746667-229.92213333C795.37493333 583.8848 827.73333333 500.5312 827.73333333 409.6 827.73333333 202.27413333 659.59253333 34.13333333 452.26666666 34.13333333 244.87253333 34.13333333 76.79999999 202.27413333 76.79999999 409.6S244.87253333 785.06666667 452.26666666 785.06666667c77.14133333 0 148.82133333-23.3472 208.41813333-63.21493334l199.33866667 228.5568c19.72906667 22.7328 54.272 24.91733333 76.8 5.25653334C959.62453333 935.86773333 961.87733333 901.46133333 942.14826666 878.7968zM179.19999999 409.6c0-150.59626667 122.4704-273.06666667 273.06666667-273.06666667 150.59626667 0 273.06666667 122.4704 273.06666667 273.06666667s-122.4704 273.06666667-273.06666667 273.06666667C301.67039999 682.66666667 179.19999999 560.19626667 179.19999999 409.6z"></path></svg></div> <span class="hidden md:inline dark:text-slate-300">Search for cheatsheet</span> <span class="hidden md:inline dark:text-slate-300 md:ml-2 text-sm leading-5 py-0.5 px-1.5 border border-slate-400 rounded-md"><span class="font-sans">⌘</span> <span class="font-sans">K</span></span></button> <a href="https://github.com/Fechin/reference/blob/main/source/_posts/django.md" rel="external nofollow noreferrer" target="_blank"><img alt="GitHub Repo stars" style="height:26px;opacity:.8" src="https://img.shields.io/github/stars/Fechin/reference?style=social"></a> <a href="https://twitter.com/FechinLi" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 items-center rounded-full bg-[#4d9feb] text-slate-100 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:opacity-80"><div class="md:mr-2"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M283.02655555 307.55600001c140.717 72.074 260.839 66.925 260.839 66.92499999s-44.617-157.87599999 94.384-228.234c138.998-70.359 236.816 48.048 236.816 48.048s24.025-6.863 42.901-13.728 44.617-18.87599999 44.61700001-18.876l-42.90100001 77.222 66.92500001-6.863s-8.579 12.014-34.31900001 36.038c-25.741 24.025-37.754 37.754-37.754 37.754s10.297 190.483-90.95 338.062c-99.53 147.58000001-229.952 235.099-417.002 253.973-187.05 18.87599999-310.606-58.347-310.606-58.347s82.37-5.149 133.852-24.025c51.483-20.592 126.99-73.79 126.99-73.79s-106.397-32.605-145.866-70.35899999-48.048-60.062-48.048-60.06200001l106.397-1.716s-111.542-60.062-142.433-106.397c-30.89-46.333-36.038-92.666-36.038-92.666l80.656 32.605s-66.925-92.666-77.222-163.025c-10.297-72.074 12.014-109.826 12.014-109.826s36.038 65.21 176.752 137.283z"></path></svg></div> <span class="hidden md:inline text-sm">Follow Me</span></button></a> <button id="darkMode" class="fadeIn inline-flex items-center justify-center flex-shrink-0 h-8 w-8 rounded-full text-gray-900 ml-1 lg:ml-4 dark:text-gray-300 bg-gray-200 dark:bg-gray-900"> <i class="icon-light text-gray-600 dark:text-gray-300 dark:hover:text-white"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M512 31.40266667c14.19946667 0 26.935296 8.14830933 31.93787733 20.447232l29.40381867 72.50466133c12.713984 31.30436267-4.456448 66.21320533-38.33856 77.96599467A70.34197333 70.34197333 0 0 1 512 206.16533333c-36.19771733 0-65.536-27.11005867-65.536-60.555264 0-7.25265067 1.41994667-14.46161067 4.17245867-21.25550933l29.425664-72.50466133C485.04285867 39.550976 497.75684267 31.40266667 512 31.40266667zm0 961.19466666c-14.221312 0-26.95714133-8.14830933-31.93787733-20.447232l-29.425664-72.50466133a56.492032 56.492032 0 0 1-4.17245867-21.25550933C446.464 844.96657067 475.80228267 817.83466667 512 817.83466667c7.86432 0 15.64125867 1.31072 23.003136 3.84477866 33.882112 11.75278933 51.052544 46.661632 38.33856 77.98784l-29.40381867 72.482816c-5.00258133 12.29892267-17.73841067 20.447232-31.93787733 20.447232zm480.59733333-480.59733333c0 14.19946667-8.14830933 26.935296-20.447232 31.93787733l-72.50466133 29.40381867c-31.30436267 12.713984-66.21320533-4.456448-77.96599467-38.33856A70.34197333 70.34197333 0 0 1 817.83466667 512c0-36.19771733 27.11005867-65.536 60.555264-65.536 7.25265067 0 14.46161067 1.41994667 21.25550933 4.17245867l72.50466133 29.425664c12.29892267 4.980736 20.447232 17.69472 20.447232 31.93787733zM31.40266667 512c0-14.221312 8.14830933-26.95714133 20.447232-31.93787733l72.50466133-29.425664c6.77205333-2.752512 13.98101333-4.17245867 21.25550933-4.17245867C179.03342933 446.464 206.16533333 475.80228267 206.16533333 512c0 7.86432-1.31072 15.64125867-3.84477866 23.003136-11.75278933 33.882112-46.661632 51.052544-77.98784 38.33856l-72.482816-29.40381867C39.550976 538.935296 31.40266667 526.19946667 31.40266667 512zM172.15214933 172.17399467c10.04885333-10.04885333 24.81629867-13.28196267 37.04968534-8.126464l72.06775466 30.45239466c31.1296 13.172736 43.66882133 49.98212267 28.00571734 82.24768a70.34197333 70.34197333 0 0 1-13.54410667 19.00544c-25.58088533 25.58088533-65.49230933 27.15374933-89.12896 3.49525334a56.492032 56.492032 0 0 1-12.10231467-17.97870934L164.04753067 209.22368c-5.177344-12.23338667-1.94423467-27.000832 8.10461866-37.04968533zm679.673856 679.673856c-10.04885333 10.04885333-24.81629867 13.28196267-37.04968533 8.10461866l-72.04590933-30.45239466a56.492032 56.492032 0 0 1-18.00055467-12.08046934c-23.63665067-23.658496-22.06378667-63.56992 3.51709867-89.15080533a70.34197333 70.34197333 0 0 1 19.00544-13.54410667c32.26555733-15.663104 69.074944-3.12388267 82.24768 28.00571734l30.45239466 72.06775466c5.15549867 12.23338667 1.92238933 26.97898667-8.126464 37.04968534zm0-679.69570134c10.04885333 10.04885333 13.28196267 24.81629867 8.126464 37.04968534l-30.45239466 72.06775466c-13.172736 31.1296-49.98212267 43.66882133-82.24768 28.00571734a70.34197333 70.34197333 0 0 1-19.00544-13.54410667c-25.58088533-25.58088533-27.15374933-65.49230933-3.49525334-89.12896 5.111808-5.15549867 11.206656-9.240576 17.97870934-12.10231467l72.04590933-30.45239466c12.23338667-5.177344 27.000832-1.94423467 37.04968533 8.10461866zM172.15214933 851.82600533c-10.04885333-10.04885333-13.28196267-24.81629867-8.10461866-37.04968533l30.45239466-72.04590933c2.83989333-6.77205333 6.946816-12.86690133 12.08046934-18.00055467 23.658496-23.63665067 63.56992-22.06378667 89.15080533 3.51709867 5.57056 5.57056 10.15808 12.01493333 13.54410667 19.00544 15.663104 32.26555733 3.12388267 69.074944-28.00571734 82.24768l-72.06775466 30.45239466c-12.23338667 5.15549867-26.97898667 1.92238933-37.04968534-8.126464zM512 752.29866667c-132.7104 0-240.29866667-107.58826667-240.29866667-240.29866667s107.58826667-240.29866667 240.29866667-240.29866667 240.29866667 107.58826667 240.29866667 240.29866667-107.58826667 240.29866667-240.29866667 240.29866667z"></path></svg></i></button> <a href="https://facebook.com/sharer/sharer.php?u=https://cheatsheets.zip/django.html" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 w-8 justify-center items-center rounded-full bg-[#4a66ad] text-slate-100 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:opacity-80"> <span class="text-md"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M594.74346667 51.53066667c-28.95893333 0-56.30826667 3.2192-88.48533334 16.0896-65.9616 27.34826667-98.13653333 88.48533333-98.13653333 186.6208v94.91946666h-91.70026667v157.66186667h91.70026667v455.28853333h186.6208v-455.28853333h127.09546667l17.696-157.66186667h-144.7936v-70.7872c0-22.52266667 1.60853333-38.61013333 8.04266666-46.65706666 8.04266667-14.47786667 24.13226667-20.91413333 49.872-20.91413334h85.26613334v-157.66186666h-143.184z"></path></svg></span> <span class="hidden">Facebook</span></button></a> <a href="https://twitter.com/intent/tweet/?text=A%20Django%20cheat%20sheet.%20&url=https://cheatsheets.zip/django.html" rel="external nofollow noreferrer" target="_blank"><button type="button" class="fadeIn inline-flex h-8 w-8 justify-center items-center rounded-full bg-[#4d9feb] text-slate-100 ml-1 lg:ml-4 px-2 md:px-3 py-2 md:hover:opacity-80"> <span class="text-md"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M283.02655555 307.55600001c140.717 72.074 260.839 66.925 260.839 66.92499999s-44.617-157.87599999 94.384-228.234c138.998-70.359 236.816 48.048 236.816 48.048s24.025-6.863 42.901-13.728 44.617-18.87599999 44.61700001-18.876l-42.90100001 77.222 66.92500001-6.863s-8.579 12.014-34.31900001 36.038c-25.741 24.025-37.754 37.754-37.754 37.754s10.297 190.483-90.95 338.062c-99.53 147.58000001-229.952 235.099-417.002 253.973-187.05 18.87599999-310.606-58.347-310.606-58.347s82.37-5.149 133.852-24.025c51.483-20.592 126.99-73.79 126.99-73.79s-106.397-32.605-145.866-70.35899999-48.048-60.062-48.048-60.06200001l106.397-1.716s-111.542-60.062-142.433-106.397c-30.89-46.333-36.038-92.666-36.038-92.666l80.656 32.605s-66.925-92.666-77.222-163.025c-10.297-72.074 12.014-109.826 12.014-109.826s36.038 65.21 176.752 137.283z"></path></svg></span> <span class="hidden">Twitter</span></button></a></div></div></div></header><div class="mx-auto flex flex-wrap md:py-5 flex-col md:flex-row items-center"><div class="flex flex-col w-full mx-auto items-center text-center my-8"><div class="max-container w-full"><h1 class="text-5xl mb-4"> <span class="text-slate-700 dark:text-slate-300 font-light">Django</span> <span class="text-slate-400 dark:text-slate-500 font-extralight hidden md:inline">cheatsheet</span></h1><div class="lg:w-3/5 mx-auto intro leading-relaxed text-slate-600"><p>A Django cheat sheet.</p></div><div class="pt-5" id="carbon_container"></div></div></div><div id="mdLayout" class="mdLayout w-full max-container"> 
+        <div class="h2-wrap">
+<h2 id="getting-started"><a class="h-anchor" href="#getting-started">#</a>Getting Started</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="start-a-new-django-project"><a class="h-anchor" href="#start-a-new-django-project">#</a>Start a new Django Project</h3>
+<div class="section">
+<p class="row-span-2"></p>
+<pre><code class="hljs language-python"><span class="hljs-comment"># Create et access project folder</span>
+~$  mkdir project_name
+~$  cd project_name
+
+<span class="hljs-comment"># Create Python virtual env</span>
+~$  python3 -m venv venv
+
+<span class="hljs-comment"># Activate virtual env</span>
+~$  source venv/<span class="hljs-built_in">bin</span>/activate
+
+<span class="hljs-comment"># If you want to deactivate virtual env</span>
+~$  deactivate
+
+<span class="hljs-comment"># Install django (~= same as 4.2.*)</span>
+~$  pip install django~=<span class="hljs-number">4.2</span><span class="hljs-number">.0</span>
+
+<span class="hljs-comment"># New django project (from project_name folder)</span>
+~$  django-admin startproject config
+
+<span class="hljs-comment"># Create app (from project_name folder)</span>
+~$  python manage.py startapp app_name
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="migration"><a class="h-anchor" href="#migration">#</a>Migration:</h3>
+<div class="section">
+<p><small>Django create a database table for each models present in your app using those commands:</small></p>
+<p>Makemigrations: Create a file under app_name/migrations with the database structure to create</p>
+<pre><code class="hljs language-python">~$  python manage.py makemigrations
+</code></pre>
+<p>Migrate: Will read the migrations files and create the actual database and tables</p>
+<pre><code class="hljs language-python">~$  python manage.py migrate
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="create-superuser-for-authenficiation-admin-panel"><a class="h-anchor" href="#create-superuser-for-authenficiation-admin-panel">#</a>Create superuser for authenficiation/admin panel</h3>
+<div class="section">
+<pre><code class="hljs language-python">~$  python manage.py createsuperuser
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="start-server"><a class="h-anchor" href="#start-server">#</a>Start server</h3>
+<div class="section">
+<pre><code class="hljs language-python">~$  python manage.py runserver  =&gt; ex.  http://<span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>:<span class="hljs-number">8000</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="requirements"><a class="h-anchor" href="#requirements">#</a>Requirements</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-comment"># Create a requirements file that contain all your project dependencies</span>
+~$  pip freeze &gt; requirements.txt
+
+<span class="hljs-comment"># Install your project requirements (if a requirements file exist)</span>
+~$  pip install -r requirements.txt
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="other-commands"><a class="h-anchor" href="#other-commands">#</a>Other commands</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-comment"># Django shell (Run project code directly)</span>
+~$ python manage.py shell
+
+<span class="hljs-comment"># example of code to run in the shell:</span>
+ &gt;&gt;&gt; <span class="hljs-keyword">from</span> app_name.models <span class="hljs-keyword">import</span> User
+ &gt;&gt;&gt; user1 = User.objects.first()
+
+<span class="hljs-comment"># Prepare static folders for production</span>
+~$ python manage.py collectstatic
+
+<span class="hljs-comment"># Take all data from app blog and export in json</span>
+~$ python manage.py dumpdata blog &gt; myapp.json
+
+<span class="hljs-comment"># Take all data in json file and import in app data table</span>
+~$ python manage.py loaddata myapp.json
+
+<span class="hljs-comment"># To Create or Update a message file for Translation, run this command</span>
+~$ django-admin makemessages -l de
+<span class="hljs-comment"># Updating message files</span>
+~$ django-admin compilemessages
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-1">
+<h2 id="project-config"><a class="h-anchor" href="#project-config">#</a>Project config</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="configuration-settings"><a class="h-anchor" href="#configuration-settings">#</a>Configuration settings</h3>
+<div class="section">
+<h5 id="project-base-templates-directory-and-apps-templates-directory"><a class="h-anchor" href="#project-base-templates-directory-and-apps-templates-directory">#</a>Project base templates directory and Apps templates directory:</h5>
+<ul>
+<li>create folder project/templates</li>
+<li>create folder appfolder/templates/appname</li>
+</ul>
+<h5 id="create-static-folder-in-base-root-and-separate-for-apps"><a class="h-anchor" href="#create-static-folder-in-base-root-and-separate-for-apps">#</a>Create Static folder in base root and separate for apps:</h5>
+<ul>
+<li>project_name\static\root</li>
+<li>app_name\static\app_name</li>
+</ul>
+<pre><code class="hljs language-python"><span class="hljs-comment"># Add app to settings.py</span>
+INSTALLED_APPS = [
+         … ,
+         <span class="hljs-string">&#x27;app_name.apps.App_nameConfig&#x27;</span>,
+ ]
+
+<span class="hljs-comment"># template directory config</span>
+Project templates settings.py:
+    TEMPLATES = [
+        &#123; …
+           <span class="hljs-string">&#x27;DIRS&#x27;</span>: [BASE_DIR / <span class="hljs-string">&#x27;templates&#x27;</span>],
+        … &#125;
+
+<span class="hljs-comment"># Static folder:</span>
+STATIC_URL = <span class="hljs-string">&#x27;/static/&#x27;</span>
+STATICFILES_DIRS = [ BASE_DIR / <span class="hljs-string">&#x27;static&#x27;</span> ]
+STATIC_ROOT = <span class="hljs-string">&#x27;static_root&#x27;</span>
+<span class="hljs-comment"># Media folder:</span>
+MEDIA_URL = <span class="hljs-string">&#x27;/media/&#x27;</span>
+STATICFILES_DIRS = (
+    (BASE_DIR / <span class="hljs-string">&#x27;static&#x27;</span>),
+)
+MEDIA_ROOT = BASE_DIR / <span class="hljs-string">&#x27;media&#x27;</span>
+
+<span class="hljs-comment"># To use PostgresSQL</span>
+<span class="hljs-comment"># pip install psycopg2</span>
+<span class="hljs-comment"># settings.py</span>
+DATABASE = &#123;
+    <span class="hljs-string">&#x27;default&#x27;</span>: &#123;
+        <span class="hljs-string">&#x27;ENGINE&#x27;</span>: <span class="hljs-string">&#x27;django.db.backends.postgresql&#x27;</span>,
+        <span class="hljs-string">&#x27;NAME&#x27;</span>: <span class="hljs-string">&#x27;blog&#x27;</span>,
+        <span class="hljs-string">&#x27;USER&#x27;</span>: <span class="hljs-string">&#x27;admin&#x27;</span>,
+        <span class="hljs-string">&#x27;PASSWORD&#x27;</span>: <span class="hljs-string">&#x27;123456&#x27;</span>,
+        <span class="hljs-string">&#x27;HOST&#x27;</span>: <span class="hljs-string">&#x27;localhost&#x27;</span>,
+        <span class="hljs-string">&#x27;PORT&#x27;</span>: <span class="hljs-string">&#x27;5432&#x27;</span>
+        &#125;
+    &#125;
+
+TIME_INPUT_FORMATS = [
+    <span class="hljs-string">&#x27;%H:%M:%S&#x27;</span>,     <span class="hljs-comment"># &#x27;14:30:59&#x27;</span>
+    <span class="hljs-string">&#x27;%H:%M&#x27;</span>,        <span class="hljs-comment"># &#x27;14:30&#x27;</span>
+]
+
+DATE_FORMAT = <span class="hljs-string">&quot;Y/M/d&quot;</span>
+
+<span class="hljs-comment"># locale for Translations</span>
+LANGUAGES = [
+    (<span class="hljs-string">&#x27;en&#x27;</span>, <span class="hljs-string">&#x27;English&#x27;</span>),
+    (<span class="hljs-string">&#x27;de&#x27;</span>, <span class="hljs-string">&#x27;German&#x27;</span>),
+]
+
+LOCALE_PATHS = (
+    BASE_DIR / <span class="hljs-string">&#x27;locale&#x27;</span>,
+)
+
+<span class="hljs-comment"># CK Editor Configuration</span>
+CKEDITOR_UPLOAD_PATH = <span class="hljs-string">&#x27;uploads/&#x27;</span>
+CKEDITOR_RESTRICT_BY_USER = <span class="hljs-literal">True</span>
+CKEDITOR_BROWSE_SHOW_DIRS = <span class="hljs-literal">True</span>
+CKEDITOR_ALLOW_NONIMGE_FILES = <span class="hljs-literal">True</span>
+CKEDITOR_IMAGE_BACKEND = <span class="hljs-string">&quot;pillow&quot;</span>
+CKEDITOR_CONFIGS = &#123;
+    <span class="hljs-string">&#x27;default&#x27;</span>: &#123;
+        <span class="hljs-string">&#x27;toolbar&#x27;</span>: <span class="hljs-string">&#x27;full&#x27;</span>,
+    &#125;&#125;
+
+<span class="hljs-comment"># SSL</span>
+<span class="hljs-comment"># If you have an SSL certificate</span>
+SECURE_SSL_REDIRECT = <span class="hljs-literal">True</span>
+<span class="hljs-comment"># cookies will only be sent via HTTPS connections</span>
+SESSION_COOKIE_SECURE = <span class="hljs-literal">True</span>
+CSRF_COOKIE_SECURE = <span class="hljs-literal">True</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="data-models"><a class="h-anchor" href="#data-models">#</a>Data Models</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap col-span-2">
+<h3 id="create-data-model"><a class="h-anchor" href="#create-data-model">#</a>Create Data Model</h3>
+<div class="section">
+<p><small>Theses models can be created as database tables with the migrations commands</small></p>
+<pre><code class="hljs language-python"><span class="hljs-comment"># models.py</span>
+<span class="hljs-comment"># The id fields is automaticly created by Django</span>
+<span class="hljs-comment"># for each model that why it&#x27;s not show below</span>
+<span class="hljs-keyword">from</span> django.db <span class="hljs-keyword">import</span> models
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Customer</span>(models.Model)
+    name = models.Charfield(<span class="hljs-string">&#x27;Customer&#x27;</span>, max_length=<span class="hljs-number">120</span>)
+    age = models.IntegerField()
+    note = models.TextField(blank=<span class="hljs-literal">True</span>, null = <span class="hljs-literal">True</span>)
+    email = models.EmailField(max_length=<span class="hljs-number">255</span>, blank=<span class="hljs-literal">True</span>, null=<span class="hljs-literal">True</span>)
+    credit = models.FloatField(blank=<span class="hljs-literal">True</span>)
+    is_active = models.BooleanField(default=<span class="hljs-literal">True</span>)
+    created_at = models.DateTimeField(auto_now_add=<span class="hljs-literal">True</span>)
+    updated_at = models.DateTimeField(auto_now=<span class="hljs-literal">True</span>)
+    img = models.ImageField(upload_to =<span class="hljs-string">&#x27;uploads/&#x27;</span>)
+    <span class="hljs-comment"># Select Field (return value, display value)</span>
+    TYPE_CHOICES = (
+        (<span class="hljs-string">&#x27;Customer&#x27;</span>, _(<span class="hljs-string">&#x27;Customer&#x27;</span>)),
+        (<span class="hljs-string">&#x27;Supplier&#x27;</span>, _(<span class="hljs-string">&#x27;Supplier&#x27;</span>)),
+        (<span class="hljs-string">&#x27;Student&#x27;</span>, _(<span class="hljs-string">&#x27;Student&#x27;</span>)),
+    )
+    <span class="hljs-built_in">type</span> = models.CharField(choices=TYPE_CHOICES)
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Meta</span>:
+        verbose_name = <span class="hljs-string">&quot;Customer&quot;</span>
+        verbose_name_plural = <span class="hljs-string">&quot;Customers&quot;</span>
+
+    <span class="hljs-comment"># Model string representation</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.name
+
+    <span class="hljs-comment"># the URL that points to a resource or page on your website</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_absolute_url</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">return</span> reverse(<span class="hljs-string">&quot;customer_detail&quot;</span>, kwargs=&#123;<span class="hljs-string">&quot;pk&quot;</span>: <span class="hljs-variable language_">self</span>.pk&#125;)
+</code></pre>
+<h4 id="we-can-also-use-this-method-to-define-the-choicefield-value"><a class="h-anchor" href="#we-can-also-use-this-method-to-define-the-choicefield-value">#</a>We can also use this method to define the ChoiceField value.</h4>
+<pre><code class="hljs language-python">  <span class="hljs-keyword">class</span> <span class="hljs-title class_">Customer</span>(models.Model)
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">TypeList</span>(models.IntegerChoices):
+        customer = <span class="hljs-number">1</span>, _(<span class="hljs-string">&#x27;Customer&#x27;</span>))
+        supplier = <span class="hljs-number">2</span>, _(<span class="hljs-string">&#x27;Supplier&#x27;</span>))
+        student = <span class="hljs-number">3</span>, _(<span class="hljs-string">&#x27;Student&#x27;</span>))
+    .
+    .
+    .
+    <span class="hljs-built_in">type</span> = models.CharField(choices=TypeList.choices, default=<span class="hljs-number">1</span>)
+</code></pre>
+<h4 id="to-access-the-choicefield-value-in-the-template-we-need-to-do-the-following-in-the-template"><a class="h-anchor" href="#to-access-the-choicefield-value-in-the-template-we-need-to-do-the-following-in-the-template">#</a>To access the ChoiceField value in the template, we need to do the following in the template:</h4>
+<ul>
+<li>In Django templates you can use the &quot;<code>get_FOO_display()</code>&quot; method, that will return the readable alias for the field, where <code>'FOO'</code> is the name of the field.</li>
+<li>If the choices are stored in the variable <code>CHOICES</code> and the model field storing the selected choice is <code>'type'</code> then you can directly use</li>
+</ul>
+<pre><code class="hljs language-html"><span class="hljs-comment">&lt;!-- Here, X is the model instance --&gt;</span>
+<span class="hljs-comment">&#123;&#123; X.get_type_display &#125;&#125;</span>
+
+<span class="hljs-comment">&lt;!-- You can even use this method to display its translation. --&gt;</span>
+<span class="hljs-comment">&#123;% trans X.get_type_display %&#125;</span>
+</code></pre>
+<h4 id="relationship-between-models"><a class="h-anchor" href="#relationship-between-models">#</a>Relationship between models</h4>
+<pre><code class="hljs language-python"><span class="hljs-comment"># One-to-Many: (use double quotes if the entity is not yet declare) ex. &quot;Supplier&quot;</span>
+supplier = models.ForeignKey(Supplier, blank=<span class="hljs-literal">True</span>, null=<span class="hljs-literal">True</span>, on_delete=models.CASCADE,related_name=<span class="hljs-string">&quot;supplierother&quot;</span>)
+
+<span class="hljs-comment"># on_delete can be set to models.CASCADE, models.ST_DEFAULT or models.SET_NULL</span>
+<span class="hljs-comment"># The related_name attribute specifies the name of the reverse relation from the supplier model back to your model</span>
+
+<span class="hljs-comment"># Many-to-Many:</span>
+tags = models.ManyToManyField(Tag, blank=<span class="hljs-literal">True</span>)
+
+<span class="hljs-comment"># One to One</span>
+User = models.OneToOneField(User, on_delete=models.CASCADE)
+
+<span class="hljs-comment"># Overwrite save method</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">save</span>(<span class="hljs-params">self, (<span class="hljs-params">*args, **kwargs</span>):
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> self.slug:
+        self.slug = slugify(<span class="hljs-params">self.title</span>)
+    <span class="hljs-built_in">super</span>(<span class="hljs-params"></span>).save(<span class="hljs-params">*args, **kwargs</span>)
+</span></code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="lookup"><a class="h-anchor" href="#lookup">#</a>Lookup</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap col-span-2">
+<h3 id="field-lookups"><a class="h-anchor" href="#field-lookups">#</a>Field Lookups</h3>
+<div class="section">
+<p>In Django, the <code>field__lookuptype</code> syntax is used to perform lookups on fields in queries. The <code>field</code> represents the
+name of the field you want to perform the lookup on, and <code>lookuptype</code> represents the type of lookup you want to perform.</p>
+<p>For example, let's say you have a model called <code>Book</code> with a field called <code>title</code> . You can use the <code>field__lookuptype</code>
+syntax to perform different types of lookups on the <code>title</code> field.</p>
+<p>Here are a few examples:</p>
+<pre><code class="hljs language-python">
+<span class="hljs-comment"># 1. Exact Match Lookup:</span>
+Book.objects.<span class="hljs-built_in">filter</span>(title__exact=<span class="hljs-string">&#x27;Python Tricks&#x27;</span>)
+<span class="hljs-comment"># 2. Case-insensitive Lookup:</span>
+Book.objects.<span class="hljs-built_in">filter</span>(title__iexact=<span class="hljs-string">&#x27;python tricks&#x27;</span>)
+<span class="hljs-comment"># 3. Contains Lookup:</span>
+Book.objects.<span class="hljs-built_in">filter</span>(title__contains=<span class="hljs-string">&#x27;Python&#x27;</span>)
+<span class="hljs-comment"># 4. Startswith Lookup:</span>
+Book.objects.<span class="hljs-built_in">filter</span>(title__startswith=<span class="hljs-string">&#x27;Python&#x27;</span>)
+<span class="hljs-comment"># 5. Endswith Lookup:</span>
+Book.objects.<span class="hljs-built_in">filter</span>(title__endswith=<span class="hljs-string">&#x27;Tricks&#x27;</span>)
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="field-lookups-reference"><a class="h-anchor" href="#field-lookups-reference">#</a>Field Lookups Reference</h3>
+<div class="section">
+<table>
+<thead>
+<tr>
+<th>Keyword</th>
+<th style="text-align:left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>contains</code></td>
+<td style="text-align:left">Contains the phrase</td>
+</tr>
+<tr>
+<td><code>icontains</code></td>
+<td style="text-align:left">Same as contains, but case-insensitive</td>
+</tr>
+<tr>
+<td><code>date</code></td>
+<td style="text-align:left">Matches a date</td>
+</tr>
+<tr>
+<td><code>day</code></td>
+<td style="text-align:left">Matches a date (day of month, 1-31) (for dates)</td>
+</tr>
+<tr>
+<td><code>endswith</code></td>
+<td style="text-align:left">Ends with</td>
+</tr>
+<tr>
+<td><code>iendswith</code></td>
+<td style="text-align:left">Same as endswidth, but case-insensitive</td>
+</tr>
+<tr>
+<td><code>exact</code></td>
+<td style="text-align:left">An exact match</td>
+</tr>
+<tr>
+<td><code>iexact</code></td>
+<td style="text-align:left">Same as exact, but case-insensitive</td>
+</tr>
+<tr>
+<td><code>in</code></td>
+<td style="text-align:left">Matches one of the values</td>
+</tr>
+<tr>
+<td><code>isnull</code></td>
+<td style="text-align:left">Matches NULL values</td>
+</tr>
+<tr>
+<td><code>gt</code></td>
+<td style="text-align:left">Greater than</td>
+</tr>
+<tr>
+<td><code>gte</code></td>
+<td style="text-align:left">Greater than, or equal to</td>
+</tr>
+<tr>
+<td><code>hour</code></td>
+<td style="text-align:left">Matches an hour (for datetimes)</td>
+</tr>
+<tr>
+<td><code>lt</code></td>
+<td style="text-align:left">Less than</td>
+</tr>
+<tr>
+<td><code>lte</code></td>
+<td style="text-align:left">Less than, or equal to</td>
+</tr>
+<tr>
+<td><code>minute</code></td>
+<td style="text-align:left">Matches a minute (for datetimes)</td>
+</tr>
+<tr>
+<td><code>month</code></td>
+<td style="text-align:left">Matches a month (for dates)</td>
+</tr>
+<tr>
+<td><code>quarter</code></td>
+<td style="text-align:left">Matches a quarter of the year (1-4) (for dates)</td>
+</tr>
+<tr>
+<td><code>range</code></td>
+<td style="text-align:left">Match between</td>
+</tr>
+<tr>
+<td><code>regex</code></td>
+<td style="text-align:left">Matches a regular expression</td>
+</tr>
+<tr>
+<td><code>iregex</code></td>
+<td style="text-align:left">Same as regex, but case-insensitive</td>
+</tr>
+<tr>
+<td><code>second</code></td>
+<td style="text-align:left">Matches a second (for datetimes)</td>
+</tr>
+<tr>
+<td><code>startswith</code></td>
+<td style="text-align:left">Starts with</td>
+</tr>
+<tr>
+<td><code>istartswith</code></td>
+<td style="text-align:left">Same as startswith, but case-insensitive</td>
+</tr>
+<tr>
+<td><code>time</code></td>
+<td style="text-align:left">Matches a time (for datetimes)</td>
+</tr>
+<tr>
+<td><code>week</code></td>
+<td style="text-align:left">Matches a week number (1-53) (for dates)</td>
+</tr>
+<tr>
+<td><code>week_day</code></td>
+<td style="text-align:left">Matches a day of week (1-7) 1 is Sunday</td>
+</tr>
+<tr>
+<td><code>iso_week_day</code></td>
+<td style="text-align:left">Matches a ISO 8601 day of week (1-7) 1 is Monday</td>
+</tr>
+<tr>
+<td><code>year</code></td>
+<td style="text-align:left">Matches a year (for dates)</td>
+</tr>
+<tr>
+<td><code>iso_year</code></td>
+<td style="text-align:left">Matches an ISO 8601 year (for dates)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="h3-wrap col-span-2">
+<h3 id="admin-panel"><a class="h-anchor" href="#admin-panel">#</a>Admin Panel</h3>
+<div class="section">
+<p>Every Django projects come with an Admin Panel that can be open at /admin url (ex: localhost:8000/admin)<br> To display
+the model in the Admin panel register the model in the app_name/admin.py file<br> For each models you can specify the
+fields you want to use</p>
+<pre><code class="hljs language-python"><span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin
+<span class="hljs-keyword">from</span> app_name.models <span class="hljs-keyword">import</span> Blog
+
+<span class="hljs-comment"># Custom model Admin (admin.py):</span>
+<span class="hljs-meta">@admin.register(<span class="hljs-params">Blog</span>)   </span><span class="hljs-comment"># Register app</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">BlogAdmin</span>(admin.ModelAdmin)
+    fields = (<span class="hljs-string">&quot;title&quot;</span>, <span class="hljs-string">&quot;description&quot;</span>) <span class="hljs-comment"># Fields to use for add/edit/show page</span>
+    list_display = (<span class="hljs-string">&quot;title&quot;</span>, <span class="hljs-string">&quot;description&quot;</span>) <span class="hljs-comment"># fields to display in search page</span>
+    list_display_links = (<span class="hljs-string">&quot;title&quot;</span>,) <span class="hljs-comment"># fields that will be a link in search page</span>
+    ordering = (<span class="hljs-string">&quot;date_created&quot;</span>,) <span class="hljs-comment"># Ordering allowed in the search page</span>
+    search_fields = (<span class="hljs-string">&quot;title&quot;</span>, <span class="hljs-string">&quot;description&quot;</span>) <span class="hljs-comment"># Search fields allowed in the search page</span>
+    list_filter =(<span class="hljs-string">&quot;title&quot;</span>,) <span class="hljs-comment"># define list filters that appear in the right sidebar</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="routing"><a class="h-anchor" href="#routing">#</a>Routing</h3>
+<div class="section">
+<p>Django routing info is store in project_folder/urls.py file</p>
+<pre><code class="hljs language-python"><span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin
+<span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> path, include
+
+urlpatterns = [
+    path(<span class="hljs-string">&#x27;admin/&#x27;</span>, admin.site.urls), <span class="hljs-comment"># pre-created admin urls routes</span>
+    path(<span class="hljs-string">&#x27;&#x27;</span>, include(<span class="hljs-string">&#x27;app_name.urls&#x27;</span>)) <span class="hljs-comment"># include your app urls</span>
+]
+</code></pre>
+<p>The 'include()' method allow to link another urls.py file created in your app folder (app_name/urls.py)</p>
+<pre><code class="hljs language-python"><span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> path
+<span class="hljs-keyword">from</span> app_name <span class="hljs-keyword">import</span> views
+
+urlpatterns = [
+    path(<span class="hljs-string">&#x27;posts&#x27;</span>, views.index, name=<span class="hljs-string">&#x27;posts.index&#x27;</span>),
+    path(<span class="hljs-string">&#x27;posts/create/&#x27;</span>, views.create, name=<span class="hljs-string">&#x27;posts.create&#x27;</span>,
+    path(<span class="hljs-string">&#x27;posts/&lt;int:id&gt;/&#x27;</span>, views.show, name=<span class="hljs-string">&#x27;posts.show&#x27;</span>),
+    path(<span class="hljs-string">&#x27;posts/&lt;int:id&gt;/edit/&#x27;</span>, views.edit, name=<span class="hljs-string">&#x27;posts.edit&#x27;</span>),
+    path(<span class="hljs-string">&#x27;posts/&lt;int:id&gt;/delete/&#x27;</span>, views.delete, name=<span class="hljs-string">&#x27;posts.delete&#x27;</span>),
+    path(<span class="hljs-string">&#x27;posts/&lt;int:id&gt;/&lt;int:state&gt;/&#x27;</span>, views.status, name=<span class="hljs-string">&#x27;posts.status&#x27;</span>), <span class="hljs-comment"># two arguments</span>
+]
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-1">
+<h2 id="static-route-and-customize-admin-panel"><a class="h-anchor" href="#static-route-and-customize-admin-panel">#</a>Static Route and Customize Admin Panel</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="customizing-admin-panel"><a class="h-anchor" href="#customizing-admin-panel">#</a>Customizing Admin Panel</h3>
+<div class="section">
+<p>Header and Title admin panel &amp; Custom <code>404</code>, <code>500</code>, and <code>503</code> Template</p>
+<pre><code class="hljs language-python"><span class="hljs-comment"># add in project/urls.py</span>
+<span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin
+<span class="hljs-keyword">from</span> django.conf <span class="hljs-keyword">import</span> settings
+<span class="hljs-keyword">from</span> django.conf.urls.static <span class="hljs-keyword">import</span> static
+
+urlpatterns = [  ...  ]
+
+<span class="hljs-keyword">if</span> settings.DEBUG == <span class="hljs-literal">True</span>:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+<span class="hljs-comment"># Customize Admin Panel Header &amp; Title</span>
+admin.site.site_header = _(<span class="hljs-string">&#x27;Administrator Control Panel&#x27;</span>)
+admin.site.site_title = _(<span class="hljs-string">&#x27;Administrator Control Panel&#x27;</span>)
+admin.site.index_title = _(<span class="hljs-string">&#x27;Wellcome to Control Panel&#x27;</span>)
+
+<span class="hljs-comment"># Costomize 404 Template page</span>
+handler404 = <span class="hljs-string">&#x27;app_name.views.handler404&#x27;</span>
+handler500 = <span class="hljs-string">&#x27;app_name.views.handler500&#x27;</span>
+handler503 = <span class="hljs-string">&#x27;app_name.views.handler503&#x27;</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-1">
+<h2 id="views"><a class="h-anchor" href="#views">#</a>Views</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="function-based-views"><a class="h-anchor" href="#function-based-views">#</a>Function Based Views</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-comment"># views.py</span>
+<span class="hljs-keyword">from</span> django.shortcuts <span class="hljs-keyword">import</span> render, redirect
+<span class="hljs-keyword">from</span> app_name.models <span class="hljs-keyword">import</span> Post
+<span class="hljs-keyword">from</span> app_name.forms <span class="hljs-keyword">import</span> PostForm
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">index</span>(<span class="hljs-params">request</span>):
+    <span class="hljs-comment"># Get all Posts</span>
+    posts = Post.objects.<span class="hljs-built_in">all</span>()
+
+    <span class="hljs-comment"># Render app template with context</span>
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&#x27;appfolder/index.html&#x27;</span>, &#123;<span class="hljs-string">&#x27;posts&#x27;</span>: posts&#125;)
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">show</span>(<span class="hljs-params">request, <span class="hljs-built_in">id</span></span>):
+    post = Post.objects.get(<span class="hljs-built_in">id</span>=<span class="hljs-built_in">id</span>)
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&#x27;appfolder/show.html&#x27;</span>, &#123;<span class="hljs-string">&#x27;post&#x27;</span>: post&#125;)
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">create</span>(<span class="hljs-params">request</span>):
+    form = PostForm(request.POST <span class="hljs-keyword">or</span> <span class="hljs-literal">None</span>, request.FILES <span class="hljs-keyword">or</span> <span class="hljs-literal">None</span>)
+    <span class="hljs-comment"># When the form contains an image or file field, we should use request.FILES</span>
+    <span class="hljs-keyword">if</span> form.is_valid():
+        <span class="hljs-comment"># optionally we can access form data with form.cleaned_data[&#x27;first_name&#x27;]</span>
+        post = form.save(commit=<span class="hljs-literal">False</span>)
+        post.user = request.user
+        post.save()
+        <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">&#x27;/posts&#x27;</span>)
+
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&#x27;appfolder/create.html&#x27;</span>, &#123;<span class="hljs-string">&#x27;form&#x27;</span>: form)
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">edit</span>(<span class="hljs-params">request, <span class="hljs-built_in">id</span></span>):
+    post = Post.objects.get(<span class="hljs-built_in">id</span>=<span class="hljs-built_in">id</span>)
+    form = PostForm(request.POST <span class="hljs-keyword">or</span> <span class="hljs-literal">None</span>, request.FILES <span class="hljs-keyword">or</span> <span class="hljs-literal">None</span>, instance=post)
+    <span class="hljs-keyword">if</span> form.is_valid():
+        form.save()
+        <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">&#x27;/posts&#x27;</span>)
+
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&#x27;appfolder/edit.html&#x27;</span>, &#123;<span class="hljs-string">&#x27;form&#x27;</span>: form)
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">delete</span>(<span class="hljs-params">request, <span class="hljs-built_in">id</span></span>):
+    post = Post.objects.get(<span class="hljs-built_in">id</span>=<span class="hljs-built_in">id</span>)
+    post.delete()
+    <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">&#x27;/posts&#x27;</span>)
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">status</span>(<span class="hljs-params">request, <span class="hljs-built_in">id</span>, state</span>):
+    post = Post.objects.get(<span class="hljs-built_in">id</span>=<span class="hljs-built_in">id</span>, state=state)
+    <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">&#x27;appfolder/status.html&#x27;</span>, &#123;<span class="hljs-string">&#x27;post&#x27;</span>: post&#125;)
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="class-based-views"><a class="h-anchor" href="#class-based-views">#</a>Class Based Views</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-keyword">from</span> django.views.generic <span class="hljs-keyword">import</span> TemplateView, ListView, DetailView,
+           CreateView, UpdateView, DeleteView
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">LandingPageView</span>(<span class="hljs-title class_ inherited__">TemplateView</span>):
+    template_name = <span class="hljs-string">&#x27;landing.html&#x27;</span>
+
+    <span class="hljs-comment"># Optional: Change context data dict</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_context_data</span>(<span class="hljs-params">self, **kwargs</span>):
+        context = <span class="hljs-built_in">super</span>().get_context_data(**kwargs)
+        context[<span class="hljs-string">&#x27;title&#x27;</span>] = <span class="hljs-string">&#x27;Landing Page&#x27;</span>
+        <span class="hljs-keyword">return</span> context
+
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">PostsListView</span>(<span class="hljs-title class_ inherited__">ListView</span>):
+    queryset = Post.objects.<span class="hljs-built_in">all</span>()
+    <span class="hljs-comment"># Optional</span>
+    <span class="hljs-comment"># context_object_name = &quot;posts&quot; (default: post_list)</span>
+    <span class="hljs-comment"># template_name = &#x27;posts.html&#x27; (default: posts/post_list.html)</span>
+
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">PostsDetailView</span>(<span class="hljs-title class_ inherited__">DetailView</span>):
+    model = Post <span class="hljs-comment"># object var in template</span>
+    <span class="hljs-comment"># Optional</span>
+    <span class="hljs-comment"># template_name = &#x27;post.html&#x27; (default: posts/post_detail.html)</span>
+
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">PostsCreateView</span>(<span class="hljs-title class_ inherited__">CreateView</span>):
+    form_class = PostForm
+    template_name = <span class="hljs-string">&#x27;posts/post_create.html&#x27;</span> <span class="hljs-comment"># no default value</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_success_url</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">return</span> reverse(<span class="hljs-string">&#x27;posts-list&#x27;</span>)
+
+    <span class="hljs-comment"># Optional: Overwrite form data (before save)</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">form_valid</span>(<span class="hljs-params">self, form</span>):
+        <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.request.user.is_authenticated:
+            <span class="hljs-keyword">from</span>.instance.author = <span class="hljs-variable language_">self</span>.request.user
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">super</span>().form_valid(form)
+
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">PostsUpdateView</span>(<span class="hljs-title class_ inherited__">UpdateView</span>):
+    model = Post
+    form_class = PostForm
+    template_name = <span class="hljs-string">&#x27;posts/post_update.html&#x27;</span>
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_success_url</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">return</span> reverse(<span class="hljs-string">&#x27;post-list&#x27;</span>)
+
+    <span class="hljs-comment"># Optional: Change context data dict</span>
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_context_data</span>(<span class="hljs-params">self, **kwargs</span>):
+        context = <span class="hljs-built_in">super</span>().get_context_data(**kwargs)
+        context[<span class="hljs-string">&#x27;submit_text&#x27;</span>] = <span class="hljs-string">&#x27;Update&#x27;</span>
+        <span class="hljs-keyword">return</span> context
+
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">PostsDeleteView</span>(<span class="hljs-title class_ inherited__">DeleteView</span>):
+    model = Post
+    template_name = <span class="hljs-string">&#x27;posts/post_delete.html&#x27;</span>
+    success_url = reverse_lazy(<span class="hljs-string">&#x27;posts-list&#x27;</span>)
+
+<span class="hljs-comment"># Urls.py route declaration</span>
+path(<span class="hljs-string">&#x27;&lt;int:pk&gt;/update/&#x27;</span>, PostsUpdateView.as_view(), name=<span class="hljs-string">&#x27;post-update&#x27;</span>)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="templates"><a class="h-anchor" href="#templates">#</a>Templates</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="basic-template"><a class="h-anchor" href="#basic-template">#</a>Basic Template</h3>
+<div class="section">
+<p>Templates are store in <code>project_folder/templates</code> or in your <code>app_folder/templates/app_name/*.html</code></p>
+<pre><code class="hljs language-html"><span class="hljs-comment">&lt;!-- Extend from another template --&gt;</span>
+<span class="hljs-comment">&lt;!-- can use the same parts of your HTML for different template --&gt;</span>
+<span class="hljs-comment">&#123;% extends 'base.html' %&#125;</span>
+
+<span class="hljs-comment">&lt;!-- A part of the parent template that is defined and is replaced by a part in the child template --&gt;</span>
+<span class="hljs-comment">&#123;% block contents %&#125;</span> <span class="hljs-comment">&#123;% endblock contents %&#125;</span>
+
+<span class="hljs-comment">&lt;!-- include template--&gt;</span>
+<span class="hljs-comment">&#123;% include 'partials/header.html' %&#125;</span>
+<span class="hljs-comment">&lt;!-- include template with One or More Parameters --&gt;</span>
+<span class="hljs-comment">&#123;% include 'body.html' with key1=value1 key2=value2 %&#125;</span>
+
+<span class="hljs-comment">&lt;!-- If statement in template --&gt;</span>
+<span class="hljs-comment">&#123;% if user.username = 'Mike' %&#125;
+<p>Hello Admin</p>
+&#123;% elif user.username = 'john' %&#125;
+<p>Hello John Doe</p>
+&#123;% else %&#125;
+<p>Hello User</p>
+&#123;% endif %&#125;</span>
+
+<span class="hljs-comment">&lt;!-- for loop in template --&gt;</span>
+<span class="hljs-comment">&#123;% for product in products %&#125;
+<p>row: &#123;&#123; forloop.counter &#125;&#125; # starting index 1 &#123;&#123; forloop.counter0 &#125;&#125; # starting index 0</p>
+<p>The product name is &#123;&#123; product.name &#125;&#125;</p>
+<p></p>
+<p>The product name is &#123;&#123; product.price &#125;&#125;</p>
+<p>
+  &#123;% endfor %&#125;</p></span>
+
+  <span class="hljs-comment">&lt;!-- Access to the variable in the template --&gt;</span>
+  <span class="hljs-comment">&#123;&#123; var_name &#125;&#125;</span>
+
+  <span class="hljs-comment">&lt;!-- Template variables formating  --&gt;</span>
+  <span class="hljs-comment">&#123;&#123; title | lower &#125;&#125;</span> <span class="hljs-comment">&#123;&#123; blog.post | truncatwords:50 &#125;&#125;</span> <span class="hljs-comment">&#123;&#123; order.date | date:"D M Y" &#125;&#125;</span> <span class="hljs-comment">&#123;&#123; list_items | slice:":3" &#125;&#125;</span> <span class="hljs-comment">&#123;&#123;
+  total | default:"nil" &#125;&#125;</span>
+
+  <span class="hljs-comment">&lt;!-- Current path (ex. posts/1/show) --&gt;</span>
+  <span class="hljs-comment">&#123;&#123; request.path &#125;&#125;</span>
+
+  <span class="hljs-comment">&lt;!-- URL by name with param --&gt;</span>
+  <span class="hljs-comment">&#123;% url 'posts.delete' id=post.id %&#125;</span>
+
+  <span class="hljs-comment">&lt;!-- Use static in template: --&gt;</span>
+  <span class="hljs-comment">&#123;% load static %&#125;</span> <span class="hljs-comment">&#123;% static 'css/main.css' %&#125;</span>
+
+  <span class="hljs-comment">&lt;!-- Define the variable in the template --&gt;</span>
+  <span class="hljs-comment">&#123;% with name="World" %&#125;
+  <html>
+    <div>Hello &#123;&#123; name &#125;&#125;!</div>
+  </html>
+  &#123;% endwith %&#125;</span>
+
+  <span class="hljs-comment">&lt;!-- Template translate text --&gt;</span>
+  <span class="hljs-comment">&#123;% load i18n %&#125;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-comment">&#123;% trans "This is the title." %&#125;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-comment">&lt;!-- Use variable translate in the template --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span><span class="hljs-comment">&#123;% trans object.title %&#125;</span><span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- Define the list in the template --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;number&quot;</span> &lt;!<span class="hljs-attr">--swig</span>￼<span class="hljs-attr">29--</span>&gt;</span>&gt;
+
+  <span class="hljs-comment">&lt;!-- Safely Pass Data to JavaScript in a Django Template: --&gt;</span>
+  <span class="hljs-comment">&lt;!--+ Use data attributes for simple values --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">data-username</span>=<span class="hljs-string">&quot;&#123;&#123; username &#125;&#125;&quot;</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> data = <span class="hljs-variable language_">document</span>.<span class="hljs-property">currentScript</span>.<span class="hljs-property">dataset</span>;
+    <span class="hljs-keyword">const</span> username = data.<span class="hljs-property">username</span>;
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- + Separate script files: can use document.currentScript for separate script files --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&#123;% static 'index.js' %&#125;&quot;</span> <span class="hljs-attr">data-username</span>=<span class="hljs-string">&quot;&#123;&#123; username &#125;&#125;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- + Case conversion --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&#123;% static 'index.js' %&#125;&quot;</span> <span class="hljs-attr">data-full-name</span>=<span class="hljs-string">&quot;&#123;&#123; full_name &#125;&#125;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+  <span class="hljs-comment">&lt;!--  Read it in JavaScript as fullName: --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> data = <span class="hljs-variable language_">document</span>.<span class="hljs-property">currentScript</span>.<span class="hljs-property">dataset</span>;
+    <span class="hljs-keyword">const</span> fullName = data.<span class="hljs-property">fullName</span>;
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- + Non-string types --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&#123;% static 'index.js' %&#125;&quot;</span> <span class="hljs-attr">data-follower-count</span>=<span class="hljs-string">&quot;&#123;&#123; follower_count &#125;&#125;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!--  parseInt() to convert this value from a string: --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="language-javascript">
+    <span class="hljs-keyword">const</span> data = <span class="hljs-variable language_">document</span>.<span class="hljs-property">currentScript</span>.<span class="hljs-property">dataset</span>;
+    <span class="hljs-keyword">const</span> followerCount = <span class="hljs-built_in">parseInt</span>(data.<span class="hljs-property">followerCount</span>, <span class="hljs-number">10</span>);
+  </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+  <span class="hljs-comment">&lt;!-- + There’s no limit: A &lt;script&gt; can have as many data attributes as you like: --&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">script</span>
+    <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;&#123;% static 'index.js' %&#125;&quot;</span>
+    <span class="hljs-attr">defer</span>
+    <span class="hljs-attr">data-settings-url</span>=<span class="hljs-string">&quot;&#123;% url 'settings' %&#125;&quot;</span>
+    <span class="hljs-attr">data-configuration-url</span>=<span class="hljs-string">&quot;&#123;% url 'configuration' %&#125;&quot;</span>
+    <span class="hljs-attr">data-options-url</span>=<span class="hljs-string">&quot;&#123;% url 'options' %&#125;&quot;</span>
+    <span class="hljs-attr">data-preferences-url</span>=<span class="hljs-string">&quot;&#123;% url 'preferences' %&#125;&quot;</span>
+    <span class="hljs-attr">data-setup-url</span>=<span class="hljs-string">&quot;&#123;% url 'setup' %&#125;&quot;</span>
+  &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="custom-template-tags-and-filters"><a class="h-anchor" href="#custom-template-tags-and-filters">#</a>Custom Template Tags and Filters</h3>
+<div class="section">
+<p>For example, if your custom tags/filters are in a file called <code>basetags.py</code>, your app layout might look like this:</p>
+<pre><code class="hljs">app_name/
+└─── templatetags/
+     └─── basetags<span class="hljs-selector-class">.py</span>
+     __init__<span class="hljs-selector-class">.py</span>
+     models<span class="hljs-selector-class">.py</span>
+     views<span class="hljs-selector-class">.py</span>
+</code></pre>
+<ul>
+<li>And in your template you would use the following:</li>
+</ul>
+<pre><code class="hljs language-html"><span class="hljs-comment">&#123;% load basetags %&#125;</span>
+</code></pre>
+<ul>
+<li>the module must contain a module-level variable named register that is a template.Library instance, in which all the
+tags and filters are registered. So, near the top of your module, put the following:</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="writing-custom-template-filters"><a class="h-anchor" href="#writing-custom-template-filters">#</a>Writing custom template filters</h3>
+<div class="section">
+<p>Custom filters are Python functions that take one or two arguments: The value of the variable (input) – not necessarily
+a string. The value of the argument – this can have a default value, or be left out altogether. For example, in the
+filter <code>&#123;&#123; var|foo:"bar" &#125;&#125;</code>, the filter foo would be passed the variable var and the argument &quot;bar&quot;.</p>
+<p>The Library.filter() method takes two arguments: The name of the filter – a string. The compilation function – a Python
+function (not the name of the function as a string). You can use register.filter() as a decorator instead:</p>
+<pre><code class="hljs language-python"><span class="hljs-comment"># basetags.py</span>
+<span class="hljs-keyword">from</span> django <span class="hljs-keyword">import</span> template
+
+register = template.Library()
+
+<span class="hljs-meta">@register.filter(<span class="hljs-params">name=<span class="hljs-string">&quot;cut&quot;</span></span>)</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">cut</span>(<span class="hljs-params">value, arg</span>):
+    <span class="hljs-string">&quot;&quot;&quot;Removes all values of arg from the given string&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">return</span> value.replace(arg, <span class="hljs-string">&quot;&quot;</span>)
+
+<span class="hljs-comment"># Most filters don’t take arguments. In this case, leave the argument out of your function</span>
+<span class="hljs-meta">@register.filter()</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">lower</span>(<span class="hljs-params">value</span>): <span class="hljs-comment"># Only one argument.</span>
+    <span class="hljs-string">&quot;&quot;&quot;Converts a string into all lowercase&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">return</span> value.lower()
+
+
+<span class="hljs-meta">@register.simple_tag</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">to_class_name</span>(<span class="hljs-params"><span class="hljs-built_in">object</span></span>):
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">str</span>(<span class="hljs-built_in">object</span>.__class__.__name__)
+
+<span class="hljs-comment"># Template</span>
+<span class="hljs-comment"># And here’s an example of how that filter would be used in Template:</span>
+&lt;!--swig￼<span class="hljs-number">18</span>--&gt;
+
+<span class="hljs-comment"># Put the result of simple tag into a variable</span>
+&lt;!--swig￼<span class="hljs-number">54</span>--&gt;
+&lt;p&gt;Model Class Name: &lt;!--swig￼<span class="hljs-number">19</span>--&gt;&lt;/p&gt;
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-1">
+<h2 id="context-processor"><a class="h-anchor" href="#context-processor">#</a>Context Processor</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="creating-custom-context-processor"><a class="h-anchor" href="#creating-custom-context-processor">#</a>Creating custom Context Processor</h3>
+<div class="section">
+<p>Anywhere, create a <code>context_processors.py</code> file</p>
+<pre><code class="hljs">project<span class="hljs-emphasis">_name
+└───app_name
+    ├───...
+    └───context_</span>processors.pyy
+</code></pre>
+<p>Create a function in context_processors.py that accepts a HttpRequest object as an argument and returns a dictionary</p>
+<p>A context processor is just a function that accepts an HttpRequest object as an argument and returns a dictionary. Like
+this:</p>
+<pre><code class="hljs language-python"><span class="hljs-comment"># app_name/context_processors.py</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">site_email</span>(<span class="hljs-params">request</span>):
+    <span class="hljs-keyword">return</span> &#123; <span class="hljs-string">&#x27;site_email&#x27;</span> : <span class="hljs-string">&#x27;example@gmail.com&#x27;</span> &#125;
+</code></pre>
+<ol start="3">
+<li>Add this to your context_processors setting in settings.py (at the bottom for security reasons)</li>
+</ol>
+<pre><code class="hljs language-python"> TEMPLATES = [
+    &#123; …
+        <span class="hljs-string">&#x27;OPTIONS&#x27;</span>: &#123;
+          <span class="hljs-string">&#x27;context_processors&#x27;</span>: [
+            …
+              <span class="hljs-string">&#x27;app_name.context_processors.site_email&#x27;</span>,
+              <span class="hljs-comment"># New context processor here</span>
+            …
+          ],
+    … &#125;,
+
+<span class="hljs-comment"># Now be able to access the &#x27;site_email&#x27; template variable on every single django template across your whole site.</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="model-managers-and-querysets"><a class="h-anchor" href="#model-managers-and-querysets">#</a>Model Managers and Querysets</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="model-manager"><a class="h-anchor" href="#model-manager">#</a>Model Manager</h3>
+<div class="section">
+<p>Model manager allow model database reads and writes</p>
+<pre><code class="hljs language-python"><span class="hljs-comment"># One line create and save</span>
+Article.objects.create(name=<span class="hljs-string">&#x27;Item 1&#x27;</span>, price=<span class="hljs-number">19.95</span>)
+
+<span class="hljs-comment"># Read all</span>
+Article.objects.<span class="hljs-built_in">all</span>()
+
+<span class="hljs-comment"># Create</span>
+user = User.objects.first()
+article = Article(user=user, name=<span class="hljs-string">&#x27;Item 1&#x27;</span>, price=<span class="hljs-number">19.95</span>)
+
+<span class="hljs-comment"># Save</span>
+article.save()
+
+<span class="hljs-comment"># Read one</span>
+Article.objects.get(<span class="hljs-built_in">id</span>=<span class="hljs-number">1</span>)
+
+<span class="hljs-comment"># Select Related (to avoid n+1 query)</span>
+posts = Post.objects.select_related(<span class="hljs-string">&#x27;user&#x27;</span>, <span class="hljs-string">&#x27;category&#x27;</span>).<span class="hljs-built_in">all</span>()
+
+<span class="hljs-comment"># Read or render a 404 not found page</span>
+<span class="hljs-keyword">from</span> django.shortcuts <span class="hljs-keyword">import</span> get_object_or_404
+article = get_object_or_404(Article, <span class="hljs-built_in">id</span>=<span class="hljs-number">512</span>)
+
+<span class="hljs-comment"># Filter</span>
+Article.objects.<span class="hljs-built_in">filter</span>(model=<span class="hljs-string">&#x27;dyson&#x27;</span>, name__icontains=<span class="hljs-string">&#x27;dyson&#x27;</span>) <span class="hljs-comment"># __icontains</span>
+Article.objects.<span class="hljs-built_in">filter</span>(year__gt=<span class="hljs-number">2016</span>) <span class="hljs-comment"># __gt = greater than</span>
+Article.objects.<span class="hljs-built_in">filter</span>(year__lt=<span class="hljs-number">2001</span>) <span class="hljs-comment"># __lt = less than</span>
+
+<span class="hljs-comment"># Filter on relationship sub model field</span>
+Article.objects.get(user__username=<span class="hljs-string">&#x27;mike&#x27;</span>)
+
+<span class="hljs-comment"># Ordering</span>
+Article.objects.order_by(<span class="hljs-string">&#x27;name&#x27;</span>)     <span class="hljs-comment"># ascending</span>
+Article.objects.order_by(<span class="hljs-string">&#x27;-name&#x27;</span>)   <span class="hljs-comment"># descending</span>
+
+<span class="hljs-comment"># Slicing return first</span>
+Article.objects.<span class="hljs-built_in">all</span>().order_by(<span class="hljs-string">&#x27;name&#x27;</span>)[<span class="hljs-number">0</span>]
+
+<span class="hljs-comment"># Slicing return last</span>
+Article.objects.<span class="hljs-built_in">all</span>().order_by(<span class="hljs-string">&#x27;-name&#x27;</span>)[<span class="hljs-number">0</span>]
+
+<span class="hljs-comment"># Slicing limit/offset</span>
+Article.objects.<span class="hljs-built_in">all</span>().order_by(<span class="hljs-string">&#x27;name&#x27;</span>)[<span class="hljs-number">1.</span><span class="hljs-number">.10</span>]
+
+<span class="hljs-comment"># Updating</span>
+article = Article.objects.first()
+article.name = <span class="hljs-string">&#x27;new name&#x27;</span>
+article.save()
+
+<span class="hljs-comment"># One line update</span>
+Article.objects.<span class="hljs-built_in">filter</span>(<span class="hljs-built_in">id</span>=<span class="hljs-number">4</span>).update(name=<span class="hljs-string">&#x27;new name&#x27;</span>)
+
+<span class="hljs-comment"># Deleting</span>
+article = Article.objects.first()
+article.delete()
+
+<span class="hljs-comment"># One line delete</span>
+article.objects.get(<span class="hljs-built_in">id</span>=<span class="hljs-number">1</span>).delete()
+
+<span class="hljs-comment"># Delete all</span>
+Article.objects.<span class="hljs-built_in">all</span>().delete()
+
+<span class="hljs-comment"># Set ForeignKey field value</span>
+model1 = Model(name=<span class="hljs-string">&#x27;dyson&#x27;</span>)
+article.model = model1
+
+<span class="hljs-comment"># Get ForeignKey value</span>
+article1.model.name
+model1.article_set.<span class="hljs-built_in">all</span>()
+
+<span class="hljs-comment"># Add Many-to-Many</span>
+article1.tags.add(tag1)
+article1.tags.<span class="hljs-built_in">all</span>()
+tag1.articles_set.<span class="hljs-built_in">all</span>()
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="form"><a class="h-anchor" href="#form">#</a>Form</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap col-span-2">
+<h3 id="form-creation"><a class="h-anchor" href="#form-creation">#</a>Form creation</h3>
+<div class="section">
+<p>In HTML, a form is a collection of elements inside <code>&lt;form&gt;...&lt;/form&gt;</code> that allow a visitor to do things like enter text,
+select options, manipulate objects or controls, and so on, and then send that information back to the server.</p>
+<pre><code class="hljs language-python"><span class="hljs-comment"># app_name/forms.py</span>
+<span class="hljs-keyword">from</span> django <span class="hljs-keyword">import</span> forms
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ArticleForm</span>(forms.Form):
+    name = forms.Charfield(max_length=<span class="hljs-number">100</span>)
+    description = forms.Charfield(blank=<span class="hljs-literal">True</span>, null = <span class="hljs-literal">True</span>)
+
+
+<span class="hljs-comment"># Model Form</span>
+<span class="hljs-keyword">from</span> django.forms <span class="hljs-keyword">import</span> ModelForm
+<span class="hljs-keyword">from</span> app_name.models <span class="hljs-keyword">import</span> Article
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ArticleForm</span>(<span class="hljs-title class_ inherited__">ModelForm</span>):
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Meta</span>:
+        model = Article
+        fields = [<span class="hljs-string">&#x27;name&#x27;</span>, <span class="hljs-string">&#x27;description&#x27;</span>, <span class="hljs-string">&#x27;price&#x27;</span>] <span class="hljs-comment"># Use &#x27;__all__&#x27; for all fields</span>
+        widgets = &#123;
+            <span class="hljs-string">&#x27;name&#x27;</span>: forms.TextInput(attrs=&#123;<span class="hljs-string">&#x27;class&#x27;</span>: <span class="hljs-string">&#x27;form-control&#x27;</span>&#125;),
+        &#125;
+        labels = &#123;
+            <span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;First Name&#x27;</span>,
+        &#125;
+        error_messages = &#123;
+            <span class="hljs-string">&#x27;name&#x27;</span>: &#123;<span class="hljs-string">&#x27;required&#x27;</span>: <span class="hljs-string">&#x27;This field is required&#x27;</span>,&#125;,
+            &#125;
+        help_texts = &#123;
+        <span class="hljs-string">&#x27;name&#x27;</span>: <span class="hljs-string">&#x27;Enter Your First Name&#x27;</span>,
+        &#125;
+</code></pre>
+<pre><code class="hljs language-html"><span class="hljs-comment">&lt;!-- Render form in template --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;“post”&quot;</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;“”&quot;</span> <span class="hljs-attr">novalidate</span>&gt;</span>
+  <span class="hljs-comment">&#123;% csrf_token %&#125;</span> <span class="hljs-comment">&#123;&#123; form &#125;&#125;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>Submit<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+<ul>
+<li>NOTE: If the form contains a file field, your form MUST contain <code>enctype=&quot;multipart/form-data&quot;</code>, eg:</li>
+</ul>
+<pre><code class="hljs language-html"><span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">&quot;&quot;</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span> <span class="hljs-attr">enctype</span>=<span class="hljs-string">&quot;multipart/form-data&quot;</span>&gt;</span>
+    <span class="hljs-comment">&#123;% csrf_token %&#125;</span>
+    <span class="hljs-comment">&#123;&#123; form.as_p &#125;&#125;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span><span class="hljs-comment">&#123;% trans 'Submit' %&#125;</span><span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</code></pre>
+<h5 id="a-tailwind-css-template-pack-for-the-wonderful-django-crispy-forms"><a class="h-anchor" href="#a-tailwind-css-template-pack-for-the-wonderful-django-crispy-forms">#</a>A Tailwind CSS template pack for the wonderful django-crispy-forms.</h5>
+<pre><code class="hljs language-bash">pip install crispy-tailwind
+</code></pre>
+<pre><code class="hljs language-python"><span class="hljs-comment"># settings.py</span>
+INSTALLED_APPS = (
+    ...
+    <span class="hljs-string">&quot;crispy_forms&quot;</span>,
+    <span class="hljs-string">&quot;crispy_tailwind&quot;</span>,
+    ...
+)
+CRISPY_ALLOWED_TEMPLATE_PACKS = <span class="hljs-string">&#x27;tailwind&#x27;</span>
+CRISPY_TEMPLATE_PACK = <span class="hljs-string">&#x27;tailwind&#x27;</span>
+</code></pre>
+<pre><code class="hljs language-html"><span class="hljs-comment">&lt;!-- template usage --&gt;</span>
+<span class="hljs-comment">&#123;% load tailwind_filters %&#125;</span> <span class="hljs-comment">&#123;&#123; form|crispy &#125;&#125;</span>
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="form-validation"><a class="h-anchor" href="#form-validation">#</a>Form Validation</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-comment"># forms.py</span>
+<span class="hljs-keyword">from</span> django.core.exceptions <span class="hljs-keyword">import</span> ValidationError
+
+<span class="hljs-comment"># field validation</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">clean_first_name</span>(<span class="hljs-params">self</span>):
+    data = <span class="hljs-variable language_">self</span>.cleaned_data[<span class="hljs-string">&#x27;first_name&#x27;</span>]
+    <span class="hljs-keyword">if</span> data = <span class="hljs-string">&#x27;Mike&#x27;</span>:
+        <span class="hljs-keyword">raise</span> ValidationError(<span class="hljs-string">&#x27;Your name must not be Mike&#x27;</span>)
+    <span class="hljs-keyword">return</span> data
+
+<span class="hljs-comment"># form validation</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">clean</span>(<span class="hljs-params">self</span>):
+    first_name = <span class="hljs-variable language_">self</span>.cleaned_data[<span class="hljs-string">&#x27;first_name&#x27;</span>]
+    last_name = <span class="hljs-variable language_">self</span>.cleaned_data[<span class="hljs-string">&#x27;last_name&#x27;</span>]
+    <span class="hljs-keyword">if</span> first_name + last_name = <span class="hljs-string">&#x27;MikeTaylor&#x27;</span>:
+        <span class="hljs-keyword">raise</span> ValidationError(<span class="hljs-string">&#x27;Your name must not be Mike Taylor&#x27;</span>)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap cols-1">
+<h2 id="flash-messages"><a class="h-anchor" href="#flash-messages">#</a>Flash messages</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="displaying-messages"><a class="h-anchor" href="#displaying-messages">#</a>Displaying messages</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-comment"># Message tags</span>
+<span class="hljs-comment"># debug, info, success, warning and error</span>
+
+messages.success(request, <span class="hljs-string">&#x27;Login successful&#x27;</span>)
+messages.error(request, <span class="hljs-string">&#x27;Login error&#x27;</span>)
+</code></pre>
+<pre><code class="hljs language-html"><span class="hljs-comment">&lt;!-- Display flash messages in template --&gt;</span>
+<span class="hljs-comment">&#123;% if messages %&#125; &#123;% for message in messages %&#125; &#123;% message %&#125; &#123;% message.tags %&#125; &#123;% endfor %&#125; &#123;% endif %&#125;</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="user-model"><a class="h-anchor" href="#user-model">#</a>User Model</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="pre-created"><a class="h-anchor" href="#pre-created">#</a>Pre-created</h3>
+<div class="section">
+<p>User Model (pre-created)</p>
+<pre><code class="hljs language-python"><span class="hljs-comment"># Get a reference to Django pre-created User model</span>
+<span class="hljs-keyword">from</span> django.contrib.auth <span class="hljs-keyword">import</span> get_user_model
+
+User = get_user_model()
+
+<span class="hljs-comment"># Or if you want to custom user model</span>
+<span class="hljs-keyword">from</span> django.contrib.auth.models <span class="hljs-keyword">import</span> AbstractUser
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span>(<span class="hljs-title class_ inherited__">AbstractUser</span>):
+    <span class="hljs-comment"># add custom fields and methods</span>
+
+<span class="hljs-comment"># To make Django use that model go to settings.py and add: AUTH_USER_MODEL = &#x27;app_name.User&#x27;</span>
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="authentication"><a class="h-anchor" href="#authentication">#</a>Authentication</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="authentication-loginview"><a class="h-anchor" href="#authentication-loginview">#</a>Authentication : LoginView</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-comment"># LoginView is already pre-created by Django</span>
+<span class="hljs-keyword">from</span> django.contrib.auth.views <span class="hljs-keyword">import</span> LoginView
+
+<span class="hljs-comment"># Add a url to reach that view</span>
+path(<span class="hljs-string">&#x27;login/&#x27;</span>, LoginView.as_view(), name=<span class="hljs-string">&#x27;login&#x27;</span>)
+
+<span class="hljs-comment"># By default the LoginView will try to open a template name &#x27;registration/login.html&#x27; and send a login form with it.</span>
+</code></pre>
+<pre><code class="hljs language-html"><span class="hljs-comment">&lt;!-- Create a template under registration/login.html --&gt;</span>
+<span class="hljs-comment">&#123;% extends "base.html" %&#125;</span> <span class="hljs-comment">&#123;% block content %&#125;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+  <span class="hljs-comment">&#123;% csrf_token %&#125;</span> <span class="hljs-comment">&#123;&#123; form &#125;&#125;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>Login<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-comment">&#123;% endblock content %&#125;</span>
+
+<span class="hljs-comment">&lt;!-- When user click the Login button, the LoginView will try to authenticate the user with the form username ans password --&gt;</span>
+
+<span class="hljs-comment">&lt;!-- If successful il will then login the user and redirect to LOGIN_REDIRECT_URL specified in your settings.py --&gt;</span>
+</code></pre>
+<h4 id="authentication-logoutview"><a class="h-anchor" href="#authentication-logoutview">#</a>Authentication : LogoutView</h4>
+<pre><code class="hljs language-python"><span class="hljs-comment"># LogoutView is already pre-created by Django</span>
+<span class="hljs-keyword">from</span> django.contrib.auth.views <span class="hljs-keyword">import</span> LogoutView
+
+<span class="hljs-comment"># Add a url to reach that view</span>
+path(<span class="hljs-string">&#x27;logout/&#x27;</span>, LoginView.as_view(), name=<span class="hljs-string">&#x27;logout&#x27;</span>)
+
+<span class="hljs-comment"># Include a link in a template</span>
+&lt;a&gt; href=<span class="hljs-string">&quot;&#123;% url 'logout' %&#125;&quot;</span>&gt;Logout&lt;/a&gt;
+
+<span class="hljs-comment"># After link is execute, the user will be logout and redirect to LOGOUT_REDIRECT_URL specified in your settings.py</span>
+</code></pre>
+<h4 id="authentication-signupview"><a class="h-anchor" href="#authentication-signupview">#</a>Authentication : SignupView</h4>
+<pre><code class="hljs language-python"><span class="hljs-comment"># Create a SignupView (that view is not created by default)</span>
+<span class="hljs-comment"># import sinupview form pre-created by Django</span>
+<span class="hljs-keyword">from</span> django.contrib.auth.forms <span class="hljs-keyword">import</span> UserCreationForm
+<span class="hljs-keyword">from</span> django.views.generic <span class="hljs-keyword">import</span> CreateView
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">SignupView</span>(<span class="hljs-title class_ inherited__">CreateView</span>):
+    template_name = <span class="hljs-string">&#x27;registration/signup.html&#x27;</span>
+    form_class = UserCreationForm
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">get_success_url</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">return</span> reverse(<span class="hljs-string">&quot;login&quot;</span>)
+</code></pre>
+<pre><code class="hljs language-html"><span class="hljs-comment">&lt;!-- Create template: registration/signup.html --&gt;</span>
+<span class="hljs-comment">&#123;% extends "base.html" %&#125;</span> <span class="hljs-comment">&#123;% block content %&#125;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">method</span>=<span class="hljs-string">&quot;post&quot;</span>&gt;</span>
+  <span class="hljs-comment">&#123;% csrf_token %&#125;</span> <span class="hljs-comment">&#123;&#123; form &#125;&#125;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;submit&quot;</span>&gt;</span>Signup<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+<span class="hljs-comment">&#123;% endblock content %&#125;</span>
+</code></pre>
+<pre><code class="hljs language-python"><span class="hljs-comment"># Add a url to reach that view</span>
+<span class="hljs-keyword">from</span> posts.views <span class="hljs-keyword">import</span> SignupView
+
+path(<span class="hljs-string">&#x27;signup/&#x27;</span>, SignupView.as_view(), name=<span class="hljs-string">&#x27;signup&#x27;</span>)
+</code></pre>
+<pre><code class="hljs language-python"><span class="hljs-comment"># Optional: Customize the UserCreationForm</span>
+<span class="hljs-comment"># (forms.py)</span>
+<span class="hljs-keyword">from</span> django.contrib.auth <span class="hljs-keyword">import</span> get_user_model
+<span class="hljs-keyword">from</span> django.contrib.auth.forms <span class="hljs-keyword">import</span> UserCreationForm
+
+User = get_user_model()
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">CustomUserCreationForm</span>(<span class="hljs-title class_ inherited__">UserCreattionForm</span>):
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Meta</span>:
+        model = User
+        fields = [<span class="hljs-string">&#x27;username&#x27;</span>]
+        fields_classes = &#123;<span class="hljs-string">&#x27;username&#x27;</span>: UsernameField&#125;
+</code></pre>
+<h4 id="optional-pre-created-authentication-routes"><a class="h-anchor" href="#optional-pre-created-authentication-routes">#</a>Optional pre-created Authentication routes</h4>
+<pre><code class="hljs language-python"><span class="hljs-comment"># urls.py</span>
+urlpatterns += path(<span class="hljs-string">&#x27;&#x27;</span>, include(<span class="hljs-string">&#x27;django.contrib.auth.urls&#x27;</span>))
+<span class="hljs-comment"># /login, /lougout, /signup, etc.</span>
+</code></pre>
+<h4 id="template-authentication-helpers"><a class="h-anchor" href="#template-authentication-helpers">#</a>Template Authentication helpers</h4>
+<pre><code class="hljs language-html"><span class="hljs-comment">&lt;!-- Authentication links --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;% url 'login' %&#125;&quot;</span>&gt;</span>Login<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;% url 'signup' %&#125;&quot;</span>&gt;</span>Signup<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;% url 'logout' %&#125;&quot;</span>&gt;</span>Logout<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- Check if user login --&gt;</span>
+<span class="hljs-comment">&#123;% if request.user.is_authenticated %&#125; Logged in as: &#123;&#123; request.user.username &#125;&#125; &#123;% endif %&#125;</span>
+</code></pre>
+<h4 id="authorization-loginrequiredmixin-and-login-required"><a class="h-anchor" href="#authorization-loginrequiredmixin-and-login-required">#</a>Authorization: LoginRequiredMixin and login_required</h4>
+<pre><code class="hljs language-python"><span class="hljs-keyword">from</span> django.contrib.auth.mixins <span class="hljs-keyword">import</span> LoginRequiredMixin
+
+<span class="hljs-comment"># Restrict views to auth user only (views.py)</span>
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">PostsCreateView</span>(LoginRequiredMixin, generic.CreateView):
+    ...
+    ...
+
+
+<span class="hljs-keyword">from</span> django.contrib.auth.decorators <span class="hljs-keyword">import</span> login_required
+
+<span class="hljs-meta">@login_required(<span class="hljs-params">login_url=<span class="hljs-string">&#x27;/login&#x27;</span></span>)</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">search_page</span>(<span class="hljs-params">request</span>):
+    ...
+    ...
+</code></pre>
+<h4 id="manual-authentication-login-and-logout"><a class="h-anchor" href="#manual-authentication-login-and-logout">#</a>Manual Authentication , Login and Logout</h4>
+<pre><code class="hljs language-python"><span class="hljs-keyword">from</span> django.contrib.auth <span class="hljs-keyword">import</span> authenticate, login
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">login_page</span>(<span class="hljs-params">request</span>):
+    <span class="hljs-keyword">if</span> request.method == <span class="hljs-string">&quot;POST&quot;</span>:
+        username = request.POST.get(<span class="hljs-string">&quot;username&quot;</span>)
+        password = request.POST.get(<span class="hljs-string">&quot;password&quot;</span>)
+        user = authenticate(request, username=username, password=password)
+        <span class="hljs-keyword">if</span> user <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+            login(request, user)
+            <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">&quot;index&quot;</span>)
+
+<span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&quot;registration/login.html&quot;</span>, &#123;&#125;)
+
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">logout_page</span>(<span class="hljs-params">request</span>):
+    logout(request)
+    <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">&quot;index&quot;</span>)
+</code></pre>
+<h4 id="user-change-password"><a class="h-anchor" href="#user-change-password">#</a>User Change password</h4>
+<pre><code class="hljs language-python"><span class="hljs-comment"># set_password will hash the password</span>
+user.set_password(<span class="hljs-string">&#x27;raw password&#x27;</span>)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="create-custom-accounts-model"><a class="h-anchor" href="#create-custom-accounts-model">#</a>Create Custom Accounts Model</h2>
+<div class="h3-wrap-list">
+<pre><code class="hljs language-python">~$ python manage.py startapp accounts
+</code></pre>
+<pre><code class="hljs language-python"><span class="hljs-comment"># Add accounts app to settings.py</span>
+INSTALLED_APPS = [ … ,
+         <span class="hljs-string">&#x27;accounts.apps.AccountsConfig&#x27;</span>,
+          ]
+.
+.
+.
+AUTH_USER_MODEL = <span class="hljs-string">&#x27;accounts.User&#x27;</span>
+</code></pre>
+<pre><code class="hljs language-python"><span class="hljs-comment"># accounts/models.py</span>
+<span class="hljs-keyword">from</span> django.db <span class="hljs-keyword">import</span> models
+<span class="hljs-keyword">from</span> django.contrib.auth.models <span class="hljs-keyword">import</span> BaseUserManager, AbstractBaseUser, PermissionsMixin
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">UserManager</span>(<span class="hljs-title class_ inherited__">BaseUserManager</span>):
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">create_user</span>(<span class="hljs-params">self, username, email, password=<span class="hljs-literal">None</span>, **extra_fields</span>):
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> username:
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&#x27;Users must have an username&#x27;</span>)
+        <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> email:
+            <span class="hljs-keyword">raise</span> ValueError(<span class="hljs-string">&#x27;Users must have an email&#x27;</span>)
+
+        user = <span class="hljs-variable language_">self</span>.model(email=email, **extra_fields)
+        user.set_password(password)
+        user.save(using=<span class="hljs-variable language_">self</span>._db)
+        <span class="hljs-keyword">return</span> user
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">create_superuser</span>(<span class="hljs-params">self, username,  email, password=<span class="hljs-literal">None</span>, **extra_fields</span>):
+        extra_fields.setdefault(<span class="hljs-string">&#x27;is_staff&#x27;</span>, <span class="hljs-literal">True</span>)
+        extra_fields.setdefault(<span class="hljs-string">&#x27;is_superuser&#x27;</span>, <span class="hljs-literal">True</span>)
+        extra_fields.setdefault(<span class="hljs-string">&#x27;is_active&#x27;</span>, <span class="hljs-literal">True</span>)
+
+        user = <span class="hljs-variable language_">self</span>.create_user(username, email, password=password, **extra_fields)
+        user.save(using=<span class="hljs-variable language_">self</span>._db)
+        <span class="hljs-keyword">return</span> user
+
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span>(AbstractBaseUser, PermissionsMixin):
+    username = models.CharField(verbose_name=<span class="hljs-string">&#x27;Username&#x27;</span>, max_length=<span class="hljs-number">255</span>, unique=<span class="hljs-literal">True</span>)
+    email = models.EmailField(verbose_name=<span class="hljs-string">&#x27;email&#x27;</span>, max_length=<span class="hljs-number">255</span>, unique=<span class="hljs-literal">True</span>)
+    phone = models.BigIntegerField(verbose_name=<span class="hljs-string">&#x27;Phone Number&#x27;</span>, unique=<span class="hljs-literal">True</span>, blank=<span class="hljs-literal">True</span>, null=<span class="hljs-literal">True</span>)
+    is_active = models.BooleanField(default=<span class="hljs-literal">True</span>, verbose_name=<span class="hljs-string">&quot;is_active&quot;</span>)
+    is_staff = models.BooleanField(default=<span class="hljs-literal">False</span>, verbose_name=<span class="hljs-string">&quot;is_staff&quot;</span>)
+    is_superuser = models.BooleanField(default=<span class="hljs-literal">False</span>, verbose_name=<span class="hljs-string">&quot;is_superuser&quot;</span>)
+
+    objects = UserManager()
+
+    <span class="hljs-comment"># We can use any field for username</span>
+    USERNAME_FIELD = <span class="hljs-string">&#x27;username&#x27;</span>  <span class="hljs-comment"># or &#x27;email&#x27; or &#x27;phone&#x27;</span>
+    REQUIRED_FIELDS = [<span class="hljs-string">&#x27;username&#x27;</span>, <span class="hljs-string">&#x27;email&#x27;</span>]
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">__str__</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.username
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Meta</span>:
+        verbose_name = <span class="hljs-string">&quot;User&quot;</span>
+        verbose_name_plural = <span class="hljs-string">&quot;Users&quot;</span>
+</code></pre>
+<pre><code class="hljs language-python"><span class="hljs-comment"># accounts/forms.py</span>
+<span class="hljs-keyword">from</span> django <span class="hljs-keyword">import</span> forms
+<span class="hljs-keyword">from</span> django.contrib.auth.forms <span class="hljs-keyword">import</span> ReadOnlyPasswordHashField
+<span class="hljs-keyword">from</span> django.core.exceptions <span class="hljs-keyword">import</span> ValidationError
+<span class="hljs-keyword">from</span> accounts.models <span class="hljs-keyword">import</span> User
+<span class="hljs-keyword">from</span> django.utils.translation <span class="hljs-keyword">import</span> gettext_lazy <span class="hljs-keyword">as</span> _
+
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">UserCreationForm</span>(forms.ModelForm):
+    password1 = forms.CharField(label=<span class="hljs-string">&#x27;Password&#x27;</span>, widget=forms.PasswordInput)
+    password2 = forms.CharField(label=<span class="hljs-string">&#x27;Password confirmation&#x27;</span>, widget=forms.PasswordInput)
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Meta</span>:
+        model = User
+        fields = (<span class="hljs-string">&#x27;username&#x27;</span>, <span class="hljs-string">&#x27;email&#x27;</span>, <span class="hljs-string">&#x27;phone&#x27;</span>, <span class="hljs-string">&#x27;is_active&#x27;</span>, <span class="hljs-string">&#x27;is_staff&#x27;</span>)
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">clean_password2</span>(<span class="hljs-params">self</span>):
+        password1 = <span class="hljs-variable language_">self</span>.cleaned_data.get(<span class="hljs-string">&quot;password1&quot;</span>)
+        password2 = <span class="hljs-variable language_">self</span>.cleaned_data.get(<span class="hljs-string">&quot;password2&quot;</span>)
+        <span class="hljs-keyword">if</span> password1 <span class="hljs-keyword">and</span> password2 <span class="hljs-keyword">and</span> password1 != password2:
+            <span class="hljs-keyword">raise</span> ValidationError(<span class="hljs-string">&quot;Passwords don&#x27;t match&quot;</span>)
+        <span class="hljs-keyword">return</span> password2
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">save</span>(<span class="hljs-params">self, commit=<span class="hljs-literal">True</span></span>):
+        user = <span class="hljs-built_in">super</span>().save(commit=<span class="hljs-literal">False</span>)
+        user.set_password(<span class="hljs-variable language_">self</span>.cleaned_data[<span class="hljs-string">&quot;password1&quot;</span>])
+        <span class="hljs-keyword">if</span> commit:
+            user.save()
+        <span class="hljs-keyword">return</span> user
+
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">UserChangeForm</span>(forms.ModelForm):
+    password = ReadOnlyPasswordHashField()
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Meta</span>:
+        model = User
+        fields = (<span class="hljs-string">&#x27;username&#x27;</span>, <span class="hljs-string">&#x27;email&#x27;</span>, <span class="hljs-string">&#x27;phone&#x27;</span>, <span class="hljs-string">&#x27;is_active&#x27;</span>, <span class="hljs-string">&#x27;is_staff&#x27;</span>)
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">clean_password</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-keyword">return</span> <span class="hljs-variable language_">self</span>.initial[<span class="hljs-string">&quot;password&quot;</span>]
+
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">LoginForm</span>(forms.Form):
+    email = forms.CharField(
+        widget=forms.TextInput(attrs=&#123;<span class="hljs-string">&#x27;class&#x27;</span>: <span class="hljs-string">&#x27;form-control&#x27;</span>, <span class="hljs-string">&#x27;placeholder&#x27;</span>: <span class="hljs-string">&#x27;Email&#x27;</span>&#125;), label=<span class="hljs-string">&#x27;Email&#x27;</span>)
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs=&#123;<span class="hljs-string">&#x27;class&#x27;</span>: <span class="hljs-string">&#x27;form-control&#x27;</span>, <span class="hljs-string">&#x27;placeholder&#x27;</span>: <span class="hljs-string">&#x27;Password&#x27;</span>&#125;),label=<span class="hljs-string">&#x27;Password&#x27;</span>)
+
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">RegisterForm</span>(forms.ModelForm):
+    password1 = forms.CharField(label=<span class="hljs-string">&#x27;Password&#x27;</span>, widget=forms.PasswordInput(
+        attrs=&#123;<span class="hljs-string">&#x27;class&#x27;</span>: <span class="hljs-string">&#x27;form-control&#x27;</span>&#125;))
+    password2 = forms.CharField(label=<span class="hljs-string">&#x27;Password confirmation&#x27;</span>,
+                                widget=forms.PasswordInput(attrs=&#123;<span class="hljs-string">&#x27;class&#x27;</span>: <span class="hljs-string">&#x27;form-control&#x27;</span>&#125;))
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Meta</span>:
+        model = User
+        fields = (<span class="hljs-string">&#x27;username&#x27;</span>, <span class="hljs-string">&#x27;email&#x27;</span>, <span class="hljs-string">&#x27;phone&#x27;</span>)
+
+        widgets = &#123;  <span class="hljs-comment"># Optional</span>
+            <span class="hljs-string">&#x27;username&#x27;</span>: forms.TextInput(attrs=&#123;<span class="hljs-string">&#x27;class&#x27;</span>: <span class="hljs-string">&#x27;form-control&#x27;</span>&#125;),
+            <span class="hljs-string">&#x27;email&#x27;</span>: forms.EmailInput(attrs=&#123;<span class="hljs-string">&#x27;class&#x27;</span>: <span class="hljs-string">&#x27;form-control&#x27;</span>&#125;),
+            <span class="hljs-string">&#x27;phone&#x27;</span>: forms.NumberInput(
+                attrs=&#123;<span class="hljs-string">&#x27;class&#x27;</span>: <span class="hljs-string">&#x27;form-control&#x27;</span>, <span class="hljs-string">&#x27;type&#x27;</span>: <span class="hljs-string">&#x27;tel&#x27;</span>, <span class="hljs-string">&#x27;maxlength&#x27;</span>: <span class="hljs-string">&#x27;11&#x27;</span>,
+                       <span class="hljs-string">&#x27;minlength&#x27;</span>: <span class="hljs-string">&#x27;11&#x27;</span>,  <span class="hljs-string">&#x27;onkeypress&#x27;</span>: <span class="hljs-string">&#x27;return isNumber(event)&#x27;</span>, <span class="hljs-string">&#x27;required&#x27;</span>: <span class="hljs-string">&#x27;false&#x27;</span>&#125;)&#125;
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">clean_password2</span>(<span class="hljs-params">self</span>):
+        password1 = <span class="hljs-variable language_">self</span>.cleaned_data.get(<span class="hljs-string">&quot;password1&quot;</span>)
+        password2 = <span class="hljs-variable language_">self</span>.cleaned_data.get(<span class="hljs-string">&quot;password2&quot;</span>)
+        <span class="hljs-keyword">if</span> password1 <span class="hljs-keyword">and</span> password2 <span class="hljs-keyword">and</span> password1 != password2:
+            <span class="hljs-keyword">raise</span> ValidationError(<span class="hljs-string">&quot;Passwords don&#x27;t match&quot;</span>)
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> password2
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">save</span>(<span class="hljs-params">self, commit=<span class="hljs-literal">True</span></span>):
+        user = <span class="hljs-built_in">super</span>().save(commit=<span class="hljs-literal">False</span>)
+        user.set_password(<span class="hljs-variable language_">self</span>.cleaned_data[<span class="hljs-string">&quot;password1&quot;</span>])
+        <span class="hljs-keyword">if</span> commit:
+            user.save()
+        <span class="hljs-keyword">return</span> user
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">EditProfileForm</span>(forms.ModelForm):
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Meta</span>:
+        model = User
+        fields = (<span class="hljs-string">&#x27;username&#x27;</span>, <span class="hljs-string">&#x27;email&#x27;</span>, <span class="hljs-string">&#x27;phone&#x27;</span>)
+
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">ChangePassword</span>(forms.Form):
+    password1 = forms.CharField(label=_(<span class="hljs-string">&#x27;Password&#x27;</span>), widget=forms.PasswordInput(
+        attrs=&#123;<span class="hljs-string">&#x27;class&#x27;</span>: <span class="hljs-string">&#x27;form-control&#x27;</span>, <span class="hljs-string">&#x27;placeholder&#x27;</span>: <span class="hljs-string">&#x27;Password&#x27;</span>&#125;))
+    password2 = forms.CharField(label=_(<span class="hljs-string">&#x27;Password confirmation&#x27;</span>),
+                                widget=forms.PasswordInput(
+                                    attrs=&#123;<span class="hljs-string">&#x27;class&#x27;</span>: <span class="hljs-string">&#x27;form-control&#x27;</span>, <span class="hljs-string">&#x27;placeholder&#x27;</span>: <span class="hljs-string">&#x27;Re-Enter Password&#x27;</span>&#125;))
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">clean_password2</span>(<span class="hljs-params">self</span>):
+        password1 = <span class="hljs-variable language_">self</span>.cleaned_data.get(<span class="hljs-string">&quot;password1&quot;</span>)
+        password2 = <span class="hljs-variable language_">self</span>.cleaned_data.get(<span class="hljs-string">&quot;password2&quot;</span>)
+        <span class="hljs-keyword">if</span> password1 <span class="hljs-keyword">and</span> password2 <span class="hljs-keyword">and</span> password1 != password2:
+            <span class="hljs-keyword">raise</span> ValidationError(<span class="hljs-string">&quot;Passwords don&#x27;t match&quot;</span>)
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">return</span> password2
+</code></pre>
+<pre><code class="hljs language-python"><span class="hljs-comment"># accounts/admin.py</span>
+<span class="hljs-keyword">from</span> django <span class="hljs-keyword">import</span> forms
+<span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> admin
+<span class="hljs-keyword">from</span> django.contrib.auth.admin <span class="hljs-keyword">import</span> UserAdmin <span class="hljs-keyword">as</span> BaseUserAdmin
+<span class="hljs-keyword">from</span> django.contrib.auth.forms <span class="hljs-keyword">import</span> ReadOnlyPasswordHashField
+<span class="hljs-keyword">from</span> django.core.exceptions <span class="hljs-keyword">import</span> ValidationError
+<span class="hljs-keyword">from</span> django.contrib.auth.models <span class="hljs-keyword">import</span> Group
+<span class="hljs-keyword">from</span> accounts.models <span class="hljs-keyword">import</span> User
+
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">UserCreationForm</span>(forms.ModelForm):
+    password1 = forms.CharField(label=<span class="hljs-string">&#x27;Password&#x27;</span>, widget=forms.PasswordInput)
+    password2 = forms.CharField(label=<span class="hljs-string">&#x27;Password confirmation&#x27;</span>, widget=forms.PasswordInput)
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Meta</span>:
+        model = User
+        fields = (<span class="hljs-string">&#x27;username&#x27;</span>, <span class="hljs-string">&#x27;email&#x27;</span>, <span class="hljs-string">&#x27;phone&#x27;</span>)
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">clean_password2</span>(<span class="hljs-params">self</span>):
+        <span class="hljs-comment"># Check that the two password entries match</span>
+        password1 = <span class="hljs-variable language_">self</span>.cleaned_data.get(<span class="hljs-string">&quot;password1&quot;</span>)
+        password2 = <span class="hljs-variable language_">self</span>.cleaned_data.get(<span class="hljs-string">&quot;password2&quot;</span>)
+        <span class="hljs-keyword">if</span> password1 <span class="hljs-keyword">and</span> password2 <span class="hljs-keyword">and</span> password1 != password2:
+            <span class="hljs-keyword">raise</span> ValidationError(<span class="hljs-string">&quot;Passwords don&#x27;t match&quot;</span>)
+        <span class="hljs-keyword">return</span> password2
+
+    <span class="hljs-keyword">def</span> <span class="hljs-title function_">save</span>(<span class="hljs-params">self, commit=<span class="hljs-literal">True</span></span>):
+        user = <span class="hljs-built_in">super</span>().save(commit=<span class="hljs-literal">False</span>)
+        user.set_password(<span class="hljs-variable language_">self</span>.cleaned_data[<span class="hljs-string">&quot;password1&quot;</span>])
+        <span class="hljs-keyword">if</span> commit:
+            user.save()
+        <span class="hljs-keyword">return</span> user
+
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">UserChangeForm</span>(forms.ModelForm):
+    password = ReadOnlyPasswordHashField()
+
+    <span class="hljs-keyword">class</span> <span class="hljs-title class_">Meta</span>:
+        model = User
+        fields = (<span class="hljs-string">&#x27;username&#x27;</span>, <span class="hljs-string">&#x27;email&#x27;</span>, <span class="hljs-string">&#x27;phone&#x27;</span>, <span class="hljs-string">&#x27;password&#x27;</span>, <span class="hljs-string">&#x27;is_active&#x27;</span>, <span class="hljs-string">&#x27;is_staff&#x27;</span>)
+
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">UserAdmin</span>(<span class="hljs-title class_ inherited__">BaseUserAdmin</span>):
+    form = UserChangeForm
+    add_form = UserCreationForm
+    list_display = (<span class="hljs-string">&#x27;username&#x27;</span>, <span class="hljs-string">&#x27;email&#x27;</span>, <span class="hljs-string">&#x27;is_active&#x27;</span>, <span class="hljs-string">&#x27;is_staff&#x27;</span>, <span class="hljs-string">&#x27;is_superuser&#x27;</span>)
+    list_editable = (<span class="hljs-string">&#x27;is_staff&#x27;</span>, <span class="hljs-string">&#x27;is_active&#x27;</span>)
+    list_filter = (<span class="hljs-string">&#x27;is_staff&#x27;</span>, <span class="hljs-string">&#x27;groups&#x27;</span>)
+    fieldsets = (
+        (<span class="hljs-literal">None</span>, &#123;<span class="hljs-string">&#x27;fields&#x27;</span>: ( <span class="hljs-string">&#x27;username&#x27;</span>, <span class="hljs-string">&#x27;email&#x27;</span>, <span class="hljs-string">&#x27;phone&#x27;</span>, <span class="hljs-string">&#x27;password&#x27;</span>)&#125;),
+        (<span class="hljs-string">&#x27;Permissions&#x27;</span>, &#123;<span class="hljs-string">&#x27;fields&#x27;</span>: (<span class="hljs-string">&#x27;is_staff&#x27;</span>,)&#125;),
+        (<span class="hljs-string">&#x27;Group Permissions&#x27;</span>, &#123;
+            <span class="hljs-string">&#x27;fields&#x27;</span>: (<span class="hljs-string">&#x27;is_active&#x27;</span>, <span class="hljs-string">&#x27;is_superuser&#x27;</span>, <span class="hljs-string">&#x27;groups&#x27;</span>, <span class="hljs-string">&#x27;user_permissions&#x27;</span>),
+        &#125;)
+    )
+    add_fieldsets = (
+        (<span class="hljs-literal">None</span>, &#123;
+            <span class="hljs-string">&#x27;classes&#x27;</span>: (<span class="hljs-string">&#x27;wide&#x27;</span>,),
+            <span class="hljs-string">&#x27;fields&#x27;</span>: (<span class="hljs-string">&#x27;username&#x27;</span>, <span class="hljs-string">&#x27;email&#x27;</span>, <span class="hljs-string">&#x27;phone&#x27;</span>, <span class="hljs-string">&#x27;password1&#x27;</span>, <span class="hljs-string">&#x27;password2&#x27;</span>),
+        &#125;),
+        (<span class="hljs-string">&#x27;Group Permissions&#x27;</span>, &#123;
+            <span class="hljs-string">&#x27;fields&#x27;</span>: (<span class="hljs-string">&#x27;is_active&#x27;</span>, <span class="hljs-string">&#x27;is_superuser&#x27;</span>, <span class="hljs-string">&#x27;groups&#x27;</span>, <span class="hljs-string">&#x27;user_permissions&#x27;</span>),
+        &#125;)
+    )
+    search_fields = (<span class="hljs-string">&#x27;username&#x27;</span>, <span class="hljs-string">&#x27;email&#x27;</span>, <span class="hljs-string">&#x27;phone&#x27;</span>)
+    ordering = (<span class="hljs-string">&#x27;username&#x27;</span>, <span class="hljs-string">&#x27;email&#x27;</span>, <span class="hljs-string">&#x27;phone&#x27;</span>)
+    filter_horizontal = (<span class="hljs-string">&#x27;groups&#x27;</span>, <span class="hljs-string">&#x27;user_permissions&#x27;</span>,)
+
+
+admin.site.register(User, UserAdmin)
+<span class="hljs-comment"># unregister the Group model from admin.</span>
+<span class="hljs-comment"># admin.site.unregister(Group)</span>
+</code></pre>
+<pre><code class="hljs language-python"><span class="hljs-comment"># accounts/urls.py</span>
+<span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> path
+<span class="hljs-keyword">from</span> accounts <span class="hljs-keyword">import</span> views
+
+app_name = <span class="hljs-string">&#x27;accounts&#x27;</span>
+urlpatterns = [
+    path(<span class="hljs-string">&#x27;login/&#x27;</span>, views.userLogin, name=<span class="hljs-string">&#x27;login&#x27;</span>),
+    path(<span class="hljs-string">&#x27;register/&#x27;</span>, views.userRegister, name=<span class="hljs-string">&#x27;register&#x27;</span>),
+    path(<span class="hljs-string">&#x27;logout/&#x27;</span>, views.LogoutPage, name=<span class="hljs-string">&#x27;logout&#x27;</span>)
+]
+</code></pre>
+<pre><code class="hljs language-python"><span class="hljs-comment"># accounts/views.py</span>
+<span class="hljs-keyword">from</span> django.shortcuts <span class="hljs-keyword">import</span> render, redirect
+<span class="hljs-keyword">from</span> django.contrib.auth <span class="hljs-keyword">import</span> login, logout, authenticate
+<span class="hljs-keyword">from</span> django.contrib.auth.decorators <span class="hljs-keyword">import</span> login_required
+<span class="hljs-keyword">from</span> django.utils.translation <span class="hljs-keyword">import</span> gettext_lazy <span class="hljs-keyword">as</span> _
+<span class="hljs-keyword">from</span> accounts.forms <span class="hljs-keyword">import</span> LoginForm, RegisterForm
+<span class="hljs-keyword">from</span> django.contrib <span class="hljs-keyword">import</span> messages
+<span class="hljs-keyword">from</span> accounts.models <span class="hljs-keyword">import</span> User
+
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">userRegister</span>(<span class="hljs-params">request</span>):
+    form = RegisterForm()
+    <span class="hljs-keyword">if</span> request.method == <span class="hljs-string">&#x27;POST&#x27;</span>:
+        form = RegisterForm(request.POST)
+        <span class="hljs-keyword">if</span> form.is_valid():
+            cd = form.cleaned_data
+            <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> User.objects.<span class="hljs-built_in">filter</span>(email=cd[<span class="hljs-string">&#x27;username&#x27;</span>]).exists():
+                <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> User.objects.<span class="hljs-built_in">filter</span>(email=cd[<span class="hljs-string">&#x27;email&#x27;</span>]).exists():
+                    user = User.objects.create_user(
+                        username=cd[<span class="hljs-string">&#x27;username&#x27;</span>], phone=cd[<span class="hljs-string">&#x27;phone&#x27;</span>], email=cd[<span class="hljs-string">&#x27;email&#x27;</span>], password=cd[<span class="hljs-string">&#x27;password1&#x27;</span>])
+                    user.save()
+                    login(request, user)
+                    messages.success(request, _(<span class="hljs-string">&quot;You successfully registered a user&quot;</span>), extra_tags=<span class="hljs-string">&quot;success&quot;</span>)
+                    <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">&#x27;app_name:home&#x27;</span>)
+                <span class="hljs-keyword">else</span>:
+                    messages.error(request, _(<span class="hljs-string">&quot;This Email is exists&quot;</span>), extra_tags=<span class="hljs-string">&quot;warning&quot;</span>)
+            <span class="hljs-keyword">else</span>:
+                messages.error(request, _(<span class="hljs-string">&quot;This Username is exists&quot;</span>), extra_tags=<span class="hljs-string">&quot;warning&quot;</span>)
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-keyword">import</span> json
+            er = json.loads(form.errors.as_json())
+            <span class="hljs-keyword">for</span> e <span class="hljs-keyword">in</span> er:
+                messages.error(request, er[e][<span class="hljs-number">0</span>][<span class="hljs-string">&#x27;message&#x27;</span>], <span class="hljs-string">&#x27;warning&#x27;</span>)
+    <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&#x27;accounts/register.html&#x27;</span>, &#123;<span class="hljs-string">&#x27;form&#x27;</span>: form&#125;)
+
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">userLogin</span>(<span class="hljs-params">request</span>):
+    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> request.user.is_active:
+        <span class="hljs-keyword">if</span> request.method == <span class="hljs-string">&#x27;POST&#x27;</span>:
+            form = LoginForm(request.POST)
+            <span class="hljs-keyword">if</span> form.is_valid():
+                cd = form.cleaned_data
+                <span class="hljs-keyword">if</span> User.objects.<span class="hljs-built_in">filter</span>(username=cd[<span class="hljs-string">&#x27;username&#x27;</span>]).exists():
+                    user = authenticate(request, username=cd[<span class="hljs-string">&#x27;username&#x27;</span>], password=cd[<span class="hljs-string">&#x27;password&#x27;</span>])
+                    <span class="hljs-keyword">if</span> user <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> <span class="hljs-literal">None</span>:
+                        login(request, user)
+                        messages.success(request, _(<span class="hljs-string">&quot;logged in successfully&quot;</span>), extra_tags=<span class="hljs-string">&quot;success&quot;</span>)
+                        <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">&#x27;app_name:home&#x27;</span>)
+                    <span class="hljs-keyword">else</span>:
+                        messages.error(request, _(<span class="hljs-string">&quot;your username Or Password is wrong&quot;</span>), extra_tags=<span class="hljs-string">&quot;warning&quot;</span>)
+                <span class="hljs-keyword">else</span>:
+                    messages.error(request, _(<span class="hljs-string">&quot;No account created with this username&quot;</span>), extra_tags=<span class="hljs-string">&quot;warning&quot;</span>)
+                    <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">&#x27;accounts:login&#x27;</span>)
+            <span class="hljs-keyword">else</span>:
+                messages.error(request, _(<span class="hljs-string">&quot;Please enter your information correctly&quot;</span>), extra_tags=<span class="hljs-string">&quot;warning&quot;</span>)
+        <span class="hljs-keyword">else</span>:
+            form = LoginForm()
+        <span class="hljs-keyword">return</span> render(request, <span class="hljs-string">&#x27;accounts/login.html&#x27;</span>, &#123;<span class="hljs-string">&#x27;form&#x27;</span>: form&#125;)
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">&#x27;app_name:home&#x27;</span>)
+
+
+<span class="hljs-meta">@login_required()</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">LogoutPage</span>(<span class="hljs-params">request</span>):
+    logout(request)
+    messages.success(request, _(<span class="hljs-string">&quot;You Logged Out successfully&quot;</span>), extra_tags=<span class="hljs-string">&quot;success&quot;</span>)
+    <span class="hljs-keyword">return</span> redirect(<span class="hljs-string">&#x27;app_name:home&#x27;</span>)
+</code></pre>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="send-email"><a class="h-anchor" href="#send-email">#</a>Send Email</h2>
+<div class="h3-wrap-list">
+<pre><code class="hljs language-python"><span class="hljs-comment"># settings.py</span>
+EMAIL_BACKEND = <span class="hljs-string">&quot;django.core.mail.backends.console.EmailBackend&quot;</span>
+
+<span class="hljs-comment"># Send email function</span>
+<span class="hljs-keyword">from</span> django.core.email <span class="hljs-keyword">import</span> send_mail
+
+send_mail(
+    subject = <span class="hljs-string">&quot;A new post has been created&quot;</span>,
+    message = <span class="hljs-string">&quot;Go to the web site to see the detail&quot;</span>,
+    from_email = <span class="hljs-string">&quot;test@test.com&quot;</span>,
+    recipient_list = [<span class="hljs-string">&quot;test2@text.com&quot;</span>]
+)
+</code></pre>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="signals"><a class="h-anchor" href="#signals">#</a>Signals</h2>
+<div class="h3-wrap-list">
+<pre><code class="hljs language-python"><span class="hljs-comment"># models.py</span>
+<span class="hljs-keyword">from</span> django.db.models.signals <span class="hljs-keyword">import</span> post_save, pre_save
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">post_user_created_signal</span>(<span class="hljs-params">sender, instance, created, **kwargs</span>):
+    <span class="hljs-keyword">if</span> created:
+        UserProfile.objects.create(user=instance)
+
+<span class="hljs-comment"># Launch the post_user_created_signal method if User model is save</span>
+post_save.connect(post_user_created_signal, sender=User)
+</code></pre>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="seed"><a class="h-anchor" href="#seed">#</a>Seed</h2>
+<div class="h3-wrap-list">
+<pre><code class="hljs language-python"><span class="hljs-keyword">from</span> app_name.models <span class="hljs-keyword">import</span> Product, Category
+<span class="hljs-keyword">from</span> django.shortcuts <span class="hljs-keyword">import</span> HttpResponse
+<span class="hljs-keyword">from</span> faker <span class="hljs-keyword">import</span> Faker
+
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">seed</span>(<span class="hljs-params">request</span>):
+    Product.objects.<span class="hljs-built_in">all</span>().delete()
+    Category.objects.<span class="hljs-built_in">all</span>().delete()
+
+    category = Category()
+    category.name = <span class="hljs-string">&quot;Sports&quot;</span>
+    category.save()
+
+    category = Category()
+    category.name = <span class="hljs-string">&quot;Home&quot;</span>
+    category.save()
+
+    fake = Faker()
+    <span class="hljs-keyword">for</span> _ <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">100</span>):
+        product = Product()
+        product.name = fake.unique.word()
+        product.short_description = fake.sentence()
+        product.main_picture = fake.image_url()
+        product.price = fake.random_digit() * <span class="hljs-number">10</span>
+        product.category =  Category.objects.order_by(<span class="hljs-string">&#x27;?&#x27;</span>).first()
+        product.save()
+
+    <span class="hljs-keyword">return</span> HttpResponse(<span class="hljs-string">&#x27;Seeded&#x27;</span>)
+</code></pre>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="environment-variables"><a class="h-anchor" href="#environment-variables">#</a>Environment Variables</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="env-key-value-file"><a class="h-anchor" href="#env-key-value-file">#</a>.env key/value file</h3>
+<div class="section">
+<pre><code class="hljs language-python">$ pip install python-decouple
+</code></pre>
+<p>Create a file name '.env' in the root folder of your project</p>
+<pre><code class="hljs language-python">SECRET_KEY = <span class="hljs-string">&#x27;your secret key&#x27;</span>
+ALLOWED_HOST = <span class="hljs-number">127.0</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span>
+</code></pre>
+<p>In settings.py change security related settings to point to the .env file</p>
+<pre><code class="hljs language-python"><span class="hljs-keyword">from</span> decouple <span class="hljs-keyword">import</span> config
+
+SECRET_KEY = config(<span class="hljs-string">&#x27;SECRET_KEY&#x27;</span>)
+ALLOWED_HOST = config(<span class="hljs-string">&#x27;ALLOWED_HOST&#x27;</span>)
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="asynchronous-tasks"><a class="h-anchor" href="#asynchronous-tasks">#</a>Asynchronous Tasks</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="django-celery-redis"><a class="h-anchor" href="#django-celery-redis">#</a>Django Celery Redis</h3>
+<div class="section">
+<p>Celery is a distributed task queue that can collect, record, schedule, and perform tasks outside of your main program.</p>
+<h4 id="step-1-install-celery-using-pip"><a class="h-anchor" href="#step-1-install-celery-using-pip">#</a>Step 1: Install Celery Using pip</h4>
+<pre><code class="hljs language-python">~$ pip install celery       <span class="hljs-comment"># pip install celery[redis]</span>
+</code></pre>
+<h4 id="step-2-add-celery-py-file-in-your-project-module"><a class="h-anchor" href="#step-2-add-celery-py-file-in-your-project-module">#</a>Step 2. Add celery.py File in Your Project Module</h4>
+<pre><code class="hljs language-python"><span class="hljs-comment"># your_project/celery.py</span>
+<span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">from</span> celery <span class="hljs-keyword">import</span> Celery
+
+os.environ.setdefault(<span class="hljs-string">&#x27;DJANGO_SETTINGS_MODULE&#x27;</span>,<span class="hljs-string">&#x27;your_project_name.settings&#x27;</span>)
+app = Celery(<span class="hljs-string">&#x27;your_project_name&#x27;</span>)
+app.config_from_object(<span class="hljs-string">&#x27;django.conf:settings&#x27;</span>, namespace=<span class="hljs-string">&#x27;CELERY&#x27;</span>)
+app.autodiscover_tasks()
+
+<span class="hljs-meta">@app.task(<span class="hljs-params">bind=<span class="hljs-literal">True</span></span>)</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">debug_task</span>(<span class="hljs-params">self</span>):
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;Request: <span class="hljs-subst">&#123;self.request!r&#125;</span>&#x27;</span>)
+</code></pre>
+<h4 id="step-3-import-the-celery-app-to-django"><a class="h-anchor" href="#step-3-import-the-celery-app-to-django">#</a>Step 3: Import the Celery App to Django</h4>
+<p><small>To ensure that the Celery app is loaded when Django starts, add the following code into the <code>__init__.py</code> file
+that sits on the project module beside on settings.py file.</small></p>
+<pre><code class="hljs language-python"><span class="hljs-comment"># your_project/__init__.py</span>
+<span class="hljs-keyword">from</span> .celery <span class="hljs-keyword">import</span> app <span class="hljs-keyword">as</span> celery_app
+
+__all__ = (<span class="hljs-string">&#x27;celery_app&#x27;</span>,)
+</code></pre>
+<h4 id="step-4-download-and-run-redis-as-a-celery-‘broker’"><a class="h-anchor" href="#step-4-download-and-run-redis-as-a-celery-‘broker’">#</a>Step 4: Download and Run Redis as a Celery ‘broker’</h4>
+<pre><code class="hljs language-python">~$ redis-server
+</code></pre>
+<p><small>You can test that Redis is working properly by typing this into your terminal:</small></p>
+<pre><code class="hljs language-python">~$ redis-cli ping
+</code></pre>
+<p>Redis should reply with PONG - try it!</p>
+<h4 id="step-5-add-redis-as-a-dependency-in-the-django-project"><a class="h-anchor" href="#step-5-add-redis-as-a-dependency-in-the-django-project">#</a>Step 5: Add Redis as a Dependency in the Django Project:</h4>
+<pre><code class="hljs language-python">~$ pip install redis
+</code></pre>
+<h4 id="step-6-celery-stuff-configure-to-the-django-settings-file"><a class="h-anchor" href="#step-6-celery-stuff-configure-to-the-django-settings-file">#</a>Step 6: Celery Stuff Configure to the Django Settings File</h4>
+<p>Once Redis is up, add the following code to your settings.py file and use celery-result</p>
+<pre><code class="hljs language-python">~$ pip install django-celery-results
+</code></pre>
+<p>This extension enables you to store Celery task results using the Django ORM.<br> It defines a single model
+(<code>django_celery_results.models.TaskResult</code>) used to store task results, and you can query this database table like any
+other Django model.</p>
+<pre><code class="hljs language-python">INSTALLED_APPS = [
+                … ,
+                <span class="hljs-string">&#x27;django_celery_results&#x27;</span>,
+                ]
+
+BROKER_URL = <span class="hljs-string">&#x27;redis://localhost:6379&#x27;</span>
+CELERY_RESULT_BACKEND = <span class="hljs-string">&#x27;redis://localhost:6379&#x27;</span>
+CELERY_ACCEPT_CONTENT = [<span class="hljs-string">&#x27;application/json&#x27;</span>]
+CELERY_TASK_SERIALIZER = <span class="hljs-string">&#x27;json&#x27;</span>
+CELERY_RESULT_SERIALIZER = <span class="hljs-string">&#x27;json&#x27;</span>
+CELERY_TIMEZONE = TIME_ZONE
+CELERY_RESULT_BACKEND = <span class="hljs-string">&#x27;django-db&#x27;</span>
+CELERY_CACHE_BACKEND = <span class="hljs-string">&#x27;django-cache&#x27;</span>
+
+CACHES = &#123;
+    <span class="hljs-string">&#x27;default&#x27;</span>: &#123;
+        <span class="hljs-string">&#x27;BACKEND&#x27;</span>: <span class="hljs-string">&#x27;django.core.cache.backends.db.DatabaseCache&#x27;</span>,
+        <span class="hljs-string">&#x27;LOCATION&#x27;</span>: <span class="hljs-string">&#x27;redis://localhost:6379/1&#x27;</span>,
+        <span class="hljs-string">&quot;OPTIONS&quot;</span>: &#123;
+                    <span class="hljs-string">&quot;CLIENT_CLASS&quot;</span>: <span class="hljs-string">&quot;django_redis.client.DefaultClient&quot;</span>,
+        &#125;
+    &#125;
+&#125;
+</code></pre>
+<h4 id="that’s-it-you-should-now-be-able-to-use-celery-with-django"><a class="h-anchor" href="#that’s-it-you-should-now-be-able-to-use-celery-with-django">#</a>That’s it! You should now be able to use Celery with Django</h4>
+<p>Test that the Celery worker is ready to receive tasks:</p>
+<pre><code class="hljs language-python">~$ celery -A your_project_name worker -l info
+</code></pre>
+<p>The most important task is: Always run a worker is needed to execute the celery task if any error throws from Redis like
+this:</p>
+<pre><code class="hljs language-python">AttributeError: <span class="hljs-string">&#x27;str&#x27;</span> <span class="hljs-built_in">object</span> has no attribute <span class="hljs-string">&#x27;items&#x27;</span>
+</code></pre>
+<ul>
+<li>the solution is: you have to use Redis old version</li>
+</ul>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="add-a-new-task"><a class="h-anchor" href="#add-a-new-task">#</a>Add a New Task</h3>
+<div class="section">
+<h4 id="step-1-add-tasks-py-file-to-your-django-app"><a class="h-anchor" href="#step-1-add-tasks-py-file-to-your-django-app">#</a>Step 1: Add tasks.py File to Your Django App.</h4>
+<pre><code class="hljs language-python"><span class="hljs-comment"># app_name/tasks.py</span>
+<span class="hljs-keyword">from</span> celery <span class="hljs-keyword">import</span> shared_task
+<span class="hljs-keyword">from</span> celery.decorators <span class="hljs-keyword">import</span> task
+<span class="hljs-keyword">from</span> time <span class="hljs-keyword">import</span> sleep
+
+
+<span class="hljs-meta">@task(<span class="hljs-params">name=<span class="hljs-string">&#x27;my_first_task&#x27;</span></span>)</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">my_first_task</span>(<span class="hljs-params">duration</span>):
+    sleep(duration)
+    <span class="hljs-keyword">return</span>(<span class="hljs-string">&#x27;first_task_done&#x27;</span>)
+
+<span class="hljs-meta">@shared_task</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">test_func</span>():
+    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">10</span>):
+        <span class="hljs-built_in">print</span>(i)
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;End_OK&#x27;</span>
+
+<span class="hljs-meta">@shared_task</span>
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">adding</span>(<span class="hljs-params">x, y</span>):
+    time.sleep(<span class="hljs-number">10</span>)
+    result = x + y
+    <span class="hljs-keyword">return</span> result
+</code></pre>
+<h4 id="step-2-assign-task-to-the-celery"><a class="h-anchor" href="#step-2-assign-task-to-the-celery">#</a>Step 2: Assign Task to the Celery.</h4>
+<p>You need to assign a task to the celery. To assign this task you need to call this function with something different.
+celery gives us two methods <code>delay()</code> and <code>apply_async()</code> to call task.</p>
+<pre><code class="hljs language-bash"><span class="hljs-comment"># Normal function call in python</span>
+~$ my_first_task()
+
+<span class="hljs-comment"># add task to the celery with function call</span>
+~$ my_first_task.delay()
+</code></pre>
+<p>You can send argument to the function using the delay method. <small>To check celery on the action open a separate tab
+of the terminal then go to the project directory (activate environment if you are using one) and run this command
+again</small></p>
+<pre><code class="hljs language-bash">~$ celery -A your_project_name worker -l info
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="create-a-view-in-your-app"><a class="h-anchor" href="#create-a-view-in-your-app">#</a>Create a View in your App</h3>
+<div class="section">
+<pre><code class="hljs language-python"><span class="hljs-comment"># app_name/views.py</span>
+<span class="hljs-keyword">from</span> django.http <span class="hljs-keyword">import</span> HttpResponse
+<span class="hljs-keyword">from</span> app_name.tasks <span class="hljs-keyword">import</span> my_first_task, test_func, adding
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">index</span>(<span class="hljs-params">request</span>):
+    my_first_task.delay(<span class="hljs-number">10</span>)
+    result = adding.delay(x=<span class="hljs-number">4</span>, y=<span class="hljs-number">5</span>)
+    <span class="hljs-keyword">return</span> HttpResponse(<span class="hljs-string">f&#x27;response done. <span class="hljs-subst">&#123;result&#125;</span>&#x27;</span>)
+
+<span class="hljs-keyword">def</span> <span class="hljs-title function_">test</span>(<span class="hljs-params">request</span>):
+    test_func.delay()
+    <span class="hljs-keyword">return</span> HttpResponse(<span class="hljs-string">&quot;Done&quot;</span>)
+</code></pre>
+<h4 id="then-call-the-view-from-your-app-url"><a class="h-anchor" href="#then-call-the-view-from-your-app-url">#</a>Then call the view from your app URL</h4>
+<pre><code class="hljs language-python"><span class="hljs-comment"># app_name/urls.py</span>
+<span class="hljs-keyword">from</span> django.urls <span class="hljs-keyword">import</span> path
+<span class="hljs-keyword">from</span> app_name.views <span class="hljs-keyword">import</span> index, test
+urlpatterns = [
+    path(<span class="hljs-string">&#x27;celery-index/&#x27;</span>, index, name=<span class="hljs-string">&#x27;celery_index_url&#x27;</span>),
+    path(<span class="hljs-string">&#x27;celery-test/&#x27;</span>, test, name=<span class="hljs-string">&#x27;celery_test_url&#x27;</span>),
+]
+</code></pre>
+</div>
+</div>
+<div class="h3-wrap">
+<h3 id="celery-in-production-using-supervisor"><a class="h-anchor" href="#celery-in-production-using-supervisor">#</a>Celery In Production Using Supervisor</h3>
+<div class="section">
+<h4 id="step-1-install-supervisor-on-ubuntu-server"><a class="h-anchor" href="#step-1-install-supervisor-on-ubuntu-server">#</a>Step 1: Install Supervisor on Ubuntu Server</h4>
+<pre><code class="hljs language-bash">~$ <span class="hljs-built_in">sudo</span> apt-get install supervisor
+</code></pre>
+<h4 id="step-2-add-conf-file-in-supervisor"><a class="h-anchor" href="#step-2-add-conf-file-in-supervisor">#</a>Step 2: Add .conf File in Supervisor</h4>
+<pre><code class="hljs language-bash">~$ <span class="hljs-built_in">sudo</span> nano /etc/supervisor/conf.d/app_name.conf
+</code></pre>
+<p><code>app_name</code> can be anything you like, it should be similar to your project name.</p>
+<h4 id="step-3-add-some-configure-in-app-name-conf"><a class="h-anchor" href="#step-3-add-some-configure-in-app-name-conf">#</a>Step 3: Add some Configure in app_name.conf</h4>
+<pre><code class="hljs language-bash">[program:your_app_name]
+<span class="hljs-built_in">command</span>=/path/to/env/bin/celery worker -A your_project_name --loglevel=INFO
+directory=/path/to/workflow/your_project_name/
+user=www-data
+autostart=<span class="hljs-literal">true</span>
+autorestart=<span class="hljs-literal">true</span>
+stdout_logfile=/path/to/workflow/your_project_name/logs/celeryd.log
+redirect_stderr=<span class="hljs-literal">true</span>
+</code></pre>
+<p>Describe the configure file:</p>
+<pre><code class="hljs language-bash">[program:your_app_name]
+<span class="hljs-comment">#The name of your supervisord program</span>
+
+<span class="hljs-built_in">command</span>=/path/to/env/bin/celery worker -A your_project_name --loglevel=INFO
+<span class="hljs-comment">#Set full path to celery program if using virtualenv</span>
+
+directory=/path/to/workflow/your_project_name/
+<span class="hljs-comment">#The directory to your Django project</span>
+
+user=www-data
+<span class="hljs-comment">#The web server has to be run under a specific user. That user must exist.</span>
+
+autostart=<span class="hljs-literal">true</span>
+<span class="hljs-comment">#If true, this program will start automatically when supervisord is started</span>
+
+autorestart=<span class="hljs-literal">true</span>
+<span class="hljs-comment">#May be one of false, unexpected, or true. If false, the process will never be autorestarted. If unexpected, the process will be restart when the program exits with an exit code that is not one of the exit codes associated with this process’ configuration (see exitcodes). If true, the process will be unconditionally restarted when it exits, without regard to its exit code.</span>
+
+stdout_logfile=/path/to/workflow/your_project_name/logs/celeryd.log
+<span class="hljs-comment">#Put process stdout output in this file</span>
+
+redirect_stderr=<span class="hljs-literal">true</span>
+<span class="hljs-comment">#If true, cause the process’ stderr output to be sent back to supervisord on its stdout file descriptor (in UNIX shell terms, this is the equivalent of executing /the/program 2&gt;&amp;1).</span>
+</code></pre>
+<h4 id="step-4-inform-configuration-to-the-server"><a class="h-anchor" href="#step-4-inform-configuration-to-the-server">#</a>Step 4: Inform Configuration to the Server</h4>
+<p>After adding a new program, we should run the following two commands, to inform the server to reread the configuration
+files and to apply any changes.</p>
+<pre><code class="hljs language-python">~$ sudo supervisorctl reread
+~$ sudo supervisorctl update
+</code></pre>
+<h4 id="managing-supervisor-app"><a class="h-anchor" href="#managing-supervisor-app">#</a>Managing Supervisor App</h4>
+<pre><code class="hljs language-bash">~$ <span class="hljs-built_in">sudo</span> supervisorctl
+</code></pre>
+<p>You will be greeted with a list of the registered processes. You will see a process called <code>your_app_name</code> with a
+<code>RUNNING</code> status.</p>
+<pre><code class="hljs language-bash">your_app_name                 RUNNING   pid 6853, <span class="hljs-built_in">uptime</span> 0:22:30
+supervisor&gt;
+</code></pre>
+<p>Type <code>help</code> for a list of available commands.</p>
+<pre><code class="hljs language-bash">supervisor&gt; <span class="hljs-built_in">help</span>
+default commands (<span class="hljs-built_in">type</span> <span class="hljs-built_in">help</span> &lt;topic&gt;):
+=====================================
+add    <span class="hljs-built_in">exit</span>      open  reload  restart   start   <span class="hljs-built_in">tail</span>
+avail  <span class="hljs-built_in">fg</span>        pid   remove  shutdown  status  update
+clear  maintail  quit  reread  signal    stop    version
+</code></pre>
+<p>In a nutshell, we can <code>start</code>, <code>stop</code> and <code>restart</code> programs bypassing the program name as an argument to the respective
+command. We can also take a look at the program output with the <code>tail</code> command. Once you are finished, you can <code>quit</code>.</p>
+<pre><code class="hljs language-bash">~$ supervisor&gt; quit
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="h2-wrap">
+<h2 id="deployment-django-in-server"><a class="h-anchor" href="#deployment-django-in-server">#</a>Deployment Django in Server</h2>
+<div class="h3-wrap-list">
+<div class="h3-wrap">
+<h3 id="set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-server"><a class="h-anchor" href="#set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-server">#</a>Set Up Django with Postgres, Nginx, and Gunicorn on Ubuntu server</h3>
+<div class="section">
+<h4 id="step-1-—-installing-the-packages-from-the-ubuntu-repositories"><a class="h-anchor" href="#step-1-—-installing-the-packages-from-the-ubuntu-repositories">#</a>Step 1 — Installing the Packages from the Ubuntu Repositories</h4>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> apt update
+<span class="hljs-built_in">sudo</span> apt install python3-venv python3-dev libpq-dev postgresql postgresql-contrib nginx curl
+</code></pre>
+<h4 id="step-2-—-creating-the-postgresql-database-and-user"><a class="h-anchor" href="#step-2-—-creating-the-postgresql-database-and-user">#</a>Step 2 — Creating the PostgreSQL Database and User</h4>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> -u postgres psql
+</code></pre>
+<ul>
+<li>First, create a database for your project:</li>
+</ul>
+<pre><code class="hljs language-bash">postgres=# CREATE DATABASE myproject;
+</code></pre>
+<ul>
+<li>Next, create a database user for our project. Make sure to select a secure password:</li>
+</ul>
+<pre><code class="hljs language-bash">postgres=# CREATE USER myprojectuser WITH PASSWORD <span class="hljs-string">&#x27;password&#x27;</span>;
+</code></pre>
+<ul>
+<li>Afterwards, you’ll modify a few of the connection parameters for the user that you just created</li>
+</ul>
+<pre><code class="hljs language-bash">postgres=# ALTER ROLE myprojectuser SET client_encoding TO <span class="hljs-string">&#x27;utf8&#x27;</span>;
+postgres=# ALTER ROLE myprojectuser SET default_transaction_isolation TO <span class="hljs-string">&#x27;read committed&#x27;</span>;
+postgres=# ALTER ROLE myprojectuser SET timezone TO <span class="hljs-string">&#x27;UTC&#x27;</span>;
+</code></pre>
+<ul>
+<li>Now, you can give the new user access to administer the new database:</li>
+</ul>
+<pre><code class="hljs language-bash">postgres=# GRANT ALL PRIVILEGES ON DATABASE myproject TO myprojectuser;
+</code></pre>
+<ul>
+<li>When you are finished, exit out of the PostgreSQL prompt by typing:</li>
+</ul>
+<pre><code class="hljs language-bash">postgres=# \q
+</code></pre>
+<h4 id="step-3-—-creating-a-python-virtual-environment-for-your-project"><a class="h-anchor" href="#step-3-—-creating-a-python-virtual-environment-for-your-project">#</a>Step 3 — Creating a Python Virtual Environment for your Project</h4>
+<ul>
+<li>thin the project directory, create a Python virtual environment by typing:</li>
+</ul>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">mkdir</span> ~/myprojectdir
+<span class="hljs-built_in">cd</span> ~/myprojectdir
+</code></pre>
+<ul>
+<li>Within the project directory, create a Python virtual environment by typing:</li>
+</ul>
+<pre><code class="hljs language-bash">python3 -m venv myprojectenv
+</code></pre>
+<ul>
+<li>Before installing your project’s Python requirements, you will need to activate the virtual environment. You can do
+that by typing:</li>
+</ul>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">source</span> myprojectenv/bin/activate
+</code></pre>
+<ul>
+<li>With your virtual environment active, install Django, Gunicorn, and the psycopg2 PostgreSQL adaptor with the local
+instance of pip</li>
+</ul>
+<pre><code class="hljs language-bash">(myprojectenv)$ pip install django gunicorn psycopg2-binary
+</code></pre>
+<h4 id="step-4-—-creating-and-configuring-a-new-django-project"><a class="h-anchor" href="#step-4-—-creating-and-configuring-a-new-django-project">#</a>Step 4 — Creating and Configuring a New Django Project</h4>
+<ul>
+<li>With your Python components installed, you can now create the actual Django project files.</li>
+</ul>
+<pre><code class="hljs language-bash">(myprojectenv)$ django-admin startproject myproject ~/myprojectdir
+</code></pre>
+<ul>
+<li>The first thing you should do with your newly created project files is adjust the settings. Open the settings file in
+your text editor:</li>
+</ul>
+<pre><code class="hljs language-bash">(myprojectenv)$ nano ~/myprojectdir/myproject/settings.py
+</code></pre>
+<ul>
+<li>Start by locating the ALLOWED_HOSTS directive.</li>
+</ul>
+<pre><code class="hljs language-python"><span class="hljs-comment"># ~/myprojectdir/myproject/settings.py</span>
+ALLOWED_HOSTS = [<span class="hljs-string">&#x27;your_server_domain_or_IP&#x27;</span>, <span class="hljs-string">&#x27;second_domain_or_IP&#x27;</span>, . . ., <span class="hljs-string">&#x27;localhost&#x27;</span>]
+</code></pre>
+<ul>
+<li>Next, find the section that configures database access. It will start with DATABASES. The configuration in the file is
+for a SQLite database.</li>
+</ul>
+<pre><code class="hljs language-python">. . .
+DATABASES = &#123;
+    <span class="hljs-string">&#x27;default&#x27;</span>: &#123;
+        <span class="hljs-string">&#x27;ENGINE&#x27;</span>: <span class="hljs-string">&#x27;django.db.backends.postgresql_psycopg2&#x27;</span>,
+        <span class="hljs-string">&#x27;NAME&#x27;</span>: <span class="hljs-string">&#x27;myproject&#x27;</span>,
+        <span class="hljs-string">&#x27;USER&#x27;</span>: <span class="hljs-string">&#x27;myprojectuser&#x27;</span>,
+        <span class="hljs-string">&#x27;PASSWORD&#x27;</span>: <span class="hljs-string">&#x27;password&#x27;</span>,
+        <span class="hljs-string">&#x27;HOST&#x27;</span>: <span class="hljs-string">&#x27;localhost&#x27;</span>,
+        <span class="hljs-string">&#x27;PORT&#x27;</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+    &#125;
+&#125;
+. . .
+</code></pre>
+<ul>
+<li>Next, move down to the bottom of the file and add a setting indicating where the static files should be placed.</li>
+</ul>
+<pre><code class="hljs language-python">. . .
+STATIC_URL = <span class="hljs-string">&#x27;static/&#x27;</span>
+
+<span class="hljs-comment"># Default primary key field type</span>
+<span class="hljs-comment"># https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field</span>
+
+DEFAULT_AUTO_FIELD = <span class="hljs-string">&#x27;django.db.models.BigAutoField&#x27;</span>
+
+<span class="hljs-keyword">import</span> os
+STATIC_ROOT = os.path.join(BASE_DIR, <span class="hljs-string">&#x27;static/&#x27;</span>)
+</code></pre>
+<h4 id="step-5-—-completing-initial-project-setup"><a class="h-anchor" href="#step-5-—-completing-initial-project-setup">#</a>Step 5 — Completing Initial Project Setup</h4>
+<ul>
+<li>Now, you can migrate the initial database schema to our PostgreSQL database using the management script:</li>
+</ul>
+<pre><code class="hljs language-bash">(myprojectenv)$ ~/myprojectdir/manage.py makemigrations
+(myprojectenv)$ ~/myprojectdir/manage.py migrate
+</code></pre>
+<ul>
+<li>Create an administrative user for the project by typing:</li>
+</ul>
+<pre><code class="hljs language-bash">(myprojectenv)$ ~/myprojectdir/manage.py createsuperuser
+</code></pre>
+<ul>
+<li>You can collect all of the static content into the directory location that you configured by typing:</li>
+</ul>
+<pre><code class="hljs language-bash">(myprojectenv)$ ~/myprojectdir/manage.py collectstatic
+</code></pre>
+<h4 id="step-6-—-testing-gunicorn’s-ability-to-serve-the-project"><a class="h-anchor" href="#step-6-—-testing-gunicorn’s-ability-to-serve-the-project">#</a>Step 6 — Testing Gunicorn’s Ability to Serve the Project</h4>
+<pre><code class="hljs language-bash">(myprojectenv)$ <span class="hljs-built_in">cd</span> ~/myprojectdir
+(myprojectenv)$ gunicorn --<span class="hljs-built_in">bind</span> 0.0.0.0:8000 myproject.wsgi
+</code></pre>
+<ul>
+<li>You’re now finished configuring your Django application. You can back out of our virtual environment by typing:</li>
+</ul>
+<pre><code class="hljs language-bash">(myprojectenv)$ deactivate
+</code></pre>
+<h4 id="step-7-—-creating-systemd-socket-and-service-files-for-gunicorn-you-have-tested-tha"><a class="h-anchor" href="#step-7-—-creating-systemd-socket-and-service-files-for-gunicorn-you-have-tested-tha">#</a>Step 7 — Creating systemd Socket and Service Files for Gunicorn You have tested tha</h4>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> nano /etc/systemd/system/gunicorn.socket
+</code></pre>
+<ul>
+<li>Inside, you will create a <code>[Unit]</code> section to describe the socket, a <code>[Socket]</code> section to define the socket location,
+and an <code>[Install]</code> section to make sure the socket is created at the right time:</li>
+</ul>
+<pre><code class="hljs language-bash">[Unit]
+Description=gunicorn socket
+
+[Socket]
+ListenStream=/run/gunicorn.sock
+
+[Install]
+WantedBy=sockets.target
+</code></pre>
+<ul>
+<li>Save and close the file when you are finished.</li>
+<li>Next, create and open a systemd service file for Gunicorn with sudo privileges in your text editor. The service
+filename should match the socket filename with the exception of the extension:</li>
+</ul>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> nano /etc/systemd/system/gunicorn.service
+</code></pre>
+<pre><code class="hljs language-bash">[Unit]
+Description=gunicorn daemon
+Requires=gunicorn.socket
+After=network.target
+
+[Service]
+User=sammy
+Group=www-data
+WorkingDirectory=/home/sammy/myprojectdir
+ExecStart=/home/sammy/myprojectdir/myprojectenv/bin/gunicorn \
+          --access-logfile - \
+          --workers 3 \
+          --<span class="hljs-built_in">bind</span> unix:/run/gunicorn.sock \
+          myproject.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+<ul>
+<li>You can now start and enable the Gunicorn socket. This will create the socket file at /run/gunicorn.sock now and at
+boot. When a connection is made to that socket, systemd will automatically start the gunicorn.service to handle it</li>
+</ul>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> systemctl start gunicorn.socket
+<span class="hljs-built_in">sudo</span> systemctl <span class="hljs-built_in">enable</span> gunicorn.socket
+</code></pre>
+<h4 id="step-8-—-checking-for-the-gunicorn-socket-file"><a class="h-anchor" href="#step-8-—-checking-for-the-gunicorn-socket-file">#</a>Step 8 — Checking for the Gunicorn Socket File</h4>
+<ul>
+<li>Check the status of the process to find out whether it was able to start:</li>
+</ul>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> systemctl status gunicorn.socket
+</code></pre>
+<ul>
+<li>Next, check for the existence of the gunicorn.sock file within the /run directory:</li>
+</ul>
+<pre><code class="hljs language-bash">file /run/gunicorn.sock
+</code></pre>
+<h4 id="step-9-—-testing-socket-activation"><a class="h-anchor" href="#step-9-—-testing-socket-activation">#</a>Step 9 — Testing Socket Activation</h4>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> systemctl status gunicorn
+</code></pre>
+<ul>
+<li>To test the socket activation mechanism, you can send a connection to the socket through curl by typing:</li>
+</ul>
+<pre><code class="hljs language-bash">curl --unix-socket /run/gunicorn.sock localhost
+</code></pre>
+<ul>
+<li>You should receive the HTML output from your application in the terminal. This indicates that Gunicorn was started and
+was able to serve your Django application. You can verify that the Gunicorn service is running by typing:</li>
+</ul>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> systemctl status gunicorn
+</code></pre>
+<ul>
+<li>Check your /etc/systemd/system/gunicorn.service file for problems. If you make changes to the
+/etc/systemd/system/gunicorn.service file, reload the daemon to reread the service definition and restart the Gunicorn
+process by typing</li>
+</ul>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> systemctl daemon-reload
+<span class="hljs-built_in">sudo</span> systemctl restart gunicorn
+</code></pre>
+<h4 id="step-10-—-configure-nginx-to-proxy-pass-to-gunicorn"><a class="h-anchor" href="#step-10-—-configure-nginx-to-proxy-pass-to-gunicorn">#</a>Step 10 — Configure Nginx to Proxy Pass to Gunicorn</h4>
+<ul>
+<li>Start by creating and opening a new server block in Nginx’s sites-available directory:</li>
+</ul>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> nano /etc/nginx/sites-available/myproject
+</code></pre>
+<pre><code class="hljs language-bash">server &#123;
+    listen 80;
+    server_name server_domain_or_IP;
+
+    location = /favicon.ico &#123; access_log off; log_not_found off; &#125;
+    location /static/ &#123;
+        <span class="hljs-built_in">alias</span> /home/sammy/myprojectdir/staticfiles/;
+    &#125;
+
+    location /media &#123;
+        autoindex on;
+        <span class="hljs-built_in">alias</span> /home/sammy/myprojectdir/media/;
+    &#125;
+
+    location / &#123;
+        include proxy_params;
+        proxy_pass http://unix:/run/gunicorn.sock;
+    &#125;
+&#125;
+</code></pre>
+<ul>
+<li>Save and close the file when you are finished. Now, you can enable the file by linking it to the sites-enabled
+directory:</li>
+</ul>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">ln</span> -s /etc/nginx/sites-available/myproject /etc/nginx/sites-enabled
+</code></pre>
+<ul>
+<li>Test your Nginx configuration for syntax errors by typing:</li>
+</ul>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> nginx -t
+</code></pre>
+<ul>
+<li>If no errors are reported, go ahead and restart Nginx by typing:</li>
+</ul>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> systemctl restart nginx
+</code></pre>
+<ul>
+<li>you need to open up your firewall to normal traffic on port 80</li>
+</ul>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> ufw allow <span class="hljs-string">&#x27;Nginx Full&#x27;</span>
+</code></pre>
+<p>You should now be able to go to your server’s domain or IP address to view your application.</p>
+<h4 id="step-11-—-troubleshooting-nginx-and-gunicorn"><a class="h-anchor" href="#step-11-—-troubleshooting-nginx-and-gunicorn">#</a>Step 11 — Troubleshooting Nginx and Gunicorn</h4>
+<ul>
+<li>Nginx Is Showing the Default Page Instead of the Django Application</li>
+</ul>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> <span class="hljs-built_in">tail</span> -F /var/log/nginx/error.log
+</code></pre>
+<ul>
+<li>Django Is Displaying: “could not connect to server: Connection refused”</li>
+</ul>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> systemctl status postgresql
+</code></pre>
+<ul>
+<li>If it is not, you can start it and enable it to start automatically at boot (if it is not already configured to do so)
+by typing:</li>
+</ul>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> systemctl start postgresql
+<span class="hljs-built_in">sudo</span> systemctl <span class="hljs-built_in">enable</span> postgresql
+</code></pre>
+<p>If you change Gunicorn socket or service files, reload the daemon and restart the process by typing:</p>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> systemctl daemon-reload
+<span class="hljs-built_in">sudo</span> systemctl restart gunicorn.socket gunicorn.service
+</code></pre>
+<p>If you change the Nginx server block configuration, test the configuration and then Nginx by typing:</p>
+<pre><code class="hljs language-bash"><span class="hljs-built_in">sudo</span> nginx -t &amp;&amp; <span class="hljs-built_in">sudo</span> systemctl restart nginx
+</code></pre>
+</div>
+</div>
+</div>
+</div>
+
+        </div></div><div id="mysearch" class="z-50 fixed inset-0 flex justify-center bg-slate-600/80 dark:bg-slate-900/90 items-start text-sm z-50 overflow-hidden lg:pt-16 lg:pb-20 hidden"><div id="mysearch-box" class="lg:max-w-screen-lg w-full flex flex-col justify-between bg-white dark:bg-slate-700 shadow-3xl dark:shadow-3xl lg:rounded-lg lg:max-h-832 min-h-320 h-full"><div class="flex items-center h-16 flex-none border-b border-slate-200 dark:border-slate-700"><div class="w-full h-full"><form class="flex items-center w-full h-full outline-none rounded-tl-lg"><label for="mysearch-input" id="mysearch-label" class="h-full w-14 mt-1 ml-1 px-4 flex items-center justify-center transition-colors duration-200 ease-in-out text-emerald-200"><div class="text-2xl text-emerald-500"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M942.14826666 878.7968l-200.56746667-229.92213333C795.37493333 583.8848 827.73333333 500.5312 827.73333333 409.6 827.73333333 202.27413333 659.59253333 34.13333333 452.26666666 34.13333333 244.87253333 34.13333333 76.79999999 202.27413333 76.79999999 409.6S244.87253333 785.06666667 452.26666666 785.06666667c77.14133333 0 148.82133333-23.3472 208.41813333-63.21493334l199.33866667 228.5568c19.72906667 22.7328 54.272 24.91733333 76.8 5.25653334C959.62453333 935.86773333 961.87733333 901.46133333 942.14826666 878.7968zM179.19999999 409.6c0-150.59626667 122.4704-273.06666667 273.06666667-273.06666667 150.59626667 0 273.06666667 122.4704 273.06666667 273.06666667s-122.4704 273.06666667-273.06666667 273.06666667C301.67039999 682.66666667 179.19999999 560.19626667 179.19999999 409.6z"></path></svg></div></label><div class="relative flex-1"> <input class="flex-1 font-light h-full bg-transparent focus:text-slate-900 text-slate-500 dark:text-slate-300 placeholder-slate-400 placeholder-opacity-80 shadow-none outline-none truncate text-lg sm:text-2xl caret-color-emerald-400 leading-normalized w-full appearance-none rounded-none transition-colors duration-200 ease-in-out" id="mysearch-input" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search for cheatsheet" maxlength="128" type="text" enterkeyhint="go"></div> <button id="mysearch-clear" type="reset" class="items-center justify-center h-full w-14 px-4 text-slate-600 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-100 opacity-75 fill-current cursor-pointer transition-fast-out flex"><i class="icon icon-close text-xs font-bold"></i></button></form></div><div class="w-px h-8 bg-slate-100 dark:bg-slate-400/20 flex-none"></div> <button class="cancel mr-1 px-4 h-full text-slate-500 dark:text-slate-300 hover:text-slate-800 dark:hover:text-slate-300"> Cancel</button></div><div class="flex flex-grow overflow-hidden lg:rounded-br-lg"><div class="relative w-full flex-none overflow-y-auto lg:w-1/2"><ul id="mysearch-list"></ul></div><div class="preview-panel shadow-inner bg-slate-100 dark:bg-slate-800 lg:block w-1/2 flex-none overflow-y-auto"></div></div></div></div><footer class="text-slate-700 dark:text-slate-300 bg-slate-200 dark:bg-slate-800 md:mt-14"><div class="max-container mb-8 md:py-10 mx-auto flex md:items-center lg:items-start md:flex-row flex-col"><div class="grid grid-cols-1 md:grid-cols-2 md:flex-grow md:flex -mb-10 md:mt-0 mt-10"><div class="md:w-1/2 md:pr-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">Related <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/%5Ccanvas.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">HTML Canvas <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/%5Ccss3.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">CSS 3 <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/%5Chtml.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">HTML <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/%5Cjavascript.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">JavaScript <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div><div class="md:w-1/2 md:pl-4"><h2 class="my-6 text-xl text-slate-700 dark:text-slate-300">Recent <span class="text-slate-400">Cheatsheet</span></h2><section class="w-full grid grid-cols-2 gap-2 md:gap-4"><a href="/windows-shortcuts.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white"> <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/unreal-engine.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Unreal Engine <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/ocaml.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">OCaml <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a><a href="/unity-shader-graph.html" class="group flex items-center p-3 bg-slate-50 rounded-lg hover:shadow dark:bg-slate-900 hover:bg-emerald-500 fadeIn"><div class="ml-4 truncate hover:text-clip overflow-hidden"><p class="mb-1 text-sm font-medium text-slate-900 dark:text-slate-300 group-hover:text-white">Unity Shader Graph <span class="text-slate-400 group-hover:text-white">Cheatsheet</span></p><p class="text-sm font-normal text-slate-400 group-hover:text-white">Quick Reference</p></div></a></section></div></div><div class="hidden md:block flex-shrink-0 mx-auto block mt-8 md:mx-8 max-w-xs"><a href="/" class="flex font-medium items-center justify-center md:justify-start text-slate-800 dark:text-slate-300"><div class="hidden md:flex justify-center text-white mr-2 text-3xl md:text-4xl"><div class="self-center"><svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"><path d="M234.624 932.864a43.52 43.52 0 0 1-58.688-17.024 46.528 46.528 0 0 1-5.248-21.248V584.896c0 30.72 17.28 49.664 62.848 70.912l278.08 138.688-276.992 138.368z" fill="#6ad09d" opacity=".4"></path><path d="M642.944 85.312c115.584 0 209.28 45.504 210.368 161.92v647.36a44.992 44.992 0 0 1-5.248 20.864 43.328 43.328 0 0 1-59.84 17.408L511.616 794.496l-278.08-138.688c-45.568-21.248-62.848-40.192-62.848-70.912V247.168c0-116.352 93.696-161.856 208.832-161.856zm28.992 257.792H350.912a33.6 33.6 0 0 0-33.472 33.728c0 18.56 14.976 33.728 33.472 33.728H672a33.6 33.6 0 0 0 33.472-33.728A33.6 33.6 0 0 0 672 343.104z" fill="#6ad09d"></path></svg></div></div> <span class="domain text-slate-600 dark:text-slate-300 text-lg md:text-2xl">cheatsheets<span class="text-emerald-400">.zip</span></span></a><h4 class="mt-5 text-sm text-slate-500">Share quick reference and cheat sheet for developers.</h4><div class="share mt-4"> <a href="/zh-CN/">中文版</a></div><div class="share mt-8"><div class="inline-flex text-slate-500 sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start"> <a class="mr-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://facebook.com/sharer/sharer.php?u=https://cheatsheets.zip/django.html" rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M594.74346667 51.53066667c-28.95893333 0-56.30826667 3.2192-88.48533334 16.0896-65.9616 27.34826667-98.13653333 88.48533333-98.13653333 186.6208v94.91946666h-91.70026667v157.66186667h91.70026667v455.28853333h186.6208v-455.28853333h127.09546667l17.696-157.66186667h-144.7936v-70.7872c0-22.52266667 1.60853333-38.61013333 8.04266666-46.65706666 8.04266667-14.47786667 24.13226667-20.91413333 49.872-20.91413334h85.26613334v-157.66186666h-143.184z"></path></svg></a> <a class="mx-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://twitter.com/intent/tweet/?text=A%20Django%20cheat%20sheet.%20&url=https://cheatsheets.zip/django.html" rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M283.02655555 307.55600001c140.717 72.074 260.839 66.925 260.839 66.92499999s-44.617-157.87599999 94.384-228.234c138.998-70.359 236.816 48.048 236.816 48.048s24.025-6.863 42.901-13.728 44.617-18.87599999 44.61700001-18.876l-42.90100001 77.222 66.92500001-6.863s-8.579 12.014-34.31900001 36.038c-25.741 24.025-37.754 37.754-37.754 37.754s10.297 190.483-90.95 338.062c-99.53 147.58000001-229.952 235.099-417.002 253.973-187.05 18.87599999-310.606-58.347-310.606-58.347s82.37-5.149 133.852-24.025c51.483-20.592 126.99-73.79 126.99-73.79s-106.397-32.605-145.866-70.35899999-48.048-60.062-48.048-60.06200001l106.397-1.716s-111.542-60.062-142.433-106.397c-30.89-46.333-36.038-92.666-36.038-92.666l80.656 32.605s-66.925-92.666-77.222-163.025c-10.297-72.074 12.014-109.826 12.014-109.826s36.038 65.21 176.752 137.283z"></path></svg></a> <a class="mx-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://reddit.com/submit/?url=https://cheatsheets.zip/django.html&resubmit=true&title=A%20Django%20cheat%20sheet." rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M830.73813333 279.88586667c29.1712 0 54.9152-24.02453333 54.9152-54.9152s-24.02453333-54.9152-54.9152-54.9152c-29.1712 0-54.9152 24.02453333-54.9152 54.9152 0 29.1712 24.02453333 54.9152 54.9152 54.9152zM518.416 741.504c-97.81333333 0-154.44693333-41.184-154.44693333-41.184-5.1488-3.4336-10.29653333-1.71626667-12.01386667 3.4336l-10.29653333 18.87573333c-1.71626667 5.1488-1.71626667 12.01386667 3.4336 15.4432 0 0 48.048 49.76746667 173.32266666 49.76746667s169.888-53.1968 169.888-53.1968c3.4336-3.4336 3.4336-10.29653333 1.71626667-13.728l-12.01386667-17.16266667c-3.4336-3.4336-8.5792-5.1488-13.728-1.71626666 0-1.71626667-48.048 39.46986667-145.8656 39.46986666zM341.66506667 609.3696c29.1712 0 54.9152-24.02453333 54.9152-54.9152s-24.02453333-54.9152-54.9152-54.9152c-29.1712 0-54.9152 24.02453333-54.9152 54.9152 1.71626667 30.8896 25.7408 54.9152 54.9152 54.9152zM667.71413333 609.3696c29.1712 0 54.9152-24.02453333 54.9152-54.9152s-24.02453333-54.9152-54.9152-54.9152-54.9152 24.02453333-54.9152 54.9152c0 30.8896 24.02453333 54.9152 54.9152 54.9152zM722.6272 216.39466667c-8.5792-3.4336-101.24693333-34.31893333-140.7168-6.86293334-41.184 29.1712-39.46986667 125.2704-36.0384 125.2704 90.9504 6.86293333 175.0368 34.31893333 238.53013333 77.2224 5.1488 3.4336 60.06186667-44.61653333 120.1248-34.31893333 60.06186667 10.29653333 101.24693333 66.9248 82.37013334 130.4192-18.87573333 61.77813333-77.2224 80.656-75.50613334 99.5296v15.4432c0 159.5936-181.9008 288.29653333-406.704 288.29653333s-406.704-128.70293333-406.704-288.29653333c0-8.5792 0-15.4432 1.71626667-24.02453333 0-1.71626667-41.184-24.02453333-56.62933333-61.77813334-15.4432-36.0384-8.5792-78.9376 6.86293333-104.67946666 25.7408-39.46986667 56.62933333-54.9152 99.5296-54.9152s89.2352 25.7408 90.9504 25.7408c68.6432-41.184 157.87626667-66.9248 253.97333333-68.6432 3.4336 0-6.86293333-116.6912 58.34666667-159.5936 66.9248-42.90133333 176.752 0 178.46933333 0v3.4336c17.16266667-37.7536 54.9152-63.49333333 97.81333334-63.49333334 60.06186667 0 108.11306667 49.76746667 108.11306666 109.82613334 0 60.06186667-48.048 109.82613333-108.11306666 109.82613333s-108.11306667-49.76746667-108.11306667-109.82613333c0-3.4336 0-6.86293333 1.71626667-8.5792z"></path></svg></a> <a class="mx-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://pinterest.com/pin/create/button/?url=https://cheatsheets.zip/django.html&description=A%20Django%20cheat%20sheet." rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M977 512c0 256.875-208.125 465-465 465-48 0-94.125-7.3125-137.625-20.8125 18.9375-30.9375 47.25-81.5625 57.75-121.875 5.625-21.75 28.875-110.625 28.875-110.625 15.1875 28.875 59.4375 53.4375 106.5 53.4375 140.25 0 241.3125-129 241.3125-289.3125 0-153.5625-125.4375-268.5-286.6875-268.5-200.625 0-307.3125 134.625-307.3125 281.4375 0 68.25 36.375 153.1875 94.3125 180.1875 8.8125 4.125 13.5 2.25 15.5625-6.1875 1.5-6.375 9.375-38.0625 12.9375-52.6875 1.125-4.6875.5625-8.8125-3.1875-13.3125-18.9375-23.4375-34.3125-66.1875-34.3125-106.125 0-102.5625 77.625-201.75 210-201.75 114.1875 0 194.25 77.8125 194.25 189.1875 0 125.8125-63.5625 213-146.25 213-45.5625 0-79.875-37.6875-68.8125-84 13.125-55.3125 38.4375-114.9375 38.4375-154.875 0-35.625-19.125-65.4375-58.875-65.4375-46.6875 0-84.1875 48.1875-84.1875 112.875 0 41.25 13.875 69 13.875 69s-45.9375 194.625-54.375 231c-9.375 40.125-5.625 96.75-1.6875 133.5C169.625 877.4375 47 709.0625 47 512 47 255.125 255.125 47 512 47s465 208.125 465 465z"></path></svg></a> <a class="mx-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://www.linkedin.com/shareArticle?url=https://cheatsheets.zip/django.html&title=Django%20Cheat%20Sheet%20&%20Quick%20Reference&summary=A%20Django%20cheat%20sheet." rel="external nofollow noreferrer" target="_blank"><svg viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" fill="currentColor" height="1em" width="1em"><path d="M387.20790124 931.03893333h183.53386665v-355.35146666c0-17.5712 1.952-37.0976 7.80906668-48.81173334 11.7152-35.1456 42.95573333-72.24106667 93.7184-72.24106665 66.38613333 0 93.7184 54.66773333 93.7184 132.76799999v341.68426666h183.53386667v-365.11466665c0-181.58293333-89.8144-265.53706667-210.86826667-265.53706668-97.62559999 0-158.14933333 58.576-181.58293333 97.6256h-3.90720001l-7.80906666-83.95626667h-160.10453333c1.952 54.66773333 3.9072 119.10186667 3.9072 197.20320001v421.73759999zM149.00310124 46.56213332c-58.576 0-97.62559999 41.00373333-95.67146668 97.62560001-1.952 52.7168 37.0976 95.67146668 95.67146668 95.67146668 60.52586667 0 99.5776-42.95573333 99.5776-95.67146668-3.9072-56.624-41.00373333-97.62559999-99.5776-97.62559999zM240.7705679 931.03893333v-616.98346666h-183.53386666v616.98346666h183.53386666z"></path></svg></a><a class="ml-3 fadeIn hover:text-slate-700 dark:hover:text-slate-300" href="https://social-plugins.line.me/lineit/share?url=https://cheatsheets.zip/django.html" rel="external nofollow noreferrer" target="_blank"><?xml version="1.0" standalone="no"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg t="1672903354277" class="icon" viewBox="0 0 1107 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="11220" xmlns:xlink="http://www.w3.org/1999/xlink" width="1em" height="1em"><path d="M551.3440625 32C264.509375 32 32 215.0290625 32 440.7875c0 209.7046875 200.7028125 382.425 459.1471875 405.9534375a31.60125001 31.60125001 0 0 1 21.105 13.7859375c11.4721875 18.8859375 3.320625 59.1271875-5.5875 104.2471875s39.5334375 21.7021875 50.25 16.4775c8.53125001-4.1390625 228.103125-127.91625001 358.820625-249.3009375 95.5903125-74.15625001 154.921875-177.20625001 154.921875-291.148125C1070.688125 215.0290625 838.16375001 32 551.3440625 32zM378.2290625 547.7721875a27.6984375 27.6984375 0 0 1-27.91875 27.44625H255.3659375c-16.760625 0-39.091875-5.791875-39.091875-32.9390625v-203.01562499a27.6825 27.6825 0 0 1 27.91875-27.44718751h5.5865625a27.6825 27.6825 0 0 1 27.91875 27.44625v175.5703125h72.59812499a27.6984375 27.6984375 0 0 1 27.93375001 27.44625v5.4928125zm78.264375-5.46093749a27.886875 27.886875 0 0 1-55.77468751 0V345.085625a27.886875 27.886875 0 0 1 55.77468751 0v197.22562499zm245.634375 0a30.8625 30.8625 0 0 1-27.91875 27.44624999 31.60125001 31.60125001 0 0 1-32.908125-15.7378125l-89.956875-126.16875v114.4284375a27.91875001 27.91875001 0 0 1-55.8215625 0V344.7396875a27.6665625 27.6665625 0 0 1 27.9028125-27.43125 35.315625 35.315625 0 0 1 31.6490625 20.0971875c8.655 12.7790625 91.27875001 127.9790625 91.27875 127.9790625V344.740625a27.9346875 27.9346875 0 0 1 55.8525 0v197.5396875zm167.5275-126.20062501a27.44624999 27.44624999 0 1 1 0 54.8925H797.05625001v43.8928125h72.59812499a27.44624999 27.44624999 0 1 1 0 54.8775H760.765625a24.8971875 24.8971875 0 0 1-25.1803125-24.676875V342.033125a24.8971875 24.8971875 0 0 1 25.18125-24.6928125h108.88875a27.44624999 27.44624999 0 1 1 0 54.8775H797.05625001v43.9078125h72.59812499z" fill="currentColor" p-id="11221"></path></svg></a></div></div></div></div><div class="max-container border-b border-slate-300 dark:border-slate-700"></div><div class="max-container flex flex-col sm:flex-row items-center"><p class="py-2 md:py-3 text-slate-500 text-sm text-center w-full"> © 2025 cheatsheets.zip, All rights reserved.</p></div></footer></body><script src="/js/main.js?_v=1735753229098"></script><script>
+        // Get all pre > code elements
+        const codeBlocks = document.querySelectorAll('pre > code');
+        const initInnerHTML = '<svg height="1em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path> </svg>';
+        const successInnerHTML = '<svg height="1em" fill="currentColor" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>';
+        codeBlocks.forEach(function (codeBlock) {
+            // Create a copy button element
+            const copyButton = document.createElement('button');
+            copyButton.className = 'bg-emerald-500 p-2 text-white fadeIn shadow-xl rounded flex items-center absolute top-2 right-2';
+            copyButton.innerHTML = initInnerHTML;
+            copyButton.style.opacity = "0";
+            const parent = codeBlock.parentNode;
+
+            parent.style = "position: relative;"
+            parent.insertBefore(copyButton, codeBlock);
+
+            // Add click event listener to copy button
+            copyButton.addEventListener('click', () => {
+                navigator.clipboard.writeText(codeBlock.textContent).then(() => {
+                    copyButton.innerHTML = successInnerHTML;
+                    setTimeout(() => {
+                        copyButton.innerHTML = initInnerHTML;
+                    }, 1000);
+                });
+            });
+
+            parent.addEventListener('mouseenter', () => {
+                copyButton.style.opacity = "1";
+            });
+            parent.addEventListener('mouseleave', () => {
+                copyButton.style.opacity = "0";
+            });
+        });
+    </script></html>
