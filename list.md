@@ -132,11 +132,11 @@ This reference was made for Emacs 27.
 - [Microsoft Teams](https://cheatsheets.zip/microsoft-teams.html): A visual cheat-sheet for the 38 keyboard shortcuts found in Microsoft Teams
 - [TablePlus](https://cheatsheets.zip/table-plus.html): A visual cheat-sheet for the 34 keyboard shortcuts found in TablePlus
 - [Bear](https://cheatsheets.zip/bear-notes.html): A visual cheat-sheet for the 66 keyboard shortcuts found in Bear. This application is MacOS-only.
-- [Feedly](https://cheatsheets.zip/feedly.html): A visual cheat-sheet for the 25 keyboard shortcuts found on the Feedly app
 - [FileZilla](https://cheatsheets.zip/filezilla.html): A visual cheat-sheet for the 30 keyboard shortcuts found on the FileZilla program
+- [Feedly](https://cheatsheets.zip/feedly.html): A visual cheat-sheet for the 25 keyboard shortcuts found on the Feedly app
 - [Reddit](https://cheatsheets.zip/reddit.html): A visual cheat-sheet for the 17 keyboard shortcuts found on Reddit.com
-- [Slack](https://cheatsheets.zip/slack.html): A visual cheat-sheet for the 62 keyboard shortcuts found in Slack
 - [SoundCloud](https://cheatsheets.zip/soundcloud.html): A visual cheat-sheet for the 22 keyboard shortcuts found on SoundCloud
+- [Slack](https://cheatsheets.zip/slack.html): A visual cheat-sheet for the 62 keyboard shortcuts found in Slack
 - [Twitter](https://cheatsheets.zip/twitter.html): A visual cheat-sheet for the 26 keyboard shortcuts found on Twitter
 - [Android Studio](https://cheatsheets.zip/android-studio.html): A visual cheat-sheet for the 130 keyboard shortcuts found in the Andriod Studio software
 - [Github](https://cheatsheets.zip/github.html): A visual cheat-sheet for the 80 keyboard shortcuts found on Github.com
@@ -182,8 +182,8 @@ This reference was made for Emacs 27.
 - [Chrome Developer Tools](https://cheatsheets.zip/chrome-devtools.html): A visual cheat-sheet for the 56 keyboard shortcuts found in Chrome's Developer Tools
 - [GIMP](https://cheatsheets.zip/gimp.html): A visual cheat-sheet for the 97 keyboard shortcuts found in GIMP
 - [Google Chrome](https://cheatsheets.zip/google-chrome.html): A visual cheat-sheet for the 65 keyboard shortcuts found in Google Chrome
-- [TickTick](https://cheatsheets.zip/ticktick.html): A visual cheat-sheet for the 25 keyboard shortcuts found in the TickTick desktop app
 - [Todoist](https://cheatsheets.zip/todoist.html): A visual cheat-sheet for the 37 keyboard shortcuts found in Todoist
+- [TickTick](https://cheatsheets.zip/ticktick.html): A visual cheat-sheet for the 25 keyboard shortcuts found in the TickTick desktop app
 - [VLC Player](https://cheatsheets.zip/vlc.html): A visual cheat-sheet for the 82 keyboard shortcuts found in VLC Player
 - [Missive](https://cheatsheets.zip/missive.html): A visual cheat-sheet for the 83 keyboard shortcuts found in Missive
 - [Origami Studio](https://cheatsheets.zip/origami.html): A visual cheat-sheet for the 71 keyboard shortcuts found in Origami Studio. This application is MacOS-only.
